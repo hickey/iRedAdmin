@@ -23,6 +23,14 @@
             <div class="head_top">
                 <div class="topbuts">
                     <ul class="clear">
+                        <li>
+                            <form method="post" action="/search" class="search_form">
+                            <!--suppress ALL -->
+                            <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                            <i class="fa fa-search-plus fa-lg color-green"></i>
+                            <input type="text" name="searchString" size="30" placeholder="Search mail accounts" class="search_field">
+                            </form>
+                        </li>
                         <li><a href="{{ctx.homepath}}/profile/{%if session.get('admin_is_mail_user') %}user{%else%}admin{%endif%}/general/{{session.get('username')}}">{{ _('Preferences') }}</a></li>
                         <li><a href="{{ctx.homepath}}/logout" class="red">{{ _('Logout') }}</a></li>
                     </ul>
@@ -61,6 +69,39 @@
                     <li {% block navlinks_activities %}{% endblock %}><a href="#">{{ _('Activities') }}</a>
                         <ul>
                             <li><a href="{{ctx.homepath}}/activities/admins">{{ _('Admin Log') }}</a></li>
+                            <li><a href="{{ctx.homepath}}/activities/fail2ban/banned">{{ _('Banned IP Addresses') }}</a></li>
+                            <li><a href="{{ctx.homepath}}/activities/smtp/sessions">{{ _('SMTP Sessions') }}</a>
+                                <ul>
+                                    <li><a href="{{ctx.homepath}}/activities/smtp/sessions">{{ _('All SMTP Sessions') }}</a></li>
+                                    <li><a href="{{ctx.homepath}}/activities/smtp/sessions/rejected">{{ _('Rejected SMTP Sessions') }}</a></li>
+                                    <li><a href="{{ctx.homepath}}/activities/smtp/sessions/outbound">{{ _('Outbound SMTP Sessions') }}</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ctx.homepath}}/activities/sent">{{ _('Sent Mails') }}</a></li>
+                            <li><a href="{{ctx.homepath}}/activities/received">{{ _('Received Mails') }}</a></li>
+
+
+
+                                <li><a href="{{ctx.homepath}}/activities/quarantined">{{ _('Quarantined Mails') }}</a>
+                                    <ul>
+                                        <li><a href="{{ctx.homepath}}/activities/quarantined/spam">{{ _('Spam') }}</a>
+                                        </li><li><a href="{{ctx.homepath}}/activities/quarantined/virus">{{ _('Virus') }}</a>
+                                        </li><li><a href="{{ctx.homepath}}/activities/quarantined/banned">{{ _('Banned') }}</a>
+                                        </li><li><a href="{{ctx.homepath}}/activities/quarantined/badheader">{{ _('Bad Header') }}</a>
+                                        </li><li><a href="{{ctx.homepath}}/activities/quarantined/clean">{{ _('Clean') }}</a>
+                                    </li></ul>
+                                </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="{{ctx.homepath}}/activities/admins">{{ _('System') }}</a>
+                        <ul>
+                                <li><a href="{{ctx.homepath}}/system/settings">{{ _('Settings') }}</a></li>
+                                <li><a href="{{ctx.homepath}}/verify/domain_ownership">{{ _('Domain ownership verification') }}</a></li>
+                                        <li><a href="{{ctx.homepath}}/system/spampolicy">{{ _('Global Spam Policy') }}</a></li>
+                                        <li><a href="{{ctx.homepath}}/system/wblist">{{ _('Whitelists &amp; Blacklists') }}</a></li>
+                                        <li><a href="{{ctx.homepath}}/system/greylisting">{{ _('Greylisting') }}</a></li>
+                                        <li><a href="{{ctx.homepath}}/system/throttle">{{ _('Throttle') }}</a></li>
                         </ul>
                     </li>
 
@@ -70,6 +111,9 @@
                             <li><a href="{{ctx.homepath}}/create/domain">{{ _('Domain') }}</a></li>
                             <li><a href="{{ctx.homepath}}/create/admin">{{ _('Admin') }}</a></li>
                             <li><a href="{{ctx.homepath}}/create/user">{{ _('User') }}</a></li>
+                            <li><a href="{{ctx.homepath}}/create/ml">{{ _('Mailing List (Subscribable)') }}</a></li>
+                            <li><a href="{{ctx.homepath}}/create/alias">{{ _('Alias') }}</a></li>
+                            <li><a href="{{ctx.homepath}}/create/wblist">{{ _('Whitelists &amp; Blacklists') }}</a></li>
                         </ul>
                     </li>
 
@@ -97,6 +141,8 @@
         <div class="pagesize clear">
             <p class="bt-space0">
                 &copy; <a href="https://www.iredmail.org/" target="_blank" rel="noopener">iRedMail</a>
+                | <img src="https://commons.wikimedia.org/wiki/File:Open_Source_Initiative_keyhole.svg" width=20 height=20>
+                  <a href="https://gitlab.com/wt0f/iredadmin-freedom" target="_blank" rel="noopener">{{ _('iRedAdmin-Freedom') }}</a>
                 {% if session.get('is_global_admin') %}
                     | <a href="https://forum.iredmail.org/" target="_blank" rel="noopener">{{ _('Support') }}</a>
                 {% else %}

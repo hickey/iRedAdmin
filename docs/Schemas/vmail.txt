@@ -1,0 +1,327 @@
+MariaDB [vmail]> show tables;
++----------------------+
+| Tables_in_vmail      |
++----------------------+
+| admin                |
+| alias                |
+| alias_domain         |
+| anyone_shares        |
+| deleted_mailboxes    |
+| domain               |
+| domain_admins        |
+| forwardings          |
+| last_login           |
+| mailbox              |
+| maillists            |
+| moderators           |
+| recipient_bcc_domain |
+| recipient_bcc_user   |
+| sender_bcc_domain    |
+| sender_bcc_user      |
+| sender_relayhost     |
+| share_folder         |
+| used_quota           |
++----------------------+
+19 rows in set (0.001 sec)
+
+MariaDB [vmail]> describe admin;
++--------------------+--------------+------+-----+---------------------+-------+
+| Field              | Type         | Null | Key | Default             | Extra |
++--------------------+--------------+------+-----+---------------------+-------+
+| username           | varchar(255) | NO   | PRI |                     |       |
+| password           | varchar(255) | NO   |     |                     |       |
+| name               | varchar(255) | NO   |     |                     |       |
+| language           | varchar(5)   | NO   |     |                     |       |
+| passwordlastchange | datetime     | NO   | MUL | 1970-01-01 01:01:01 |       |
+| settings           | text         | YES  |     | NULL                |       |
+| created            | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| modified           | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| expired            | datetime     | NO   | MUL | 9999-12-31 00:00:00 |       |
+| active             | tinyint(1)   | NO   | MUL | 1                   |       |
++--------------------+--------------+------+-----+---------------------+-------+
+10 rows in set (0.002 sec)
+
+MariaDB [vmail]> describe alias;
++--------------+--------------+------+-----+---------------------+-------+
+| Field        | Type         | Null | Key | Default             | Extra |
++--------------+--------------+------+-----+---------------------+-------+
+| address      | varchar(255) | NO   | PRI |                     |       |
+| name         | varchar(255) | NO   |     |                     |       |
+| accesspolicy | varchar(30)  | NO   |     |                     |       |
+| domain       | varchar(255) | NO   | MUL |                     |       |
+| created      | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| modified     | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| expired      | datetime     | NO   | MUL | 9999-12-31 00:00:00 |       |
+| active       | tinyint(1)   | NO   | MUL | 1                   |       |
++--------------+--------------+------+-----+---------------------+-------+
+8 rows in set (0.001 sec)
+
+MariaDB [vmail]> describe alias_domain;
++---------------+--------------+------+-----+---------------------+-------+
+| Field         | Type         | Null | Key | Default             | Extra |
++---------------+--------------+------+-----+---------------------+-------+
+| alias_domain  | varchar(255) | NO   | PRI | NULL                |       |
+| target_domain | varchar(255) | NO   | MUL | NULL                |       |
+| created       | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| modified      | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| active        | tinyint(1)   | NO   | MUL | 1                   |       |
++---------------+--------------+------+-----+---------------------+-------+
+5 rows in set (0.001 sec)
+
+MariaDB [vmail]> describe anyone_shares;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| from_user | varchar(255) | NO   | PRI | NULL    |       |
+| dummy     | char(1)      | YES  |     | 1       |       |
++-----------+--------------+------+-----+---------+-------+
+2 rows in set (0.002 sec)
+
+MariaDB [vmail]> describe deleted_mailboxes;
++-------------+---------------------+------+-----+---------------------+----------------+
+| Field       | Type                | Null | Key | Default             | Extra          |
++-------------+---------------------+------+-----+---------------------+----------------+
+| id          | bigint(20) unsigned | NO   | MUL | NULL                | auto_increment |
+| timestamp   | timestamp           | NO   | MUL | current_timestamp() |                |
+| username    | varchar(255)        | NO   | MUL |                     |                |
+| domain      | varchar(255)        | NO   | MUL |                     |                |
+| maildir     | varchar(255)        | NO   |     |                     |                |
+| admin       | varchar(255)        | NO   | MUL |                     |                |
+| delete_date | date                | YES  | MUL | NULL                |                |
++-------------+---------------------+------+-----+---------------------+----------------+
+7 rows in set (0.006 sec)
+
+MariaDB [vmail]> describe domain;
++-------------+--------------+------+-----+---------------------+-------+
+| Field       | Type         | Null | Key | Default             | Extra |
++-------------+--------------+------+-----+---------------------+-------+
+| domain      | varchar(255) | NO   | PRI |                     |       |
+| description | text         | YES  |     | NULL                |       |
+| disclaimer  | text         | YES  |     | NULL                |       |
+| aliases     | int(10)      | NO   |     | 0                   |       |
+| mailboxes   | int(10)      | NO   |     | 0                   |       |
+| maillists   | int(10)      | NO   |     | 0                   |       |
+| maxquota    | bigint(20)   | NO   |     | 0                   |       |
+| quota       | bigint(20)   | NO   |     | 0                   |       |
+| transport   | varchar(255) | NO   |     | dovecot             |       |
+| backupmx    | tinyint(1)   | NO   | MUL | 0                   |       |
+| settings    | text         | YES  |     | NULL                |       |
+| created     | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| modified    | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| expired     | datetime     | NO   | MUL | 9999-12-31 00:00:00 |       |
+| active      | tinyint(1)   | NO   | MUL | 1                   |       |
++-------------+--------------+------+-----+---------------------+-------+
+15 rows in set (0.002 sec)
+
+MariaDB [vmail]> describe domain_admins;
++----------+--------------+------+-----+---------------------+-------+
+| Field    | Type         | Null | Key | Default             | Extra |
++----------+--------------+------+-----+---------------------+-------+
+| username | varchar(255) | NO   | PRI |                     |       |
+| domain   | varchar(255) | NO   | PRI |                     |       |
+| created  | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| modified | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| expired  | datetime     | NO   |     | 9999-12-31 00:00:00 |       |
+| active   | tinyint(1)   | NO   | MUL | 1                   |       |
++----------+--------------+------+-----+---------------------+-------+
+6 rows in set (0.002 sec)
+
+MariaDB [vmail]> describe forwardings;
++---------------+---------------------+------+-----+---------+----------------+
+| Field         | Type                | Null | Key | Default | Extra          |
++---------------+---------------------+------+-----+---------+----------------+
+| id            | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| address       | varchar(255)        | NO   | MUL |         |                |
+| forwarding    | varchar(255)        | NO   |     |         |                |
+| domain        | varchar(255)        | NO   | MUL |         |                |
+| dest_domain   | varchar(255)        | NO   | MUL |         |                |
+| is_maillist   | tinyint(1)          | NO   | MUL | 0       |                |
+| is_list       | tinyint(1)          | NO   | MUL | 0       |                |
+| is_forwarding | tinyint(1)          | NO   |     | 0       |                |
+| is_alias      | tinyint(1)          | NO   | MUL | 0       |                |
+| active        | tinyint(1)          | NO   |     | 1       |                |
++---------------+---------------------+------+-----+---------+----------------+
+10 rows in set (0.001 sec)
+
+MariaDB [vmail]> describe last_login;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| username | varchar(255) | NO   | PRI |         |       |
+| domain   | varchar(255) | NO   | MUL |         |       |
+| imap     | int(11)      | YES  | MUL | NULL    |       |
+| pop3     | int(11)      | YES  | MUL | NULL    |       |
+| lda      | int(11)      | YES  | MUL | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+5 rows in set (0.001 sec)
+
+MariaDB [vmail]> describe mailbox;
++--------------------------+-----------------+------+-----+---------------------+-------+
+| Field                    | Type            | Null | Key | Default             | Extra |
++--------------------------+-----------------+------+-----+---------------------+-------+
+| username                 | varchar(255)    | NO   | PRI |                     |       |
+| password                 | varchar(255)    | NO   |     |                     |       |
+| name                     | varchar(255)    | NO   |     |                     |       |
+| language                 | varchar(5)      | NO   |     |                     |       |
+| mailboxformat            | varchar(50)     | NO   |     | maildir             |       |
+| mailboxfolder            | varchar(50)     | NO   |     | Maildir             |       |
+| storagebasedirectory     | varchar(255)    | NO   |     |                     |       |
+| storagenode              | varchar(255)    | NO   |     |                     |       |
+| maildir                  | varchar(255)    | NO   |     |                     |       |
+| quota                    | bigint(20)      | NO   |     | 0                   |       |
+| domain                   | varchar(255)    | NO   | MUL |                     |       |
+| transport                | varchar(255)    | NO   |     |                     |       |
+| department               | varchar(255)    | NO   | MUL |                     |       |
+| rank                     | varchar(255)    | NO   |     | normal              |       |
+| employeeid               | varchar(255)    | YES  | MUL |                     |       |
+| isadmin                  | tinyint(1)      | NO   | MUL | 0                   |       |
+| isglobaladmin            | tinyint(1)      | NO   | MUL | 0                   |       |
+| enablesmtp               | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablesmtpsecured        | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablepop3               | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablepop3secured        | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablepop3tls            | tinyint(1)      | NO   | MUL | 1                   |       |
+| enableimap               | tinyint(1)      | NO   | MUL | 1                   |       |
+| enableimapsecured        | tinyint(1)      | NO   | MUL | 1                   |       |
+| enableimaptls            | tinyint(1)      | NO   | MUL | 1                   |       |
+| enabledeliver            | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablelda                | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablemanagesieve        | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablemanagesievesecured | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablesieve              | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablesievesecured       | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablesievetls           | tinyint(1)      | NO   | MUL | 1                   |       |
+| enableinternal           | tinyint(1)      | NO   | MUL | 1                   |       |
+| enabledoveadm            | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablelib-storage        | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablequota-status       | tinyint(1)      | NO   | MUL | 1                   |       |
+| enableindexer-worker     | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablelmtp               | tinyint(1)      | NO   | MUL | 1                   |       |
+| enabledsync              | tinyint(1)      | NO   | MUL | 1                   |       |
+| enablesogo               | tinyint(1)      | NO   | MUL | 1                   |       |
+| allow_nets               | text            | YES  |     | NULL                |       |
+| lastlogindate            | datetime        | NO   |     | 1970-01-01 01:01:01 |       |
+| lastloginipv4            | int(4) unsigned | NO   |     | 0                   |       |
+| lastloginprotocol        | char(255)       | NO   |     |                     |       |
+| disclaimer               | text            | YES  |     | NULL                |       |
+| allowedsenders           | text            | YES  |     | NULL                |       |
+| rejectedsenders          | text            | YES  |     | NULL                |       |
+| allowedrecipients        | text            | YES  |     | NULL                |       |
+| rejectedrecipients       | text            | YES  |     | NULL                |       |
+| settings                 | text            | YES  |     | NULL                |       |
+| passwordlastchange       | datetime        | NO   | MUL | 1970-01-01 01:01:01 |       |
+| created                  | datetime        | NO   |     | 1970-01-01 01:01:01 |       |
+| modified                 | datetime        | NO   |     | 1970-01-01 01:01:01 |       |
+| expired                  | datetime        | NO   | MUL | 9999-12-31 00:00:00 |       |
+| active                   | tinyint(1)      | NO   | MUL | 1                   |       |
++--------------------------+-----------------+------+-----+---------------------+-------+
+55 rows in set (0.002 sec)
+
+MariaDB [vmail]> describe maillists;
++---------------+---------------------+------+-----+---------------------+----------------+
+| Field         | Type                | Null | Key | Default             | Extra          |
++---------------+---------------------+------+-----+---------------------+----------------+
+| id            | bigint(20) unsigned | NO   | PRI | NULL                | auto_increment |
+| address       | varchar(255)        | NO   | UNI |                     |                |
+| domain        | varchar(255)        | NO   | MUL |                     |                |
+| transport     | varchar(255)        | NO   |     |                     |                |
+| accesspolicy  | varchar(30)         | NO   |     |                     |                |
+| maxmsgsize    | bigint(20)          | NO   |     | 0                   |                |
+| name          | varchar(255)        | NO   |     |                     |                |
+| description   | text                | YES  |     | NULL                |                |
+| mlid          | varchar(36)         | NO   | UNI |                     |                |
+| is_newsletter | tinyint(1)          | NO   | MUL | 0                   |                |
+| settings      | text                | YES  |     | NULL                |                |
+| created       | datetime            | NO   |     | 1970-01-01 01:01:01 |                |
+| modified      | datetime            | NO   |     | 1970-01-01 01:01:01 |                |
+| expired       | datetime            | NO   |     | 9999-12-31 00:00:00 |                |
+| active        | tinyint(1)          | NO   | MUL | 1                   |                |
++---------------+---------------------+------+-----+---------------------+----------------+
+15 rows in set (0.001 sec)
+
+MariaDB [vmail]> describe moderators;
++-------------+---------------------+------+-----+---------+----------------+
+| Field       | Type                | Null | Key | Default | Extra          |
++-------------+---------------------+------+-----+---------+----------------+
+| id          | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| address     | varchar(255)        | NO   | MUL |         |                |
+| moderator   | varchar(255)        | NO   |     |         |                |
+| domain      | varchar(255)        | NO   | MUL |         |                |
+| dest_domain | varchar(255)        | NO   | MUL |         |                |
++-------------+---------------------+------+-----+---------+----------------+
+5 rows in set (0.001 sec)
+
+MariaDB [vmail]> describe recipient_bcc_domain;
++-------------+--------------+------+-----+---------------------+-------+
+| Field       | Type         | Null | Key | Default             | Extra |
++-------------+--------------+------+-----+---------------------+-------+
+| domain      | varchar(255) | NO   | PRI |                     |       |
+| bcc_address | varchar(255) | NO   | MUL |                     |       |
+| created     | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| modified    | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| expired     | datetime     | NO   | MUL | 9999-12-31 00:00:00 |       |
+| active      | tinyint(1)   | NO   | MUL | 1                   |       |
++-------------+--------------+------+-----+---------------------+-------+
+6 rows in set (0.001 sec)
+
+MariaDB [vmail]> describe recipient_bcc_user;
++-------------+--------------+------+-----+---------------------+-------+
+| Field       | Type         | Null | Key | Default             | Extra |
++-------------+--------------+------+-----+---------------------+-------+
+| username    | varchar(255) | NO   | PRI |                     |       |
+| bcc_address | varchar(255) | NO   | MUL |                     |       |
+| domain      | varchar(255) | NO   |     |                     |       |
+| created     | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| modified    | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| expired     | datetime     | NO   | MUL | 9999-12-31 00:00:00 |       |
+| active      | tinyint(1)   | NO   | MUL | 1                   |       |
++-------------+--------------+------+-----+---------------------+-------+
+7 rows in set (0.002 sec)
+
+MariaDB [vmail]> describe sender_bcc_domain;
++-------------+--------------+------+-----+---------------------+-------+
+| Field       | Type         | Null | Key | Default             | Extra |
++-------------+--------------+------+-----+---------------------+-------+
+| domain      | varchar(255) | NO   | PRI |                     |       |
+| bcc_address | varchar(255) | NO   | MUL |                     |       |
+| created     | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| modified    | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| expired     | datetime     | NO   | MUL | 9999-12-31 00:00:00 |       |
+| active      | tinyint(1)   | NO   | MUL | 1                   |       |
++-------------+--------------+------+-----+---------------------+-------+
+6 rows in set (0.003 sec)
+
+MariaDB [vmail]> describe sender_bcc_user;
++-------------+--------------+------+-----+---------------------+-------+
+| Field       | Type         | Null | Key | Default             | Extra |
++-------------+--------------+------+-----+---------------------+-------+
+| username    | varchar(255) | NO   | PRI |                     |       |
+| bcc_address | varchar(255) | NO   | MUL |                     |       |
+| domain      | varchar(255) | NO   | MUL |                     |       |
+| created     | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| modified    | datetime     | NO   |     | 1970-01-01 01:01:01 |       |
+| expired     | datetime     | NO   | MUL | 9999-12-31 00:00:00 |       |
+| active      | tinyint(1)   | NO   | MUL | 1                   |       |
++-------------+--------------+------+-----+---------------------+-------+
+7 rows in set (0.001 sec)
+
+MariaDB [vmail]> describe share_folder;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| from_user | varchar(255) | NO   | PRI | NULL    |       |
+| to_user   | varchar(255) | NO   | PRI | NULL    |       |
+| dummy     | char(1)      | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+3 rows in set (0.006 sec)
+
+MariaDB [vmail]> describe used_quota;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| username | varchar(255) | NO   | PRI | NULL    |       |
+| bytes    | bigint(20)   | NO   |     | 0       |       |
+| messages | bigint(20)   | NO   |     | 0       |       |
+| domain   | varchar(255) | NO   | MUL |         |       |
++----------+--------------+------+-----+---------+-------+
+4 rows in set (0.001 sec)

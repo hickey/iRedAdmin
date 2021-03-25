@@ -1,0 +1,3088 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>Edit account profile</title>
+
+    
+    <link rel="stylesheet" type="text/css" href="Forwarding_files/reset.css">
+    <link rel="stylesheet" type="text/css" href="Forwarding_files/fancybox.css">
+    <link rel="stylesheet" type="text/css" href="Forwarding_files/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="Forwarding_files/screen.css">
+    <link rel="icon" type="image/x-icon" href="https://demo-sql.iredmail.org/static/favicon.ico">
+<style>@media print {#ghostery-tracker-tally {display:none !important}}</style></head>
+
+<body>
+    <div class="pagetop">
+        <div class="head pagesize">
+            <div class="head_top">
+                <div class="topbuts">
+                    <ul class="clear">
+                        
+                            
+                        
+
+                        
+                        <li>
+                            <form method="post" action="/search" class="search_form">
+                            
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                            <i class="fa fa-search-plus fa-lg color-green"></i>
+                            <input type="text" name="searchString" size="30" placeholder="Search mail accounts" class="search_field">
+                            </form>
+                        </li>
+                        
+
+                        <li><a href="https://demo-sql.iredmail.org/profile/user/general/postmaster@example.com">Preferences</a></li>
+                        
+                            
+                                <li><a href="https://demo-sql.iredmail.org/system/license">License</a></li>
+                            
+                        
+                        <li><a href="https://demo-sql.iredmail.org/logout" class="red">Logout</a></li>
+                    </ul>
+
+                    <div class="user clear">
+                        <span class="user-detail">
+                            <span class="text">Logged in as postmaster@example.com</span>
+                            <i class="fas fa-download" style="color: #00A5C4;"></i>
+                            <a href="https://demo-sql.iredmail.org/export/managed_accounts/postmaster@example.com" target="_blank" rel="noopener" style="color: #00A5C4;">Export all managed accounts</a><br>
+
+                           
+                            <i class="fas fa-download" style="color: #00A5C4;"></i>
+                            <a href="https://demo-sql.iredmail.org/export/statistics/admins" target="_blank" rel="noopener" style="color: #00A5C4;">Export statistics of admins</a>
+                           
+                        </span>
+                    </div>
+                </div>
+
+                <div class="logo clear">
+                    <a href="https://demo-sql.iredmail.org/">
+                        
+                        
+                        <span class="textlogo">
+                            <span class="title">iRedAdmin-Pro</span>
+                            <span class="text">iRedMail Admin Panel</span>
+                        </span>
+                    </a>
+                </div>
+            </div> <!-- *** End head_top *** -->
+
+            <div class="menu"><!-- menu -->
+                <ul class="clear">
+                    <li><a href="https://demo-sql.iredmail.org/dashboard">Dashboard</a></li>
+                    <li class="active"><a href="https://demo-sql.iredmail.org/domains">Domains and Accounts</a></li>
+
+                    
+                    
+                        <li><a href="https://demo-sql.iredmail.org/admins">Admins</a></li>
+                    
+
+                    <li><a href="#">Activities</a>
+                        <ul>
+                            <li><a href="https://demo-sql.iredmail.org/activities/admins">Admin Log</a></li>
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/fail2ban/banned">Banned IP Addresses</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions">SMTP Sessions</a>
+                                    <ul>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions">All SMTP Sessions</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions/rejected">Rejected SMTP Sessions</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions/outbound">Outbound SMTP Sessions</a></li>
+                                    </ul>
+                                </li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/sent">Sent Mails</a></li>
+                                <li><a href="https://demo-sql.iredmail.org/activities/received">Received Mails</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/quarantined">Quarantined Mails</a>
+                                    <ul>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/quarantined/spam">Spam</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/virus">Virus</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/banned">Banned</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/badheader">Bad Header</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/clean">Clean</a>
+                                    </li></ul>
+                                </li>
+                            
+                        </ul>
+                    </li>
+
+                    
+                    <li><a href="https://demo-sql.iredmail.org/activities/admins">System</a>
+                        <ul style="visibility: hidden; display: block;">
+                            
+                                <li><a href="https://demo-sql.iredmail.org/system/settings">Settings</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/verify/domain_ownership">Domain ownership verification</a></li>
+                            
+
+                            
+                                
+                                    
+                                        <li><a href="https://demo-sql.iredmail.org/system/spampolicy">Global Spam Policy</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/system/wblist">Whitelists &amp; Blacklists</a></li>
+                                    
+
+                                    
+                                        <li><a href="https://demo-sql.iredmail.org/system/greylisting">Greylisting</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/system/throttle">Throttle</a></li>
+                                    
+                                
+                            
+                        </ul>
+                    </li>
+                    
+
+                    <li>
+                        <a href="#"><i class="fa fa-plus fa-lg"></i> Add...</a>
+                        <ul>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/domain">Domain</a></li>
+                            
+
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/admin">Admin</a></li>
+                            
+
+                            <li><a href="https://demo-sql.iredmail.org/create/user">User</a></li>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/ml">Mailing List (Subscribable)</a></li>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/alias">Alias</a></li>
+
+                            
+                                
+                                    <li><a href="https://demo-sql.iredmail.org/create/wblist">Whitelists &amp; Blacklists</a></li>
+                                
+                            
+                        </ul>
+                    </li>
+
+                </ul>
+            </div> <!-- End menu -->
+
+        </div> <!-- End head layout -->
+    </div><!-- End page top -->
+
+    
+    
+
+    
+        
+    
+
+    
+    
+        <div class="breadcrumb">
+            <div class="pagesize">
+                <ul id="breadcrumb">
+                    
+                        <li><a href="https://demo-sql.iredmail.org/domains">All domains</a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/profile/domain/general/duck.com">duck.com</a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/users/duck.com">Users</a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/profile/user/general/donald@duck.com" class="inactive"><strong>Profile of user:&nbsp;donald@duck.com</strong></a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/mls/duck.com">Mailing Lists</a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/aliases/duck.com">Aliases</a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/admins/duck.com">Admins</a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    
+
+
+    <div class="main pagesize"> <!-- *** mainpage layout *** -->
+        <div class="main-wrap">
+            <div class="page clear">
+                
+                
+
+
+
+
+
+
+
+    
+
+
+<div class="content-box">
+    <div class="box-body">
+        <div class="box-header clear">
+            <ul class="tabs clear">
+                
+                    
+                        <li><a href="#profile_general" class="">General</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_forwarding" class="selected">Forwarding</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_bcc">BCC</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_relay">Relay</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_aliases">Aliases</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_throttle">Throttling</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_greylisting">Greylisting</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_wblist">White/Blacklists</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_spampolicy">Spam Policy</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_password">Password</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_advanced">Advanced</a></li>
+                    
+                
+            </ul>
+
+            <h2>
+        <a href="https://demo-sql.iredmail.org/activities/sent/user/donald@duck.com">
+            <i class="far fa-chart-bar fa-lg " style="padding-left: 5px;"></i>
+        </a>
+    </h2>
+        </div>
+
+        
+        
+    
+    <div id="change_email_address" class="modal-window modal-600">
+        <form method="post" action="/profile/user/rename/donald@duck.com">
+            
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+            <p>
+                <strong>Change email address to</strong>
+                <input type="text" name="new_mail_username" size="35" class="text">@duck.com
+                <input type="submit" value="Apply" class="button green">
+            </p>
+        </form>
+    </div>
+
+        <div class="box-wrap clear">
+            <div id="profile_general" style="display: none;">
+                <form name="general" method="post" action="/profile/user/general/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                            
+                            
+                            
+
+                            
+
+                            
+                            
+                            
+                            
+
+                            
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            
+    <div class="form-field clear">
+        
+            <h4 class="size-250 fl-space">Enable this account</h4>
+        
+
+        <div class="form-checkbox-item clear fl-space2">
+            <input name="accountStatus" type="checkbox" rel="checkboxhorizont" class="checkbox fl-space" checked="checked">
+        </div>
+    </div>
+
+                            <div class="bt-space10"></div>
+                            
+
+    
+        
+        
+
+        
+
+        
+    
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Display Name</h4>
+
+        <span class="clean-padding bt-space20">
+            <input type="text" size="35" name="cn" class="text ">
+        </span>
+    </div>
+
+    
+
+                            
+                            
+
+                            
+    
+
+    
+    
+
+    
+        
+    
+
+    <div class="form-field clear">
+        
+            <h4 class="size-250 fl-space">Mailbox Quota</h4>
+        
+
+        <div class="clean-padding fl-space2">
+            <input type="text" size="6" name="mailQuota" value="1024" class="text fl-space ">
+            <label class="fl-space">MB
+                
+                
+            </label>
+
+            
+                
+                    
+                        
+
+                        
+                            <label class="fl-space color-grey">(Mailbox is empty.)</label>
+                        
+                    
+                
+            
+        </div>
+    </div>
+
+                            <div class="form-field clear">
+    
+        <h4 class="size-250 fl-space">Preferred language</h4>
+    
+    <select name="preferredLanguage">
+        <option value="none"></option>
+        
+            <option value="bg_BG">Bulgarian</option>
+        
+            <option value="cs_CZ">Čeština</option>
+        
+            <option value="da_DK">Dansk</option>
+        
+            <option value="de_DE">Deutsch (Deutsch)</option>
+        
+            <option value="en_US" selected="selected">English (US)</option>
+        
+            <option value="es_ES">Español</option>
+        
+            <option value="fi_FI">Finnish (Suomi)</option>
+        
+            <option value="fr_FR">Français</option>
+        
+            <option value="hu_HU">Hungarian</option>
+        
+            <option value="it_IT">Italiano</option>
+        
+            <option value="ja_JP">Japanese (日本語)</option>
+        
+            <option value="ko_KR">Korean</option>
+        
+            <option value="lv_LV">Latvian</option>
+        
+            <option value="nl_NL">Netherlands</option>
+        
+            <option value="pl_PL">Polski</option>
+        
+            <option value="pt_BR">Portuguese (Brazilian)</option>
+        
+            <option value="ru_RU">Русский</option>
+        
+            <option value="sl_SI">Slovenian</option>
+        
+            <option value="zh_CN">简体中文</option>
+        
+            <option value="zh_TW">繁體中文</option>
+        
+    </select>
+</div>
+                            
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Time zone</h4>
+        <select name="timezone">
+            <option value="none" selected="selected"></option>
+
+            
+                <option value="Africa/Abidjan">Africa/Abidjan (GMT+00:00)</option>
+            
+                <option value="Africa/Accra">Africa/Accra (GMT+00:00)</option>
+            
+                <option value="Africa/Addis_Ababa">Africa/Addis_Ababa (GMT+03:00)</option>
+            
+                <option value="Africa/Algiers">Africa/Algiers (GMT+01:00)</option>
+            
+                <option value="Africa/Asmara">Africa/Asmara (GMT+03:00)</option>
+            
+                <option value="Africa/Bamako">Africa/Bamako (GMT+00:00)</option>
+            
+                <option value="Africa/Bangui">Africa/Bangui (GMT+01:00)</option>
+            
+                <option value="Africa/Banjul">Africa/Banjul (GMT+00:00)</option>
+            
+                <option value="Africa/Bissau">Africa/Bissau (GMT+00:00)</option>
+            
+                <option value="Africa/Blantyre">Africa/Blantyre (GMT+02:00)</option>
+            
+                <option value="Africa/Brazzaville">Africa/Brazzaville (GMT+01:00)</option>
+            
+                <option value="Africa/Bujumbura">Africa/Bujumbura (GMT+02:00)</option>
+            
+                <option value="Africa/Cairo">Africa/Cairo (GMT+02:00)</option>
+            
+                <option value="Africa/Casablanca">Africa/Casablanca (GMT+00:00)</option>
+            
+                <option value="Africa/Ceuta">Africa/Ceuta (GMT+01:00)</option>
+            
+                <option value="Africa/Conakry">Africa/Conakry (GMT+00:00)</option>
+            
+                <option value="Africa/Dakar">Africa/Dakar (GMT+00:00)</option>
+            
+                <option value="Africa/Dar_es_Salaam">Africa/Dar_es_Salaam (GMT+03:00)</option>
+            
+                <option value="Africa/Djibouti">Africa/Djibouti (GMT+03:00)</option>
+            
+                <option value="Africa/Douala">Africa/Douala (GMT+01:00)</option>
+            
+                <option value="Africa/El_Aaiun">Africa/El_Aaiun (GMT+00:00)</option>
+            
+                <option value="Africa/Freetown">Africa/Freetown (GMT+00:00)</option>
+            
+                <option value="Africa/Gaborone">Africa/Gaborone (GMT+02:00)</option>
+            
+                <option value="Africa/Harare">Africa/Harare (GMT+02:00)</option>
+            
+                <option value="Africa/Johannesburg">Africa/Johannesburg (GMT+02:00)</option>
+            
+                <option value="Africa/Juba">Africa/Juba (GMT+03:00)</option>
+            
+                <option value="Africa/Kampala">Africa/Kampala (GMT+03:00)</option>
+            
+                <option value="Africa/Khartoum">Africa/Khartoum (GMT+03:00)</option>
+            
+                <option value="Africa/Kigali">Africa/Kigali (GMT+02:00)</option>
+            
+                <option value="Africa/Kinshasa">Africa/Kinshasa (GMT+01:00)</option>
+            
+                <option value="Africa/Lagos">Africa/Lagos (GMT+01:00)</option>
+            
+                <option value="Africa/Libreville">Africa/Libreville (GMT+01:00)</option>
+            
+                <option value="Africa/Lome">Africa/Lome (GMT+00:00)</option>
+            
+                <option value="Africa/Luanda">Africa/Luanda (GMT+01:00)</option>
+            
+                <option value="Africa/Lubumbashi">Africa/Lubumbashi (GMT+02:00)</option>
+            
+                <option value="Africa/Lusaka">Africa/Lusaka (GMT+02:00)</option>
+            
+                <option value="Africa/Malabo">Africa/Malabo (GMT+01:00)</option>
+            
+                <option value="Africa/Maputo">Africa/Maputo (GMT+02:00)</option>
+            
+                <option value="Africa/Maseru">Africa/Maseru (GMT+02:00)</option>
+            
+                <option value="Africa/Mbabane">Africa/Mbabane (GMT+02:00)</option>
+            
+                <option value="Africa/Mogadishu">Africa/Mogadishu (GMT+03:00)</option>
+            
+                <option value="Africa/Monrovia">Africa/Monrovia (GMT+00:00)</option>
+            
+                <option value="Africa/Nairobi">Africa/Nairobi (GMT+03:00)</option>
+            
+                <option value="Africa/Ndjamena">Africa/Ndjamena (GMT+01:00)</option>
+            
+                <option value="Africa/Niamey">Africa/Niamey (GMT+01:00)</option>
+            
+                <option value="Africa/Nouakchott">Africa/Nouakchott (GMT+00:00)</option>
+            
+                <option value="Africa/Ouagadougou">Africa/Ouagadougou (GMT+00:00)</option>
+            
+                <option value="Africa/Porto-Novo">Africa/Porto-Novo (GMT+01:00)</option>
+            
+                <option value="Africa/Sao_Tome">Africa/Sao_Tome (GMT+00:00)</option>
+            
+                <option value="Africa/Tripoli">Africa/Tripoli (GMT+02:00)</option>
+            
+                <option value="Africa/Tunis">Africa/Tunis (GMT+01:00)</option>
+            
+                <option value="Africa/Windhoek">Africa/Windhoek (GMT+02:00)</option>
+            
+                <option value="America/Adak">America/Adak (GMT-10:00)</option>
+            
+                <option value="America/Anchorage">America/Anchorage (GMT-09:00)</option>
+            
+                <option value="America/Anguilla">America/Anguilla (GMT-04:00)</option>
+            
+                <option value="America/Antigua">America/Antigua (GMT-04:00)</option>
+            
+                <option value="America/Araguaina">America/Araguaina (GMT-03:00)</option>
+            
+                <option value="America/Argentina/Buenos_Aires">America/Argentina/Buenos_Aires (GMT-03:00)</option>
+            
+                <option value="America/Argentina/Catamarca">America/Argentina/Catamarca (GMT-03:00)</option>
+            
+                <option value="America/Argentina/Cordoba">America/Argentina/Cordoba (GMT-03:00)</option>
+            
+                <option value="America/Argentina/Jujuy">America/Argentina/Jujuy (GMT-03:00)</option>
+            
+                <option value="America/Argentina/La_Rioja">America/Argentina/La_Rioja (GMT-03:00)</option>
+            
+                <option value="America/Argentina/Mendoza">America/Argentina/Mendoza (GMT-03:00)</option>
+            
+                <option value="America/Argentina/Rio_Gallegos">America/Argentina/Rio_Gallegos (GMT-03:00)</option>
+            
+                <option value="America/Argentina/Salta">America/Argentina/Salta (GMT-03:00)</option>
+            
+                <option value="America/Argentina/San_Juan">America/Argentina/San_Juan (GMT-03:00)</option>
+            
+                <option value="America/Argentina/San_Luis">America/Argentina/San_Luis (GMT-03:00)</option>
+            
+                <option value="America/Argentina/Tucuman">America/Argentina/Tucuman (GMT-03:00)</option>
+            
+                <option value="America/Argentina/Ushuaia">America/Argentina/Ushuaia (GMT-03:00)</option>
+            
+                <option value="America/Aruba">America/Aruba (GMT-04:00)</option>
+            
+                <option value="America/Asuncion">America/Asuncion (GMT-03:00)</option>
+            
+                <option value="America/Atikokan">America/Atikokan (GMT-05:00)</option>
+            
+                <option value="America/Bahia">America/Bahia (GMT-03:00)</option>
+            
+                <option value="America/Bahia_Banderas">America/Bahia_Banderas (GMT-06:00)</option>
+            
+                <option value="America/Barbados">America/Barbados (GMT-04:00)</option>
+            
+                <option value="America/Belem">America/Belem (GMT-03:00)</option>
+            
+                <option value="America/Belize">America/Belize (GMT-06:00)</option>
+            
+                <option value="America/Blanc-Sablon">America/Blanc-Sablon (GMT-04:00)</option>
+            
+                <option value="America/Boa_Vista">America/Boa_Vista (GMT-04:00)</option>
+            
+                <option value="America/Bogota">America/Bogota (GMT-05:00)</option>
+            
+                <option value="America/Boise">America/Boise (GMT-07:00)</option>
+            
+                <option value="America/Cambridge_Bay">America/Cambridge_Bay (GMT-07:00)</option>
+            
+                <option value="America/Campo_Grande">America/Campo_Grande (GMT-03:00)</option>
+            
+                <option value="America/Cancun">America/Cancun (GMT-05:00)</option>
+            
+                <option value="America/Caracas">America/Caracas (GMT-04:30)</option>
+            
+                <option value="America/Cayenne">America/Cayenne (GMT-03:00)</option>
+            
+                <option value="America/Cayman">America/Cayman (GMT-05:00)</option>
+            
+                <option value="America/Chicago">America/Chicago (GMT-06:00)</option>
+            
+                <option value="America/Chihuahua">America/Chihuahua (GMT-07:00)</option>
+            
+                <option value="America/Costa_Rica">America/Costa_Rica (GMT-06:00)</option>
+            
+                <option value="America/Creston">America/Creston (GMT-07:00)</option>
+            
+                <option value="America/Cuiaba">America/Cuiaba (GMT-03:00)</option>
+            
+                <option value="America/Curacao">America/Curacao (GMT-04:00)</option>
+            
+                <option value="America/Danmarkshavn">America/Danmarkshavn (GMT+00:00)</option>
+            
+                <option value="America/Dawson">America/Dawson (GMT-08:00)</option>
+            
+                <option value="America/Dawson_Creek">America/Dawson_Creek (GMT-07:00)</option>
+            
+                <option value="America/Denver">America/Denver (GMT-07:00)</option>
+            
+                <option value="America/Detroit">America/Detroit (GMT-05:00)</option>
+            
+                <option value="America/Dominica">America/Dominica (GMT-04:00)</option>
+            
+                <option value="America/Edmonton">America/Edmonton (GMT-07:00)</option>
+            
+                <option value="America/Eirunepe">America/Eirunepe (GMT-05:00)</option>
+            
+                <option value="America/El_Salvador">America/El_Salvador (GMT-06:00)</option>
+            
+                <option value="America/Fortaleza">America/Fortaleza (GMT-03:00)</option>
+            
+                <option value="America/Glace_Bay">America/Glace_Bay (GMT-04:00)</option>
+            
+                <option value="America/Godthab">America/Godthab (GMT-03:00)</option>
+            
+                <option value="America/Goose_Bay">America/Goose_Bay (GMT-04:00)</option>
+            
+                <option value="America/Grand_Turk">America/Grand_Turk (GMT-04:00)</option>
+            
+                <option value="America/Grenada">America/Grenada (GMT-04:00)</option>
+            
+                <option value="America/Guadeloupe">America/Guadeloupe (GMT-04:00)</option>
+            
+                <option value="America/Guatemala">America/Guatemala (GMT-06:00)</option>
+            
+                <option value="America/Guayaquil">America/Guayaquil (GMT-05:00)</option>
+            
+                <option value="America/Guyana">America/Guyana (GMT-04:00)</option>
+            
+                <option value="America/Halifax">America/Halifax (GMT-04:00)</option>
+            
+                <option value="America/Havana">America/Havana (GMT-05:00)</option>
+            
+                <option value="America/Hermosillo">America/Hermosillo (GMT-07:00)</option>
+            
+                <option value="America/Indiana/Indianapolis">America/Indiana/Indianapolis (GMT-05:00)</option>
+            
+                <option value="America/Indiana/Knox">America/Indiana/Knox (GMT-06:00)</option>
+            
+                <option value="America/Indiana/Marengo">America/Indiana/Marengo (GMT-05:00)</option>
+            
+                <option value="America/Indiana/Petersburg">America/Indiana/Petersburg (GMT-05:00)</option>
+            
+                <option value="America/Indiana/Tell_City">America/Indiana/Tell_City (GMT-06:00)</option>
+            
+                <option value="America/Indiana/Vevay">America/Indiana/Vevay (GMT-05:00)</option>
+            
+                <option value="America/Indiana/Vincennes">America/Indiana/Vincennes (GMT-05:00)</option>
+            
+                <option value="America/Indiana/Winamac">America/Indiana/Winamac (GMT-05:00)</option>
+            
+                <option value="America/Inuvik">America/Inuvik (GMT-07:00)</option>
+            
+                <option value="America/Iqaluit">America/Iqaluit (GMT-05:00)</option>
+            
+                <option value="America/Jamaica">America/Jamaica (GMT-05:00)</option>
+            
+                <option value="America/Juneau">America/Juneau (GMT-09:00)</option>
+            
+                <option value="America/Kentucky/Louisville">America/Kentucky/Louisville (GMT-05:00)</option>
+            
+                <option value="America/Kentucky/Monticello">America/Kentucky/Monticello (GMT-05:00)</option>
+            
+                <option value="America/Kralendijk">America/Kralendijk (GMT-04:00)</option>
+            
+                <option value="America/La_Paz">America/La_Paz (GMT-04:00)</option>
+            
+                <option value="America/Lima">America/Lima (GMT-05:00)</option>
+            
+                <option value="America/Los_Angeles">America/Los_Angeles (GMT-08:00)</option>
+            
+                <option value="America/Lower_Princes">America/Lower_Princes (GMT-04:00)</option>
+            
+                <option value="America/Maceio">America/Maceio (GMT-03:00)</option>
+            
+                <option value="America/Managua">America/Managua (GMT-06:00)</option>
+            
+                <option value="America/Manaus">America/Manaus (GMT-04:00)</option>
+            
+                <option value="America/Marigot">America/Marigot (GMT-04:00)</option>
+            
+                <option value="America/Martinique">America/Martinique (GMT-04:00)</option>
+            
+                <option value="America/Matamoros">America/Matamoros (GMT-06:00)</option>
+            
+                <option value="America/Mazatlan">America/Mazatlan (GMT-07:00)</option>
+            
+                <option value="America/Menominee">America/Menominee (GMT-06:00)</option>
+            
+                <option value="America/Merida">America/Merida (GMT-06:00)</option>
+            
+                <option value="America/Metlakatla">America/Metlakatla (GMT-08:00)</option>
+            
+                <option value="America/Mexico_City">America/Mexico_City (GMT-06:00)</option>
+            
+                <option value="America/Miquelon">America/Miquelon (GMT-03:00)</option>
+            
+                <option value="America/Moncton">America/Moncton (GMT-04:00)</option>
+            
+                <option value="America/Monterrey">America/Monterrey (GMT-06:00)</option>
+            
+                <option value="America/Montevideo">America/Montevideo (GMT-02:00)</option>
+            
+                <option value="America/Montserrat">America/Montserrat (GMT-04:00)</option>
+            
+                <option value="America/Nassau">America/Nassau (GMT-05:00)</option>
+            
+                <option value="America/New_York">America/New_York (GMT-05:00)</option>
+            
+                <option value="America/Nipigon">America/Nipigon (GMT-05:00)</option>
+            
+                <option value="America/Nome">America/Nome (GMT-09:00)</option>
+            
+                <option value="America/Noronha">America/Noronha (GMT-02:00)</option>
+            
+                <option value="America/North_Dakota/Beulah">America/North_Dakota/Beulah (GMT-06:00)</option>
+            
+                <option value="America/North_Dakota/Center">America/North_Dakota/Center (GMT-06:00)</option>
+            
+                <option value="America/North_Dakota/New_Salem">America/North_Dakota/New_Salem (GMT-06:00)</option>
+            
+                <option value="America/Ojinaga">America/Ojinaga (GMT-07:00)</option>
+            
+                <option value="America/Panama">America/Panama (GMT-05:00)</option>
+            
+                <option value="America/Pangnirtung">America/Pangnirtung (GMT-05:00)</option>
+            
+                <option value="America/Paramaribo">America/Paramaribo (GMT-03:00)</option>
+            
+                <option value="America/Phoenix">America/Phoenix (GMT-07:00)</option>
+            
+                <option value="America/Port-au-Prince">America/Port-au-Prince (GMT-05:00)</option>
+            
+                <option value="America/Port_of_Spain">America/Port_of_Spain (GMT-04:00)</option>
+            
+                <option value="America/Porto_Velho">America/Porto_Velho (GMT-04:00)</option>
+            
+                <option value="America/Puerto_Rico">America/Puerto_Rico (GMT-04:00)</option>
+            
+                <option value="America/Rainy_River">America/Rainy_River (GMT-06:00)</option>
+            
+                <option value="America/Rankin_Inlet">America/Rankin_Inlet (GMT-06:00)</option>
+            
+                <option value="America/Recife">America/Recife (GMT-03:00)</option>
+            
+                <option value="America/Regina">America/Regina (GMT-06:00)</option>
+            
+                <option value="America/Resolute">America/Resolute (GMT-06:00)</option>
+            
+                <option value="America/Rio_Branco">America/Rio_Branco (GMT-05:00)</option>
+            
+                <option value="America/Santa_Isabel">America/Santa_Isabel (GMT-08:00)</option>
+            
+                <option value="America/Santarem">America/Santarem (GMT-03:00)</option>
+            
+                <option value="America/Santiago">America/Santiago (GMT-03:00)</option>
+            
+                <option value="America/Santo_Domingo">America/Santo_Domingo (GMT-04:00)</option>
+            
+                <option value="America/Sao_Paulo">America/Sao_Paulo (GMT-02:00)</option>
+            
+                <option value="America/Scoresbysund">America/Scoresbysund (GMT-01:00)</option>
+            
+                <option value="America/Sitka">America/Sitka (GMT-09:00)</option>
+            
+                <option value="America/St_Barthelemy">America/St_Barthelemy (GMT-04:00)</option>
+            
+                <option value="America/St_Johns">America/St_Johns (GMT-03:30)</option>
+            
+                <option value="America/St_Kitts">America/St_Kitts (GMT-04:00)</option>
+            
+                <option value="America/St_Lucia">America/St_Lucia (GMT-04:00)</option>
+            
+                <option value="America/St_Thomas">America/St_Thomas (GMT-04:00)</option>
+            
+                <option value="America/St_Vincent">America/St_Vincent (GMT-04:00)</option>
+            
+                <option value="America/Swift_Current">America/Swift_Current (GMT-06:00)</option>
+            
+                <option value="America/Tegucigalpa">America/Tegucigalpa (GMT-06:00)</option>
+            
+                <option value="America/Thule">America/Thule (GMT-04:00)</option>
+            
+                <option value="America/Thunder_Bay">America/Thunder_Bay (GMT-05:00)</option>
+            
+                <option value="America/Tijuana">America/Tijuana (GMT-08:00)</option>
+            
+                <option value="America/Toronto">America/Toronto (GMT-05:00)</option>
+            
+                <option value="America/Tortola">America/Tortola (GMT-04:00)</option>
+            
+                <option value="America/Vancouver">America/Vancouver (GMT-08:00)</option>
+            
+                <option value="America/Whitehorse">America/Whitehorse (GMT-08:00)</option>
+            
+                <option value="America/Winnipeg">America/Winnipeg (GMT-06:00)</option>
+            
+                <option value="America/Yakutat">America/Yakutat (GMT-09:00)</option>
+            
+                <option value="America/Yellowknife">America/Yellowknife (GMT-07:00)</option>
+            
+                <option value="Antarctica/Casey">Antarctica/Casey (GMT+08:00)</option>
+            
+                <option value="Antarctica/Davis">Antarctica/Davis (GMT+07:00)</option>
+            
+                <option value="Antarctica/DumontDUrville">Antarctica/DumontDUrville (GMT+10:00)</option>
+            
+                <option value="Antarctica/Macquarie">Antarctica/Macquarie (GMT+11:00)</option>
+            
+                <option value="Antarctica/Mawson">Antarctica/Mawson (GMT+05:00)</option>
+            
+                <option value="Antarctica/McMurdo">Antarctica/McMurdo (GMT+13:00)</option>
+            
+                <option value="Antarctica/Palmer">Antarctica/Palmer (GMT-03:00)</option>
+            
+                <option value="Antarctica/Rothera">Antarctica/Rothera (GMT-03:00)</option>
+            
+                <option value="Antarctica/Syowa">Antarctica/Syowa (GMT+03:00)</option>
+            
+                <option value="Antarctica/Troll">Antarctica/Troll (GMT+00:00)</option>
+            
+                <option value="Antarctica/Vostok">Antarctica/Vostok (GMT+06:00)</option>
+            
+                <option value="Arctic/Longyearbyen">Arctic/Longyearbyen (GMT+01:00)</option>
+            
+                <option value="Asia/Aden">Asia/Aden (GMT+03:00)</option>
+            
+                <option value="Asia/Almaty">Asia/Almaty (GMT+06:00)</option>
+            
+                <option value="Asia/Amman">Asia/Amman (GMT+02:00)</option>
+            
+                <option value="Asia/Anadyr">Asia/Anadyr (GMT+12:00)</option>
+            
+                <option value="Asia/Aqtau">Asia/Aqtau (GMT+05:00)</option>
+            
+                <option value="Asia/Aqtobe">Asia/Aqtobe (GMT+05:00)</option>
+            
+                <option value="Asia/Ashgabat">Asia/Ashgabat (GMT+05:00)</option>
+            
+                <option value="Asia/Baghdad">Asia/Baghdad (GMT+03:00)</option>
+            
+                <option value="Asia/Bahrain">Asia/Bahrain (GMT+03:00)</option>
+            
+                <option value="Asia/Baku">Asia/Baku (GMT+04:00)</option>
+            
+                <option value="Asia/Bangkok">Asia/Bangkok (GMT+07:00)</option>
+            
+                <option value="Asia/Beijing">Asia/Beijing (GMT+08:00)</option>
+            
+                <option value="Asia/Beirut">Asia/Beirut (GMT+02:00)</option>
+            
+                <option value="Asia/Bishkek">Asia/Bishkek (GMT+06:00)</option>
+            
+                <option value="Asia/Brunei">Asia/Brunei (GMT+08:00)</option>
+            
+                <option value="Asia/Chita">Asia/Chita (GMT+08:00)</option>
+            
+                <option value="Asia/Choibalsan">Asia/Choibalsan (GMT+08:00)</option>
+            
+                <option value="Asia/Colombo">Asia/Colombo (GMT+05:30)</option>
+            
+                <option value="Asia/Damascus">Asia/Damascus (GMT+02:00)</option>
+            
+                <option value="Asia/Dhaka">Asia/Dhaka (GMT+06:00)</option>
+            
+                <option value="Asia/Dili">Asia/Dili (GMT+09:00)</option>
+            
+                <option value="Asia/Dubai">Asia/Dubai (GMT+04:00)</option>
+            
+                <option value="Asia/Dushanbe">Asia/Dushanbe (GMT+05:00)</option>
+            
+                <option value="Asia/Gaza">Asia/Gaza (GMT+02:00)</option>
+            
+                <option value="Asia/Hebron">Asia/Hebron (GMT+02:00)</option>
+            
+                <option value="Asia/Ho_Chi_Minh">Asia/Ho_Chi_Minh (GMT+07:00)</option>
+            
+                <option value="Asia/Hong_Kong">Asia/Hong_Kong (GMT+08:00)</option>
+            
+                <option value="Asia/Hovd">Asia/Hovd (GMT+07:00)</option>
+            
+                <option value="Asia/Irkutsk">Asia/Irkutsk (GMT+08:00)</option>
+            
+                <option value="Asia/Jakarta">Asia/Jakarta (GMT+07:00)</option>
+            
+                <option value="Asia/Jayapura">Asia/Jayapura (GMT+09:00)</option>
+            
+                <option value="Asia/Jerusalem">Asia/Jerusalem (GMT+02:00)</option>
+            
+                <option value="Asia/Kabul">Asia/Kabul (GMT+04:30)</option>
+            
+                <option value="Asia/Kamchatka">Asia/Kamchatka (GMT+12:00)</option>
+            
+                <option value="Asia/Karachi">Asia/Karachi (GMT+05:00)</option>
+            
+                <option value="Asia/Kathmandu">Asia/Kathmandu (GMT+05:45)</option>
+            
+                <option value="Asia/Khandyga">Asia/Khandyga (GMT+09:00)</option>
+            
+                <option value="Asia/Kolkata">Asia/Kolkata (GMT+05:30)</option>
+            
+                <option value="Asia/Krasnoyarsk">Asia/Krasnoyarsk (GMT+07:00)</option>
+            
+                <option value="Asia/Kuala_Lumpur">Asia/Kuala_Lumpur (GMT+08:00)</option>
+            
+                <option value="Asia/Kuching">Asia/Kuching (GMT+08:00)</option>
+            
+                <option value="Asia/Kuwait">Asia/Kuwait (GMT+03:00)</option>
+            
+                <option value="Asia/Macau">Asia/Macau (GMT+08:00)</option>
+            
+                <option value="Asia/Magadan">Asia/Magadan (GMT+10:00)</option>
+            
+                <option value="Asia/Makassar">Asia/Makassar (GMT+08:00)</option>
+            
+                <option value="Asia/Manila">Asia/Manila (GMT+08:00)</option>
+            
+                <option value="Asia/Muscat">Asia/Muscat (GMT+04:00)</option>
+            
+                <option value="Asia/Nicosia">Asia/Nicosia (GMT+02:00)</option>
+            
+                <option value="Asia/Novokuznetsk">Asia/Novokuznetsk (GMT+07:00)</option>
+            
+                <option value="Asia/Novosibirsk">Asia/Novosibirsk (GMT+06:00)</option>
+            
+                <option value="Asia/Omsk">Asia/Omsk (GMT+06:00)</option>
+            
+                <option value="Asia/Oral">Asia/Oral (GMT+05:00)</option>
+            
+                <option value="Asia/Phnom_Penh">Asia/Phnom_Penh (GMT+07:00)</option>
+            
+                <option value="Asia/Pontianak">Asia/Pontianak (GMT+07:00)</option>
+            
+                <option value="Asia/Pyongyang">Asia/Pyongyang (GMT+09:00)</option>
+            
+                <option value="Asia/Qatar">Asia/Qatar (GMT+03:00)</option>
+            
+                <option value="Asia/Qyzylorda">Asia/Qyzylorda (GMT+06:00)</option>
+            
+                <option value="Asia/Rangoon">Asia/Rangoon (GMT+06:30)</option>
+            
+                <option value="Asia/Riyadh">Asia/Riyadh (GMT+03:00)</option>
+            
+                <option value="Asia/Sakhalin">Asia/Sakhalin (GMT+10:00)</option>
+            
+                <option value="Asia/Samarkand">Asia/Samarkand (GMT+05:00)</option>
+            
+                <option value="Asia/Seoul">Asia/Seoul (GMT+09:00)</option>
+            
+                <option value="Asia/Shanghai">Asia/Shanghai (GMT+08:00)</option>
+            
+                <option value="Asia/Singapore">Asia/Singapore (GMT+08:00)</option>
+            
+                <option value="Asia/Srednekolymsk">Asia/Srednekolymsk (GMT+11:00)</option>
+            
+                <option value="Asia/Taipei">Asia/Taipei (GMT+08:00)</option>
+            
+                <option value="Asia/Tashkent">Asia/Tashkent (GMT+05:00)</option>
+            
+                <option value="Asia/Tbilisi">Asia/Tbilisi (GMT+04:00)</option>
+            
+                <option value="Asia/Tehran">Asia/Tehran (GMT+03:30)</option>
+            
+                <option value="Asia/Thimphu">Asia/Thimphu (GMT+06:00)</option>
+            
+                <option value="Asia/Tokyo">Asia/Tokyo (GMT+09:00)</option>
+            
+                <option value="Asia/Ulaanbaatar">Asia/Ulaanbaatar (GMT+08:00)</option>
+            
+                <option value="Asia/Urumqi">Asia/Urumqi (GMT+06:00)</option>
+            
+                <option value="Asia/Ust-Nera">Asia/Ust-Nera (GMT+10:00)</option>
+            
+                <option value="Asia/Vientiane">Asia/Vientiane (GMT+07:00)</option>
+            
+                <option value="Asia/Vladivostok">Asia/Vladivostok (GMT+10:00)</option>
+            
+                <option value="Asia/Yakutsk">Asia/Yakutsk (GMT+09:00)</option>
+            
+                <option value="Asia/Yekaterinburg">Asia/Yekaterinburg (GMT+05:00)</option>
+            
+                <option value="Asia/Yerevan">Asia/Yerevan (GMT+04:00)</option>
+            
+                <option value="Atlantic/Azores">Atlantic/Azores (GMT-01:00)</option>
+            
+                <option value="Atlantic/Bermuda">Atlantic/Bermuda (GMT-04:00)</option>
+            
+                <option value="Atlantic/Canary">Atlantic/Canary (GMT+00:00)</option>
+            
+                <option value="Atlantic/Cape_Verde">Atlantic/Cape_Verde (GMT-01:00)</option>
+            
+                <option value="Atlantic/Faroe">Atlantic/Faroe (GMT+00:00)</option>
+            
+                <option value="Atlantic/Madeira">Atlantic/Madeira (GMT+00:00)</option>
+            
+                <option value="Atlantic/Reykjavik">Atlantic/Reykjavik (GMT+00:00)</option>
+            
+                <option value="Atlantic/South_Georgia">Atlantic/South_Georgia (GMT-02:00)</option>
+            
+                <option value="Atlantic/St_Helena">Atlantic/St_Helena (GMT+00:00)</option>
+            
+                <option value="Atlantic/Stanley">Atlantic/Stanley (GMT-03:00)</option>
+            
+                <option value="Australia/Adelaide">Australia/Adelaide (GMT+10:30)</option>
+            
+                <option value="Australia/Brisbane">Australia/Brisbane (GMT+10:00)</option>
+            
+                <option value="Australia/Broken_Hill">Australia/Broken_Hill (GMT+10:30)</option>
+            
+                <option value="Australia/Currie">Australia/Currie (GMT+11:00)</option>
+            
+                <option value="Australia/Darwin">Australia/Darwin (GMT+09:30)</option>
+            
+                <option value="Australia/Eucla">Australia/Eucla (GMT+08:45)</option>
+            
+                <option value="Australia/Hobart">Australia/Hobart (GMT+11:00)</option>
+            
+                <option value="Australia/Lindeman">Australia/Lindeman (GMT+10:00)</option>
+            
+                <option value="Australia/Lord_Howe">Australia/Lord_Howe (GMT+11:00)</option>
+            
+                <option value="Australia/Melbourne">Australia/Melbourne (GMT+11:00)</option>
+            
+                <option value="Australia/Perth">Australia/Perth (GMT+08:00)</option>
+            
+                <option value="Australia/Sydney">Australia/Sydney (GMT+10:00)</option>
+            
+                <option value="Europe/Amsterdam">Europe/Amsterdam (GMT+01:00)</option>
+            
+                <option value="Europe/Andorra">Europe/Andorra (GMT+01:00)</option>
+            
+                <option value="Europe/Athens">Europe/Athens (GMT+02:00)</option>
+            
+                <option value="Europe/Belgrade">Europe/Belgrade (GMT+01:00)</option>
+            
+                <option value="Europe/Berlin">Europe/Berlin (GMT+01:00)</option>
+            
+                <option value="Europe/Bratislava">Europe/Bratislava (GMT+01:00)</option>
+            
+                <option value="Europe/Brussels">Europe/Brussels (GMT+01:00)</option>
+            
+                <option value="Europe/Bucharest">Europe/Bucharest (GMT+02:00)</option>
+            
+                <option value="Europe/Budapest">Europe/Budapest (GMT+01:00)</option>
+            
+                <option value="Europe/Busingen">Europe/Busingen (GMT+01:00)</option>
+            
+                <option value="Europe/Chisinau">Europe/Chisinau (GMT+02:00)</option>
+            
+                <option value="Europe/Copenhagen">Europe/Copenhagen (GMT+01:00)</option>
+            
+                <option value="Europe/Dublin">Europe/Dublin (GMT+00:00)</option>
+            
+                <option value="Europe/Gibraltar">Europe/Gibraltar (GMT+01:00)</option>
+            
+                <option value="Europe/Guernsey">Europe/Guernsey (GMT+00:00)</option>
+            
+                <option value="Europe/Helsinki">Europe/Helsinki (GMT+02:00)</option>
+            
+                <option value="Europe/Isle_of_Man">Europe/Isle_of_Man (GMT+00:00)</option>
+            
+                <option value="Europe/Istanbul">Europe/Istanbul (GMT+03:00)</option>
+            
+                <option value="Europe/Jersey">Europe/Jersey (GMT+00:00)</option>
+            
+                <option value="Europe/Kaliningrad">Europe/Kaliningrad (GMT+02:00)</option>
+            
+                <option value="Europe/Kiev">Europe/Kiev (GMT+02:00)</option>
+            
+                <option value="Europe/Lisbon">Europe/Lisbon (GMT+00:00)</option>
+            
+                <option value="Europe/Ljubljana">Europe/Ljubljana (GMT+01:00)</option>
+            
+                <option value="Europe/London">Europe/London (GMT+00:00)</option>
+            
+                <option value="Europe/Luxembourg">Europe/Luxembourg (GMT+01:00)</option>
+            
+                <option value="Europe/Madrid">Europe/Madrid (GMT+01:00)</option>
+            
+                <option value="Europe/Malta">Europe/Malta (GMT+01:00)</option>
+            
+                <option value="Europe/Mariehamn">Europe/Mariehamn (GMT+02:00)</option>
+            
+                <option value="Europe/Minsk">Europe/Minsk (GMT+03:00)</option>
+            
+                <option value="Europe/Monaco">Europe/Monaco (GMT+01:00)</option>
+            
+                <option value="Europe/Moscow">Europe/Moscow (GMT+03:00)</option>
+            
+                <option value="Europe/Oslo">Europe/Oslo (GMT+01:00)</option>
+            
+                <option value="Europe/Paris">Europe/Paris (GMT+01:00)</option>
+            
+                <option value="Europe/Podgorica">Europe/Podgorica (GMT+01:00)</option>
+            
+                <option value="Europe/Prague">Europe/Prague (GMT+01:00)</option>
+            
+                <option value="Europe/Riga">Europe/Riga (GMT+02:00)</option>
+            
+                <option value="Europe/Rome">Europe/Rome (GMT+01:00)</option>
+            
+                <option value="Europe/Samara">Europe/Samara (GMT+04:00)</option>
+            
+                <option value="Europe/San_Marino">Europe/San_Marino (GMT+01:00)</option>
+            
+                <option value="Europe/Sarajevo">Europe/Sarajevo (GMT+01:00)</option>
+            
+                <option value="Europe/Simferopol">Europe/Simferopol (GMT+03:00)</option>
+            
+                <option value="Europe/Skopje">Europe/Skopje (GMT+01:00)</option>
+            
+                <option value="Europe/Sofia">Europe/Sofia (GMT+02:00)</option>
+            
+                <option value="Europe/Stockholm">Europe/Stockholm (GMT+01:00)</option>
+            
+                <option value="Europe/Tallinn">Europe/Tallinn (GMT+02:00)</option>
+            
+                <option value="Europe/Tirane">Europe/Tirane (GMT+01:00)</option>
+            
+                <option value="Europe/Uzhgorod">Europe/Uzhgorod (GMT+02:00)</option>
+            
+                <option value="Europe/Vaduz">Europe/Vaduz (GMT+01:00)</option>
+            
+                <option value="Europe/Vatican">Europe/Vatican (GMT+01:00)</option>
+            
+                <option value="Europe/Vienna">Europe/Vienna (GMT+01:00)</option>
+            
+                <option value="Europe/Vilnius">Europe/Vilnius (GMT+02:00)</option>
+            
+                <option value="Europe/Volgograd">Europe/Volgograd (GMT+03:00)</option>
+            
+                <option value="Europe/Warsaw">Europe/Warsaw (GMT+01:00)</option>
+            
+                <option value="Europe/Zagreb">Europe/Zagreb (GMT+01:00)</option>
+            
+                <option value="Europe/Zaporozhye">Europe/Zaporozhye (GMT+02:00)</option>
+            
+                <option value="Europe/Zurich">Europe/Zurich (GMT+01:00)</option>
+            
+                <option value="Indian/Antananarivo">Indian/Antananarivo (GMT+03:00)</option>
+            
+                <option value="Indian/Chagos">Indian/Chagos (GMT+06:00)</option>
+            
+                <option value="Indian/Christmas">Indian/Christmas (GMT+07:00)</option>
+            
+                <option value="Indian/Cocos">Indian/Cocos (GMT+06:30)</option>
+            
+                <option value="Indian/Comoro">Indian/Comoro (GMT+03:00)</option>
+            
+                <option value="Indian/Kerguelen">Indian/Kerguelen (GMT+05:00)</option>
+            
+                <option value="Indian/Mahe">Indian/Mahe (GMT+04:00)</option>
+            
+                <option value="Indian/Maldives">Indian/Maldives (GMT+05:00)</option>
+            
+                <option value="Indian/Mauritius">Indian/Mauritius (GMT+04:00)</option>
+            
+                <option value="Indian/Mayotte">Indian/Mayotte (GMT+03:00)</option>
+            
+                <option value="Indian/Reunion">Indian/Reunion (GMT+04:00)</option>
+            
+                <option value="Pacific/Apia">Pacific/Apia (GMT+14:00)</option>
+            
+                <option value="Pacific/Auckland">Pacific/Auckland (GMT+13:00)</option>
+            
+                <option value="Pacific/Bougainville">Pacific/Bougainville (GMT+11:00)</option>
+            
+                <option value="Pacific/Chatham">Pacific/Chatham (GMT+13:45)</option>
+            
+                <option value="Pacific/Chuuk">Pacific/Chuuk (GMT+10:00)</option>
+            
+                <option value="Pacific/Easter">Pacific/Easter (GMT-05:00)</option>
+            
+                <option value="Pacific/Efate">Pacific/Efate (GMT+11:00)</option>
+            
+                <option value="Pacific/Enderbury">Pacific/Enderbury (GMT+13:00)</option>
+            
+                <option value="Pacific/Fakaofo">Pacific/Fakaofo (GMT+13:00)</option>
+            
+                <option value="Pacific/Fiji">Pacific/Fiji (GMT+13:00)</option>
+            
+                <option value="Pacific/Funafuti">Pacific/Funafuti (GMT+12:00)</option>
+            
+                <option value="Pacific/Galapagos">Pacific/Galapagos (GMT-06:00)</option>
+            
+                <option value="Pacific/Gambier">Pacific/Gambier (GMT-09:00)</option>
+            
+                <option value="Pacific/Guadalcanal">Pacific/Guadalcanal (GMT+11:00)</option>
+            
+                <option value="Pacific/Guam">Pacific/Guam (GMT+10:00)</option>
+            
+                <option value="Pacific/Honolulu">Pacific/Honolulu (GMT-10:00)</option>
+            
+                <option value="Pacific/Johnston">Pacific/Johnston (GMT-10:00)</option>
+            
+                <option value="Pacific/Kiritimati">Pacific/Kiritimati (GMT+14:00)</option>
+            
+                <option value="Pacific/Kosrae">Pacific/Kosrae (GMT+11:00)</option>
+            
+                <option value="Pacific/Kwajalein">Pacific/Kwajalein (GMT+12:00)</option>
+            
+                <option value="Pacific/Majuro">Pacific/Majuro (GMT+12:00)</option>
+            
+                <option value="Pacific/Marquesas">Pacific/Marquesas (GMT-09:30)</option>
+            
+                <option value="Pacific/Midway">Pacific/Midway (GMT-11:00)</option>
+            
+                <option value="Pacific/Nauru">Pacific/Nauru (GMT+12:00)</option>
+            
+                <option value="Pacific/Niue">Pacific/Niue (GMT-11:00)</option>
+            
+                <option value="Pacific/Norfolk">Pacific/Norfolk (GMT+11:30)</option>
+            
+                <option value="Pacific/Noumea">Pacific/Noumea (GMT+11:00)</option>
+            
+                <option value="Pacific/Pago_Pago">Pacific/Pago_Pago (GMT-11:00)</option>
+            
+                <option value="Pacific/Palau">Pacific/Palau (GMT+09:00)</option>
+            
+                <option value="Pacific/Pitcairn">Pacific/Pitcairn (GMT-08:00)</option>
+            
+                <option value="Pacific/Pohnpei">Pacific/Pohnpei (GMT+11:00)</option>
+            
+                <option value="Pacific/Port_Moresby">Pacific/Port_Moresby (GMT+10:00)</option>
+            
+                <option value="Pacific/Rarotonga">Pacific/Rarotonga (GMT-10:00)</option>
+            
+                <option value="Pacific/Saipan">Pacific/Saipan (GMT+10:00)</option>
+            
+                <option value="Pacific/Tahiti">Pacific/Tahiti (GMT-10:00)</option>
+            
+                <option value="Pacific/Tarawa">Pacific/Tarawa (GMT+12:00)</option>
+            
+                <option value="Pacific/Tongatapu">Pacific/Tongatapu (GMT+13:00)</option>
+            
+                <option value="Pacific/Wake">Pacific/Wake (GMT+12:00)</option>
+            
+                <option value="Pacific/Wallis">Pacific/Wallis (GMT+12:00)</option>
+            
+                <option value="UTC">UTC (GMT+00:00)</option>
+            
+        </select>
+    </div>
+                            <div class="bt-space10"></div>
+                            
+        
+    
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">User/Employee ID</h4>
+        <input type="text" size="35" name="employeeNumber" class="text ">
+
+        
+    </div>
+                        </div><div class="col1-3 lastcol">
+                            
+
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li><a href="#change_email_address" class="modal-link"><span class="text">Change email address</span></a></li>
+                                    <li class="bt-space5">You can enable self-service (per-domain setting) to allow users to manage their own preferences and more.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><div class="rule"></div>
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            <div class="form-field clear">
+                                <h4 class="size-250 fl-space">Member of Mailing Lists</h4>
+                                <div class="checklist clear">
+                                    <fieldset>
+                                        
+                                            
+                                            
+
+                                            <div class="checklist-item">
+                                                <span class="fl-space">
+                                                    <input type="checkbox" name="subscribed_list" value="prueba@duck.com">
+                                                </span>
+                                                <label><a href="https://demo-sql.iredmail.org/profile/ml/general/prueba@duck.com">Prueba</a>&nbsp;(prueba@duck.com)</label>
+                                            </div>
+                                            <div class="clear"></div>
+                                        
+                                    </fieldset>
+                                </div></div></div>
+
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5"><a href="https://demo-sql.iredmail.org/create/ml/duck.com">Add mailing list</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><div class="rule"></div>
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            <div class="form-field clear">
+                                <h4 class="size-250 fl-space">Member of Mail Aliases</h4>
+                                <div class="checklist clear">
+                                    <fieldset>
+                                        
+
+                                        
+                                        
+
+                                    </fieldset>
+                                </div></div></div>
+
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5"><a href="https://demo-sql.iredmail.org/create/alias/duck.com">Add mail alias</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rule"></div>
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            
+    
+    
+        
+    
+
+    
+        
+    
+
+<div class="form-field clear">
+    <h4 class="size-250 fl-space">Mark this user as</h4>
+    
+        <div class="form-checkbox-item clear">
+            <span class="clean-padding bt-space20 required">
+                <input class="checkbox" name="domainGlobalAdmin" value="global" type="checkbox"> Global admin
+            </span>
+            <span class="color-grey"><em>Note: Global admin can manage all mail domains.</em></span>
+        </div>
+
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+    
+
+    <div class="form-checkbox-item clear">
+        <span class="clean-padding bt-space20">
+            <input type="checkbox" name="domainadmin" value="normal" class="checkbox"> Domain admin
+        </span>
+        <span class="color-grey"><em>Please choose managed domains below.</em></span>
+    </div>
+
+    <h4 class="size-250 fl-space">&nbsp;</h4>
+    <div class="form-checkbox-item clear">
+        <span class="clean-padding bt-space20">&nbsp;&nbsp;<span class="color-grey">|--</span>
+            <input type="checkbox" name="disable_viewing_mail_log"> Disallow to view log of inbound/outbound mails
+        </span>
+    </div>
+
+    <h4 class="size-250 fl-space">&nbsp;</h4>
+    <div class="form-checkbox-item clear">
+        <span class="clean-padding bt-space20">&nbsp;&nbsp;<span class="color-grey">|--</span>
+            <input type="checkbox" name="disable_managing_quarantined_mails"> Disallow to manage quarantined mails
+        </span>
+    </div>
+
+    <h4 class="size-250 fl-space">&nbsp;</h4>
+    <div class="form-checkbox-item clear">
+        
+
+        <span class="clean-padding bt-space20">&nbsp;&nbsp;<span class="color-grey">|--</span>
+            <input type="checkbox" name="allowed_to_grant_admin" value="yes" class="checkbox"> Allow this admin to mark other mail user as domain admin
+        </span>
+    </div>
+
+    
+    
+    <h4 class="size-250 fl-space">&nbsp;</h4>
+    <div class="form-checkbox-item clear">
+        <span class="clean-padding bt-space20">&nbsp;&nbsp;<span class="color-grey">|--</span>
+            <input type="checkbox" name="allowed_to_create_domain" class="checkbox" id="normal_admin_options"> Allow this admin to create new mail domains with up to
+        </span>
+    </div>
+
+    <h4 class="size-250 fl-space normal_admin_options" style="display: none;">&nbsp;</h4>
+    <div class="form-checkbox-item clear normal_admin_options" style="display: none;">
+        <span class="clean-padding bt-space20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-grey">|--</span>
+            <input type="checkbox" name="disable_domain_ownership_verification"> No need to verify ownership for new domain
+        </span>
+    </div>
+
+    <h4 class="size-250 fl-space normal_admin_options" style="display: none;">&nbsp;</h4>
+    <div class="form-checkbox-item clear normal_admin_options" style="display: none;">
+        <span class="clean-padding bt-space20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-grey">|--</span>
+            <input type="text" name="create_max_domains" size="10"> Domains
+        </span>
+    </div>
+
+    <h4 class="size-250 fl-space normal_admin_options" style="display: none;">&nbsp;</h4>
+    <div class="form-checkbox-item clear normal_admin_options" style="display: none;">
+        <span class="clean-padding bt-space20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-grey">|--</span>
+            <input type="text" name="create_max_quota" size="10">
+
+            
+
+            <select name="create_quota_unit">
+                <option value="TB" selected="selected">TB</option>
+                <option value="GB">GB</option>
+            </select>
+            Mailbox Quota
+        </span>
+    </div>
+
+    <h4 class="size-250 fl-space normal_admin_options" style="display: none;">&nbsp;</h4>
+    <div class="form-checkbox-item clear normal_admin_options" style="display: none;">
+        <span class="clean-padding bt-space20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-grey">|--</span>
+            <input type="text" name="create_max_users" size="10"> Mail Users
+        </span>
+    </div>
+
+    <h4 class="size-250 fl-space normal_admin_options" style="display: none;">&nbsp;</h4>
+    <div class="form-checkbox-item clear normal_admin_options" style="display: none;">
+        <span class="clean-padding bt-space20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="color-grey">|--</span>
+            <input type="text" name="create_max_aliases" size="10"> Mail Aliases
+        </span>
+    </div>
+
+    
+
+</div>
+                        </div>
+
+                        
+                        <div class="col1-3 lastcol normal_admin_options" style="display: none;">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li>All domains managed by this admin share the mailbox quota and limit of mail accounts.</li>
+                                    <li>Domain ownership verification is
+ recommended if you can not fully trust this admin, because if domains 
+like gmail.com, hotmail.com were added locally, all emails sent to 
+gmail.com/hotmail.com will be delivered locally on your server instead 
+of the real Gmail/Hotmail servers.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    
+        
+    
+
+    
+
+<div class="columns clear normal_admin_create_domain_options">
+    <div class="col2-3">
+        <div class="form-field clear">
+            <h4 class="size-250 fl-space">Managed Domains</h4>
+            <div class="checklist clear">
+                <div class="checklist-item clear">
+                    0 of 11 in total.
+                    Filter: <input type="text" size="15" id="domain_search" style="width: auto;">
+                    <hr>
+                </div>
+
+                <table id="all_domains">
+                    
+                    <thead>
+                        <tr>
+                            <th width="1%"></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="123.com">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/123.com">123.com</a>
+                                
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="duck.com">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/duck.com">duck.com</a>
+                                
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="example.com">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/example.com">example.com</a>
+                                
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="fhoding.vn">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/fhoding.vn">fhoding.vn</a>
+                                
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="google.com">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/google.com">google.com</a>
+                                
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="ict.om">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/ict.om">ict.om</a>
+                                (MyDomain ICT)
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="mdp.loc">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/mdp.loc">mdp.loc</a>
+                                (MDP)
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="pippo.it">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/pippo.it">pippo.it</a>
+                                (lu ragne)
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="prueba.com">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/prueba.com">prueba.com</a>
+                                (Prueba)
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="test.by">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/test.by">test.by</a>
+                                (test)
+                            </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td width="1%"><input type="checkbox" name="domainName" value="test.com">
+                            </td>
+                            <td>
+                                <a href="https://demo-sql.iredmail.org/profile/domain/general/test.com">test.com</a>
+                                
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col1-3 lastcol">
+        <div class="mark_blue bt-space10">
+            <ul class="standard clean-padding bt-space10">
+                <li class="bt-space5"><a href="https://demo-sql.iredmail.org/create/domain" class="action_add">Add domain</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+
+                    
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+
+            
+            
+            <div id="profile_forwarding" style="display: block;">
+                <form name="forwarding" method="post" action="/profile/user/forwarding/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                    
+
+
+    
+
+
+
+
+<div class="form-field clear">
+    <h4 class="size-250 fl-space">Save a copy in mailbox</h4>
+    <span class="clean-padding">
+        <input type="checkbox" name="savecopy">
+    </span>
+</div>
+
+<div class="form-field clear">
+    <h4 class="size-250 fl-space">Forward mails to address</h4>
+    <small>One mail address per line. Invalid address will be discarded.</small>
+    <textarea name="mailForwardingAddresses" rows="6" style="width: 50%" class="textarea"></textarea>
+</div>
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+            
+
+            
+            
+            <div id="profile_bcc" style="display: none;">
+                <form name="bcc" method="post" action="/profile/user/bcc/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                    
+                    <div class="columns clear">
+                        <div class="col2-3 ">
+                            <div class="form-field clear">
+                                <h4 class="size-250 fl-space">Monitor incoming emails via BCC</h4>
+                                <div class="clear">
+                                    <input type="checkbox" name="recipientbcc" class="checkbox" rel="checkboxhorizont">
+                                </div>
+                            </div>
+
+                            <div class="form-field clear">
+                                <h4 class="size-250 fl-space">Monitor outgoing emails via BCC</h4>
+                                <div class="clear">
+                                    <input type="checkbox" name="senderbcc" class="checkbox" rel="checkboxhorizont">
+                                </div>
+                            </div>
+
+                            
+        
+    
+
+    
+        
+    
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">BCC incoming emails to other address</h4>
+        <span class="clean-padding">
+            <input type="text" name="recipientBccAddress" size="35" class="text">
+        </span>
+    </div>
+                            
+        
+    
+
+    
+        
+    
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">BCC outgoing emails to other address</h4>
+        <span class="clean-padding">
+            <input type="text" name="senderBccAddress" size="35" class="text">
+        </span>
+    </div>
+                        </div>
+
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">Multiple addresses are NOT supported.</li>
+                                    <li class="bt-space5">Per-user bcc settings has higher priority than per-domain bcc settings.</li>
+                                    <li class="bt-space5">Invalid email addresses will be silently discarded.</li>
+                                </ul>
+                            </div>
+                        </div></div>
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+            
+
+            
+            
+            <div id="profile_relay" style="display: none;">
+                <form name="relay" method="post" action="/profile/user/relay/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                    
+    
+
+    
+        
+    
+
+    
+    
+    
+
+    <div class="columns clear">
+        <div class="col2-3 ">
+            <div class="form-field clear">
+                <h4 class="size-250 fl-space">Relay received email to</h4>
+                <div class="clear">
+                    <input type="text" name="mtaTransport" size="30" class="text">
+
+                    
+                </div>
+            </div>
+
+            
+        </div>
+
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue ">
+                <p style="padding-bottom: 10px;"><a href="#sample_transport" class="label modal-link">Sample Settings</a></p>
+            </div>
+        </div>
+
+        <div id="sample_transport" class="modal-window modal-600">
+            <h2>Sample Settings</h2>
+
+            <table class="style1">
+                <thead>
+                    <tr>
+                        <th>Setting</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+
+                    <tr>
+                        <td><strong>discard</strong></td>
+                        <td>discard received email</td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap;"><strong>smtp:[example.com]:25</strong></td>
+                        <td>forward emails to host example.com through 
+port 25. The [] form is required when you specify an IP address instead 
+of a hostname, or disable MX DNS lookup.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ul class="standard clean-padding bt-space10">
+                
+                    <li class="bt-space10">Leave it empty to use <a href="https://demo-sql.iredmail.org/profile/domain/relay/duck.com">domain setting</a>.</li>
+                
+
+                
+                    <li class="bt-space10">For advanced settings and further information please see <a href="http://www.postfix.org/transport.5.html" target="_blank" rel="noopener">Postfix manual page</a></li>
+                
+            </ul>
+        </div>
+    </div>
+
+                    <div class="rule"></div>
+                    
+    <div class="columns clear">
+        <div class="col2-3 ">
+            <div class="form-field clear">
+                <h4 class="size-250 fl-space">Relay outgoing email to</h4>
+                <div class="clear">
+                    <input type="text" name="relayhost" size="30" class="text">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue ">
+                <p style="padding-bottom: 10px;"><a href="#sample_relayhost" class="label modal-link">Sample Settings</a></p>
+            </div>
+        </div>
+
+        <div id="sample_relayhost" class="modal-window modal-600">
+            <h2>Sample Settings</h2>
+
+            <table class="style1">
+                <thead>
+                    <tr>
+                        <th>Setting</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td style="white-space: nowrap;"><strong>example.com</strong></td>
+                        <td>relay emails to the servers specified in MX DNS records of domain example.com through port 25</td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap;"><strong>[example.com]</strong></td>
+                        <td>relay emails to the servers specified in A DNS records of domain example.com through port 25</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+            <ul class="standard clean-padding bt-space10">
+                <li class="bt-space10">For advanced settings and further information please see <a href="http://www.postfix.org/transport.5.html" target="_blank" rel="noopener">Postfix manual page</a></li>
+            </ul>
+            
+        </div>
+    </div>
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+            
+
+            
+            
+            <div id="profile_aliases" style="display: none;">
+                <form name="aliases" method="post" action="/profile/user/aliases/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            <div class="form-field clear">
+                                <h4 class="size-250 fl-space">Email addresses of alias accounts</h4>
+                                <small>One mail address per line. Invalid address will be discarded.</small>
+                            </div>
+
+                            <div class="form-field clear">
+                                <h4 class="size-250 fl-space"></h4>
+                                <textarea name="user_alias_addresses" rows="6" style="width: 50%" class="textarea">daffy@duck.com
+</textarea>
+                            </div>
+                        </div><div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">Emails sent to alias accounts will be delivered to <strong>donald@duck.com</strong>.</li>
+                                    
+                                        <li class="bt-space5">Email address of alias account must end with domain name(s): <strong>duck.com</strong>.</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div><div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+            
+
+
+            
+            
+            <div id="profile_throttle" style="display: none;">
+                <form name="throttle" method="post" action="/profile/user/throttle/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                    
+                    <div class="columns clear">
+                        
+
+    
+        
+        
+            
+        
+    
+
+    
+        <div class="col1-3-compat">
+    
+
+        <div class="form-field clear bt-space10">
+            <div class="form-checkbox-item clear">
+                <input type="checkbox" class="checkbox" name="enable_outbound_throttling">
+                
+                    <strong>Throttle outbound mails</strong>
+                
+                <span class="required">*</span>
+            </div>
+        </div>
+
+        
+            
+        
+
+        <div class="form-field clear bt-space10">
+            <h4>Period of time<span class="required">*</span></h4>
+            <div class="form-radio-item clear">
+                <input type="radio" class="radio fl-space" name="outbound_period" value="86400" checked="checked"> 1 Day
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" class="radio fl-space" name="outbound_period" value="3600"> 1 Hour
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" class="radio fl-space" name="outbound_period" value="60"> 1 Minute
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" class="radio fl-space" name="outbound_period"> Custom:
+                <input type="text" name="custom_outbound_period" size="10"> Seconds
+            </div>
+        </div>
+
+        
+        
+        <div class="form-field clear bt-space10">
+            
+                <h4>Number of max outbound emails</h4>
+            
+
+            
+
+            
+            <div class="form-radio-item clear">
+                <input type="radio" name="outbound_max_msgs" value="-1" checked="checked">
+                    
+                        Inherit per-domain throttle setting
+                    
+            </div>
+            
+
+            <div class="form-radio-item clear">
+                <input type="radio" name="outbound_max_msgs" value="0"> Unlimited
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" name="outbound_max_msgs"> Custom:
+                <input type="text" name="custom_outbound_max_msgs" size="15">
+            </div>
+        </div>
+
+        
+        
+        <div class="form-field clear bt-space10">
+            
+                <h4>Cumulative size of all outbound emails</h4>
+            
+
+            
+            <div class="form-radio-item clear">
+                <input type="radio" name="outbound_max_quota" value="-1" checked="checked"> Inherit from account which has lower priority
+            </div>
+            
+
+            <div class="form-radio-item clear">
+                <input type="radio" name="outbound_max_quota" value="0"> Unlimited
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" name="outbound_max_quota"> Custom:
+                <input type="text" name="custom_outbound_max_quota" size="15"> Bytes
+            </div>
+        </div>
+
+        
+        
+        <div class="form-field clear">
+            <h4>Max size of single email</h4>
+
+            
+            <div class="form-radio-item clear">
+                <input type="radio" name="outbound_msg_size" value="-1" checked="checked"> Inherit from account which has lower priority
+            </div>
+            
+
+            <div class="form-radio-item clear">
+                <input type="radio" name="outbound_msg_size"> Unlimited
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" name="outbound_msg_size"> Custom:
+                <input type="text" name="custom_outbound_msg_size" size="15"> Bytes
+            </div>
+        </div>
+    </div>
+
+
+                        
+
+    
+        
+        
+            
+        
+    
+
+    
+        <div class="col1-3-compat-left-border">
+    
+
+        <div class="form-field clear bt-space10">
+            <div class="form-checkbox-item clear">
+                <input type="checkbox" class="checkbox" name="enable_inbound_throttling">
+                <strong>Throttle inbound mails</strong>
+                
+                <span class="required">*</span>
+            </div>
+        </div>
+
+        
+            
+        
+
+        <div class="form-field clear bt-space10">
+            <h4>Period of time<span class="required">*</span></h4>
+            <div class="form-radio-item clear">
+                <input type="radio" class="radio fl-space" name="inbound_period" value="86400" checked="checked"> 1 Day
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" class="radio fl-space" name="inbound_period" value="3600"> 1 Hour
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" class="radio fl-space" name="inbound_period" value="60"> 1 Minute
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" class="radio fl-space" name="inbound_period"> Custom:
+                <input type="text" name="custom_inbound_period" size="10"> Seconds
+            </div>
+        </div>
+
+        
+        
+        <div class="form-field clear bt-space10">
+            
+                <h4>Number of max inbound emails</h4>
+            
+
+            
+
+            
+            <div class="form-radio-item clear">
+                <input type="radio" name="inbound_max_msgs" value="-1" checked="checked">
+                    
+                        Inherit per-domain throttle setting
+                    
+            </div>
+            
+
+            <div class="form-radio-item clear">
+                <input type="radio" name="inbound_max_msgs" value="0"> Unlimited
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" name="inbound_max_msgs"> Custom:
+                <input type="text" name="custom_inbound_max_msgs" size="15">
+            </div>
+        </div>
+
+        
+        
+        <div class="form-field clear bt-space10">
+            
+                <h4>Cumulative size of all inbound emails</h4>
+            
+
+            
+            <div class="form-radio-item clear">
+                <input type="radio" name="inbound_max_quota" value="-1" checked="checked"> Inherit from account which has lower priority
+            </div>
+            
+
+            <div class="form-radio-item clear">
+                <input type="radio" name="inbound_max_quota" value="0"> Unlimited
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" name="inbound_max_quota"> Custom:
+                <input type="text" name="custom_inbound_max_quota" size="15"> Bytes
+            </div>
+        </div>
+
+        
+        
+        <div class="form-field clear">
+            <h4>Max size of single email</h4>
+
+            
+            <div class="form-radio-item clear">
+                <input type="radio" name="inbound_msg_size" value="-1" checked="checked"> Inherit from account which has lower priority
+            </div>
+            
+
+            <div class="form-radio-item clear">
+                <input type="radio" name="inbound_msg_size"> Unlimited
+            </div>
+            <div class="form-radio-item clear">
+                <input type="radio" name="inbound_msg_size"> Custom:
+                <input type="text" name="custom_inbound_msg_size" size="15"> Bytes
+            </div>
+        </div>
+    </div>
+
+
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">You can set per-domain throttling in domain profile page.</li>
+                                </ul>
+                            </div>
+                        </div></div>
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+            
+
+        
+        
+            
+            <div id="profile_greylisting" style="display: none;">
+                <form name="greylisting" method="post" action="/profile/user/greylisting/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                    
+
+    
+    
+    
+
+    
+    
+        
+        
+    
+
+    
+    
+    
+
+    <div class="columns clear">
+        <div class="col2-3">
+            <h4 class="size-250 fl-space">Greylisting service for this user</h4>
+
+            
+                <div class="form-checkbox-item clear">
+                    <input type="radio" name="greylisting" value="inherit" class="checkbox fl-space" rel="checkboxhorizont" checked="checked"> Inherit global setting
+                </div>
+                <h4 class="size-250 fl-space">&nbsp;</h4>
+            
+
+                <div class="form-checkbox-item clear">
+                    <input type="radio" name="greylisting" value="enable" class="checkbox fl-space" rel="checkboxhorizont"> Enable greylisting service
+                </div>
+
+                <h4 class="size-250 fl-space">&nbsp;</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="radio" name="greylisting" value="disable" class="checkbox fl-space" rel="checkboxhorizont"> Disable greylisting service
+                </div>
+        </div>
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue">
+                <p style="padding-bottom: 10px;"><a href="#about_greylisting" class="label modal-link">About greylisting</a></p>
+            </div>
+        </div>
+
+            
+            <div id="about_greylisting" class="modal-window modal-600">
+                <h2>About greylisting</h2>
+                <div class="rule3"></div>
+                <ul class="standard clean-padding bt-space10">
+                    <li class="bt-space10">Greylisting is a method of 
+defending your email users against spam. A mail transfer agent (MTA, 
+e.g. Postfix) using greylisting will temporarily reject any email from a
+ sender it does not recognize. If the mail is legitimate the originating
+ server will, after a delay, try again and, if sufficient time has 
+elapsed (usually 7 to 30 minutes), the email will be accepted.</li>
+                    <li class="bt-space10">Greylisting helps block out huge amounts of spam, not recommended to turn it off.</li>
+                    <li class="bt-space10">Refer to <a href="http://www.greylisting.org/" target="_blank" rel="noopener">greylisting.org</a> for technical details about greylisting.</li>
+                </ul>
+                <div class="bt-space0">&nbsp;</div>
+            </div>
+    </div>
+
+                    <div class="columns clear">
+        <div class="col2-3">
+            <h4 class="size-250 fl-space">Do not apply greylisting on listed senders</h4>
+            <small>One sender per line.</small>
+            <textarea name="whitelists" class="textarea" rows="15" style="width: 50%;"></textarea>
+        </div>
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue bt-space10">
+                <h4>Sender address format</h4>
+                <ul class="standard clean-padding bt-space10">
+                    <li><strong>IP Address</strong>
+                        <ul>
+                            <li>Single IP Address: <em><u>192.168.2.10</u></em></li>
+                            <li>CIDR formatted range of IP addresses: <em><u>192.168.2.0/24</u></em></li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Email address or domain names</strong>
+                        <ul>
+                            <li>Single user: <em><u>user@example.com</u></em></li>
+                            <li>Entire domain: <em><u>@example.com</u></em></li>
+                            <li>All sub-domains: <em><u>@.example.com</u></em></li>
+                        </ul>
+                    </li>
+                    <li>Record comment can be added after a #: <em><u>192.168.2.20 # Comment</u></em></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+            
+        
+
+        
+        
+            <div id="profile_wblist" style="display: none;">
+                <form name="wblist" method="post" action="/profile/user/wblist/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                    <div class="columns clear">
+        <div class="col2-3">
+            
+            <h3>For Inbound Mails</h3>
+            <div class="rule"></div>
+            <div class="col1-2">
+                <div class="col1-3">
+        <div class="form-field clear">
+            <h4>Whitelisted senders <small>(One record per line. )</small></h4>
+
+            
+                <textarea name="whitelistSender" rows="15" class="textarea" style="width: 95%;"></textarea>
+            
+        </div>
+    </div>
+            </div>
+            <div class="col1-2 lastcol">
+                <div class="col1-3">
+        <div class="form-field clear">
+            <h4>Blacklisted senders <small>(One record per line. )</small></h4>
+
+            
+                <textarea name="blacklistSender" rows="15" class="textarea" style="width: 95%;"></textarea>
+            
+        </div>
+    </div>
+            </div>
+            <div class="bt-space0">&nbsp;</div>
+            
+
+            
+            <h3>For Outbound Mails</h3>
+            <div class="rule"></div>
+            <div class="col1-2">
+                <div class="col1-3">
+        <div class="form-field clear">
+            <h4>Whitelisted recipients <small>(One record per line. )</small></h4>
+
+            
+                <textarea name="whitelistRecipient" rows="15" class="textarea" style="width: 95%;"></textarea>
+            
+        </div>
+    </div>
+            </div>
+            <div class="col1-2 lastcol">
+                <div class="col1-3">
+        <div class="form-field clear">
+            <h4>Blacklisted recipients <small>(One record per line. )</small></h4>
+
+            
+                <textarea name="blacklistRecipient" rows="15" class="textarea" style="width: 95%;"></textarea>
+            
+        </div>
+    </div>
+            </div>
+            
+        </div>
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue bt-space10">
+                <ul class="standard clean-padding bt-space10">
+                    <li class="bt-space5">Whitelist has higher priority than blacklist.</li>
+                    <li class="bt-space5">Per-user whitelists &amp; blacklists has highest priority, then per-domain setting, then global setting.</li>
+                    <li class="bt-space5">Mails sent from blacklisted senders will be quarantined by default.</li>
+                </ul>
+
+                <h4>Valid record formats</h4>
+                <ul class="standard clean-padding bt-space10">
+                    
+                    <li><strong>IP Address</strong>
+                        <ul>
+                            <li>Single IP Address: <em><u>192.168.2.10</u></em></li>
+                            <li>IP CIDR Network: <em><u>192.168.2.0/24, 2620:0:2d0:200::7/128</u></em></li>
+                        </ul>
+                    </li>
+                    
+
+                    <li class="bt-space5"><strong>Single user</strong>: <u>user@domain.tld</u></li>
+                    <li class="bt-space5"><strong>User with wildcard</strong>: <u>user@*</u></li>
+                    <li class="bt-space5"><strong>Entire domain</strong>: <u>@domain.tld</u></li>
+                    <li class="bt-space5"><strong>Domain and its sub-domains</strong>: <u>@.domain.tld</u></li>
+
+                    
+                    <li class="bt-space5"><strong>All accounts</strong>: <u style="color: red;">@.</u></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+        
+
+        
+        
+            <div id="profile_spampolicy" style="display: none;">
+                <form name="spampolicy" method="post" action="/profile/user/spampolicy/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                    <div class="columns clear">
+                        
+        
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+        <div class="notification note-info">
+        
+
+        <p><i class="fa fa-info fa-lg fa-fw"></i>
+            
+                Account does not have specific spam policy yet, server-wide policy will be applied.
+            
+        </p>
+    </div>
+    
+
+    
+    <div class="columns clear">
+        <div class="col2-3">
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">Spam checking</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="checkbox" name="enable_spam_checks" checked="checked">
+                    <label>Enable spam checking</label>
+                </div>
+            </div>
+
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">&nbsp;</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="checkbox" name="spam_quarantine_to">
+                    <label>Quarantine spam</label>
+                </div>
+            </div>
+
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">Virus checking</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="checkbox" name="enable_virus_checks" checked="checked">
+                    <label>Enable virus checking</label>
+                </div>
+            </div>
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">&nbsp;</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="checkbox" name="virus_quarantine_to">
+                    <label>Quarantine virus</label>
+                </div>
+            </div>
+
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">Bad-header checking</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="checkbox" name="enable_header_checks" checked="checked">
+                    <label>Enable bad-header checking</label>
+                </div>
+            </div>
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">&nbsp;</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="checkbox" name="bad_header_quarantine_to">
+                    <label>Quarantine bad-header email</label>
+                </div>
+            </div>
+
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">Banned file type checking</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="checkbox" name="enable_banned_checks" checked="checked">
+                    <label>Enable banned file type checking</label>
+                </div>
+            </div>
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">&nbsp;</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="checkbox" name="banned_quarantine_to">
+                    <label>Quarantine email which contains banned file types</label>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="rule"></div>
+    <div class="columns clear">
+        <div class="col2-3">
+            
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">Prefix text [SPAM] to the subject of spam</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="checkbox" name="modify_spam_subject">
+                </div>
+            </div>
+            
+
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">Mark mail as spam when score is &gt;=</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="text" name="spam_tag2_level">
+                    
+
+                    <label class="color-grey">Default is 6.</label>
+                </div>
+            </div>
+
+            <div class="form-field clear">
+                <h4 class="size-300 fl-space">Block or quarantine marked spam when score is &gt;=</h4>
+                <div class="form-checkbox-item clear">
+                    <input type="text" name="spam_kill_level">
+                    
+                        
+                    
+
+                    <label class="color-grey">Default is 6.9.</label>
+                </div>
+            </div>
+
+            
+                
+            
+        </div>
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue bt-space10">
+                <ul class="standard clean-padding bt-space10">
+                    <li class="bt-space5">If many clean mails were marked as spam, please slightly increase the score.</li>
+                    <li class="bt-space5">If many spam message were not classified, please slightly decrease the score.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+                        <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                    </div>
+                </form>
+            </div>
+        
+
+        
+            <div id="profile_password" style="display: none;">
+                <form name="password" method="post" action="/profile/user/password/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                    <div class="columns clear">
+                        <div class="col3-4">
+                            
+    
+
+    
+        
+    
+
+    
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">New password <span class="required">*</span></h4>
+        <span class="clean-padding bt-space20">
+            <input type="password" size="35" name="newpw" value="" class="text ">
+        </span>
+        
+            <small>At least 8 characters.</small>
+        
+    </div>
+
+    
+        <div class="form-field clear">
+            <h4 class="size-250 fl-space">Confirm new password <span class="required">*</span></h4>
+            <span class="clean-padding bt-space20">
+                <input type="password" size="35" name="confirmpw" value="" class="text ">
+            </span>
+        </div>
+    
+
+    
+                        </div>
+                        <div class="col1-4 lastcol">
+                            <div class="mark_blue bt-space10">
+        
+
+        <div class="rule"></div>
+
+        
+
+        <h4>Need a strong password?</h4>
+        <p class="clean-padding clean-padding bt-space10">7uj6bw22qf</p>
+        <p><input type="button" onclick="fill_random_password()" value="Use this password"></p>
+
+        <script type="text/javascript">
+            function fill_random_password() {
+                document.getElementsByName("newpw")[0].value = "7uj6bw22qf";
+                document.getElementsByName("confirmpw")[0].value = "7uj6bw22qf";
+            }
+        </script>
+
+        
+            <h4>Password last change:</h4>
+            <p class="clean-padding clean-padding bt-space10">2021-03-21 09:59:07</p>
+        
+
+    </div>
+                        </div>
+                    </div>
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+
+            <div id="profile_advanced" style="display: none;">
+                <form name="advanced" method="post" action="/profile/user/advanced/donald@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                    
+
+<div class="columns clear">
+    <div class="col2-3">
+
+<div class="form-field clear">
+    <h4 class="size-250 fl-space">Enabled Services</h4>
+
+    
+        
+
+        <div class="form-checkbox-item clear">
+            <input name="enabledService" type="checkbox" value="enabledeliver" class="checkbox" rel="checkboxhorizont" checked="checked">
+            <label>Accepting mails sent to this account on mail server</label>
+        </div>
+    
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <div class="form-checkbox-item clear">
+            <input name="enabledService" type="checkbox" value="enablesmtp" class="checkbox" rel="checkboxhorizont" checked="checked">
+            <label>Sending mails via SMTP</label>
+        </div>
+    
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <div class="form-checkbox-item clear">
+            <input name="enabledService" type="checkbox" value="enablesmtpsecured" class="checkbox" rel="checkboxhorizont" checked="checked">
+            <label>Sending mails via SMTP over TLS/SSL</label>
+        </div>
+    
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <div class="form-checkbox-item clear">
+            <input name="enabledService" type="checkbox" value="enablepop3" class="checkbox" rel="checkboxhorizont" checked="checked">
+            <label>Fetching mails via POP3</label>
+        </div>
+    
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <div class="form-checkbox-item clear">
+            <input name="enabledService" type="checkbox" value="enablepop3secured" class="checkbox" rel="checkboxhorizont" checked="checked">
+            <label>Fetching mails via POP3 over TLS/SSL</label>
+        </div>
+    
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <div class="form-checkbox-item clear">
+            <input name="enabledService" type="checkbox" value="enableimap" class="checkbox" rel="checkboxhorizont" checked="checked">
+            <label>Fetching mails via IMAP</label>
+        </div>
+    
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <div class="form-checkbox-item clear">
+            <input name="enabledService" type="checkbox" value="enableimapsecured" class="checkbox" rel="checkboxhorizont" checked="checked">
+            <label>Fetching mails via IMAP over TLS/SSL</label>
+        </div>
+    
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <div class="form-checkbox-item clear">
+            <input name="enabledService" type="checkbox" value="enablemanagesieve" class="checkbox" rel="checkboxhorizont" checked="checked">
+            <label>Customize mail filter rule</label>
+        </div>
+    
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <div class="form-checkbox-item clear">
+            <input name="enabledService" type="checkbox" value="enablemanagesievesecured" class="checkbox" rel="checkboxhorizont" checked="checked">
+            <label>Customize mail filter rule over TLS/SSL</label>
+        </div>
+    
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <div class="form-checkbox-item clear">
+            <input name="enabledService" type="checkbox" value="enablesogo" class="checkbox" rel="checkboxhorizont" checked="checked">
+            <label>SOGo Groupware (Calendar, Contacts, Tasks, ActiveSync)</label>
+        </div>
+    
+</div>
+
+    </div>
+</div>
+
+                    <div class="rule"></div>
+                    <div class="columns clear">
+        <div class="col2-3">
+            <h4 class="size-250 fl-space">Restrict to login from specified addresses</h4>
+            <small>One IP address or CIDR network per line.</small>
+            <textarea name="allow_nets" class="textarea" rows="5" style="width: 50%;"></textarea>
+        </div>
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue bt-space10">
+                <h4>Address format</h4>
+                <ul class="standard clean-padding bt-space10">
+                    <li>Single IP Address: <em><u>192.168.2.10</u></em></li>
+                    <li>CIDR formatted range of IP addresses: <em><u>192.168.2.0/24</u></em></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+                    <div class="rule"></div>
+
+                    
+                        
+                        <div class="form-field clear">
+                            <h4 class="size-250 fl-space">Path to mailbox</h4>
+                            <input type="text" name="storageBaseDirectory" value="/var/vmail" size="0" class="fl-space text">
+                            <span class="vcenter">/</span>
+                            <input type="text" name="storageNode" value="vmail1">
+                            <span class="vcenter">/</span>
+                            <input type="text" name="mailMessageStore" value="duck.com/d/o/n/donald-2021.03.21.09.59.07/" size="42" class="text">
+                        </div>
+                    
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <div class="footer">
+        <div class="pagesize clear">
+            <p class="bt-space0">
+                © <a href="https://www.iredmail.org/" target="_blank" rel="noopener">iRedMail</a>
+                
+                    | <a href="https://forum.iredmail.org/" target="_blank" rel="noopener">News &amp; Announcements</a>
+                    | <a href="https://www.iredmail.org/support.html" target="_blank" rel="noopener">Support</a>
+                
+            </p>
+        </div>
+    </div>
+    
+
+    
+    <script type="text/javascript">
+        // redirect to url
+        function change_url(domain, baseurl) {
+            if ( domain.options[domain.selectedIndex].value != 'none' ) {
+                location.href = baseurl + domain.options[domain.selectedIndex].value;
+            }
+        };
+    </script>
+        <script type="text/javascript" src="Forwarding_files/jquery-1.js"></script>
+    <script type="text/javascript" src="Forwarding_files/jquery_002.js"></script>
+    <script type="text/javascript" src="Forwarding_files/jquery_004.js"></script>
+    <script type="text/javascript" src="Forwarding_files/jquery.js"></script>
+    <script type="text/javascript" src="Forwarding_files/jquery_003.js"></script>
+    <script type="text/javascript" src="Forwarding_files/stupidtable.js"></script>
+
+    <script type="text/javascript">
+        function remove_element_by_id(css_id) {
+            document.getElementById(css_id).remove();
+        }
+
+        
+        function add_input_inside_id(css_id, name) {
+            
+            var e = document.getElementById(css_id);
+            var length = e.children.length;
+
+            
+            var new_id = name + '_' + (length + 1);
+
+            var elem = document.createElement('div');
+            elem.innerHTML = '<div class="form-field clear" id="' + new_id + '">' +
+                             '<h4 class="size-250 fl-space">&nbsp;</h4>' +
+                             '<input type="text" size="35" class="text" ' +
+                                'name="' + name + '" ' +
+                                'value="" />' +
+                             '<input type="button" value="+" onclick="add_input_inside_id(\'' + css_id + '\', \'' + name + '\')" />' +
+                             '<input type="button" value="-" onclick="remove_element_by_id(\'' + new_id  + '\')" />' +
+                             '</div>';
+
+            document.getElementById(css_id).appendChild(elem);
+        }
+
+    
+    $(document).ready(function() {
+        
+        $('.menu li').hover(function () {
+            $(this).find('ul:first').css({'visibility': 'visible', 'display': 'none'}).slideDown();
+        }, function () {
+            $(this).find('ul:first').css({visibility: "hidden"});
+        });
+
+        
+        
+        $('.content-box .select-all').click(function () {
+            if ($(this).is(':checked'))
+                $(this).parent().parent().parent().parent().find('[type="checkbox"]').prop('checked', true);
+            else
+                $(this).parent().parent().parent().parent().find('[type="checkbox"]').prop('checked', false);
+        });
+
+        
+        $('.content-box .tabs').idTabs();
+
+        
+        $('.notification .close').click(function () {
+            $(this).parent().fadeOut(100);
+            return false;
+        });
+
+        
+        $("a[title], img[title], span[title], input[title], i[title]").tooltip({
+            position: "top center",
+            offset: [-5, 0],
+            predelay: 200,
+            delay: 100,
+            effect: "fade",
+            opacity: 1
+        });
+
+        
+        $('.modal-link').fancybox({
+            'modal'                 : false,
+            'hideOnOverlayClick'    : true,
+            'hideOnContentClick'    : false,
+            'enableEscapeButton'    : true,
+            'showCloseButton'       : true,
+            'speedOut'              : 0
+        });
+        $("a[href$='gif']").fancybox();
+        $("a[href$='jpg']").fancybox();
+        $("a[href$='png']").fancybox();
+
+        
+        $("table").stupidtable();
+
+        
+        $('.box-slide-head > td > span').click(function (event) {
+            tgt = $(event.target);
+            if (tgt.hasClass('clickable')) {
+                return;
+            }
+
+            mailid = $(this).parents('tr').attr('id');
+            mailid_orig = $(this).parents('tr').attr('mailid');
+            body = $('#box-tr-'+mailid);
+            if (!body.hasClass('box-slide-tr')) {
+                $.get('/activities/quarantined/raw/'+mailid_orig, function(data) {
+                    if (data != ''){
+                        $('#'+mailid).after(data);
+                    }
+                });
+            }
+            if (body.is(':visible')) {
+                body.hide();
+            } else {
+                body.show();
+            }
+            return false;
+        });
+
+        
+        $('#account_delete_date').hide()
+        $('#account_list_actions').change(function(){
+            if ($(this).val() == 'delete') {
+                $('#account_delete_date').show();
+            } else {
+                $("#account_delete_date").hide();
+            }
+        });
+
+        $('#domain_delete_date').hide()
+        $('#domain_list_actions').change(function(){
+            if ($(this).val() == 'delete') {
+                $('#domain_delete_date').show();
+            } else {
+                $("#domain_delete_date").hide();
+            }
+        });
+
+        
+        if ($('#mark_as_global_admin').is(':checked') == false) {
+            $('.normal_admin_create_domain_options').show();
+        } else {
+            $(".normal_admin_create_domain_options").hide();
+        }
+        $('#mark_as_global_admin').change(function(){
+            if ($(this).is(':checked') == true) {
+                $('.normal_admin_create_domain_options').hide();
+            } else {
+                $(".normal_admin_create_domain_options").show();
+            }
+        });
+
+        
+        if ($('#normal_admin_options').is(':checked') == true) {
+            $('.normal_admin_options').show();
+        } else {
+            $(".normal_admin_options").hide();
+        }
+        $('#normal_admin_options').change(function(){
+            if ($(this).is(':checked') == true) {
+                $('.normal_admin_options').show();
+                $('.normal_admin_options').show();
+            } else {
+                $(".normal_admin_options").hide();
+            }
+        });
+    });
+    </script>
+    
+
+    
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".tabs li").idTabs("profile_general");
+    $('#domain_search').quickfilter('#all_domains tr');
+});
+</script>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div></body></html>

@@ -1,0 +1,167 @@
+MariaDB [iredapd]> show tables;
++----------------------------------+
+| Tables_in_iredapd                |
++----------------------------------+
+| greylisting                      |
+| greylisting_tracking             |
+| greylisting_whitelist_domain_spf |
+| greylisting_whitelist_domains    |
+| greylisting_whitelists           |
+| senderscore_cache                |
+| smtp_sessions                    |
+| srs_exclude_domains              |
+| throttle                         |
+| throttle_tracking                |
+| wblist_rdns                      |
++----------------------------------+
+11 rows in set (0.001 sec)
+
+MariaDB [iredapd]> describe greylisting;
++-----------------+---------------------+------+-----+---------+----------------+
+| Field           | Type                | Null | Key | Default | Extra          |
++-----------------+---------------------+------+-----+---------+----------------+
+| id              | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| account         | varchar(100)        | NO   | MUL |         |                |
+| priority        | tinyint(2)          | NO   |     | 0       |                |
+| sender          | varchar(100)        | NO   |     |         |                |
+| sender_priority | tinyint(2)          | NO   |     | 0       |                |
+| comment         | varchar(255)        | NO   | MUL |         |                |
+| active          | tinyint(1)          | NO   |     | 1       |                |
++-----------------+---------------------+------+-----+---------+----------------+
+7 rows in set (0.001 sec)
+
+MariaDB [iredapd]> describe greylisting_tracking;
++----------------+---------------------+------+-----+---------+----------------+
+| Field          | Type                | Null | Key | Default | Extra          |
++----------------+---------------------+------+-----+---------+----------------+
+| id             | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| sender         | varchar(255)        | NO   | MUL | NULL    |                |
+| recipient      | varchar(255)        | NO   |     | NULL    |                |
+| client_address | varchar(40)         | NO   | MUL | NULL    |                |
+| sender_domain  | varchar(255)        | NO   | MUL |         |                |
+| rcpt_domain    | varchar(255)        | NO   | MUL |         |                |
+| init_time      | int(10) unsigned    | NO   |     | 0       |                |
+| block_expired  | int(10) unsigned    | NO   |     | 0       |                |
+| record_expired | int(10) unsigned    | NO   |     | 0       |                |
+| blocked_count  | bigint(20)          | NO   |     | 0       |                |
+| passed         | tinyint(1)          | NO   |     | 0       |                |
++----------------+---------------------+------+-----+---------+----------------+
+11 rows in set (0.013 sec)
+
+MariaDB [iredapd]> describe greylisting_whitelist_domain_spf;
++---------+---------------------+------+-----+---------+----------------+
+| Field   | Type                | Null | Key | Default | Extra          |
++---------+---------------------+------+-----+---------+----------------+
+| id      | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| account | varchar(100)        | NO   | MUL |         |                |
+| sender  | varchar(100)        | NO   |     |         |                |
+| comment | varchar(255)        | NO   | MUL |         |                |
++---------+---------------------+------+-----+---------+----------------+
+4 rows in set (0.002 sec)
+
+MariaDB [iredapd]> describe greylisting_whitelist_domains;
++--------+---------------------+------+-----+---------+----------------+
+| Field  | Type                | Null | Key | Default | Extra          |
++--------+---------------------+------+-----+---------+----------------+
+| id     | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| domain | varchar(255)        | NO   | UNI |         |                |
++--------+---------------------+------+-----+---------+----------------+
+2 rows in set (0.001 sec)
+
+MariaDB [iredapd]> describe greylisting_whitelists;
++---------+---------------------+------+-----+---------+----------------+
+| Field   | Type                | Null | Key | Default | Extra          |
++---------+---------------------+------+-----+---------+----------------+
+| id      | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| account | varchar(100)        | NO   | MUL |         |                |
+| sender  | varchar(100)        | NO   |     |         |                |
+| comment | varchar(255)        | NO   | MUL |         |                |
++---------+---------------------+------+-----+---------+----------------+
+4 rows in set (0.002 sec)
+
+MariaDB [iredapd]> describe senderscore_cache;
++----------------+------------------+------+-----+---------+-------+
+| Field          | Type             | Null | Key | Default | Extra |
++----------------+------------------+------+-----+---------+-------+
+| client_address | varchar(40)      | NO   | PRI |         |       |
+| score          | int(3) unsigned  | YES  | MUL | 0       |       |
+| time           | int(10) unsigned | NO   | MUL | 0       |       |
++----------------+------------------+------+-----+---------+-------+
+3 rows in set (0.002 sec)
+
+MariaDB [iredapd]> describe smtp_sessions;
++---------------------+---------------------+------+-----+---------------------+----------------+
+| Field               | Type                | Null | Key | Default             | Extra          |
++---------------------+---------------------+------+-----+---------------------+----------------+
+| id                  | bigint(20) unsigned | NO   | PRI | NULL                | auto_increment |
+| time                | timestamp           | NO   | MUL | current_timestamp() |                |
+| time_num            | int(10) unsigned    | NO   | MUL | 0                   |                |
+| action              | varchar(20)         | NO   | MUL |                     |                |
+| reason              | varchar(150)        | NO   | MUL |                     |                |
+| instance            | varchar(40)         | NO   | MUL |                     |                |
+| client_address      | varchar(40)         | NO   | MUL |                     |                |
+| client_name         | varchar(255)        | NO   | MUL |                     |                |
+| reverse_client_name | varchar(255)        | NO   | MUL |                     |                |
+| helo_name           | varchar(255)        | NO   | MUL |                     |                |
+| sender              | varchar(255)        | NO   | MUL |                     |                |
+| sender_domain       | varchar(255)        | NO   | MUL |                     |                |
+| sasl_username       | varchar(255)        | NO   | MUL |                     |                |
+| sasl_domain         | varchar(255)        | NO   | MUL |                     |                |
+| recipient           | varchar(255)        | NO   | MUL |                     |                |
+| recipient_domain    | varchar(255)        | NO   | MUL |                     |                |
+| encryption_protocol | varchar(20)         | NO   | MUL |                     |                |
+| encryption_cipher   | varchar(50)         | NO   | MUL |                     |                |
+| server_address      | varchar(40)         | NO   | MUL |                     |                |
+| server_port         | varchar(10)         | NO   | MUL |                     |                |
++---------------------+---------------------+------+-----+---------------------+----------------+
+20 rows in set (0.001 sec)
+
+MariaDB [iredapd]> describe srs_exclude_domains;
++--------+---------------------+------+-----+---------+----------------+
+| Field  | Type                | Null | Key | Default | Extra          |
++--------+---------------------+------+-----+---------+----------------+
+| id     | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| domain | varchar(255)        | NO   | UNI |         |                |
++--------+---------------------+------+-----+---------+----------------+
+2 rows in set (0.002 sec)
+
+MariaDB [iredapd]> describe throttle;
++-----------+---------------------+------+-----+----------+----------------+
+| Field     | Type                | Null | Key | Default  | Extra          |
++-----------+---------------------+------+-----+----------+----------------+
+| id        | bigint(20) unsigned | NO   | PRI | NULL     | auto_increment |
+| account   | varchar(255)        | NO   | MUL | NULL     |                |
+| kind      | varchar(10)         | NO   |     | outbound |                |
+| priority  | tinyint(1) unsigned | NO   |     | 0        |                |
+| period    | int(10) unsigned    | NO   |     | 0        |                |
+| msg_size  | bigint(20)          | NO   |     | -1       |                |
+| max_msgs  | bigint(20)          | NO   |     | -1       |                |
+| max_quota | bigint(20)          | NO   |     | -1       |                |
++-----------+---------------------+------+-----+----------+----------------+
+8 rows in set (0.001 sec)
+
+MariaDB [iredapd]> describe throttle_tracking;
++------------------+-----------------------+------+-----+---------+----------------+
+| Field            | Type                  | Null | Key | Default | Extra          |
++------------------+-----------------------+------+-----+---------+----------------+
+| id               | bigint(20) unsigned   | NO   | PRI | NULL    | auto_increment |
+| tid              | bigint(20) unsigned   | NO   | MUL | 0       |                |
+| account          | varchar(255)          | NO   |     |         |                |
+| period           | int(10) unsigned      | NO   |     | 0       |                |
+| cur_msgs         | mediumint(8) unsigned | NO   |     | 0       |                |
+| cur_quota        | int(10) unsigned      | NO   |     | 0       |                |
+| init_time        | int(10) unsigned      | NO   |     | 0       |                |
+| last_time        | int(10) unsigned      | NO   |     | 0       |                |
+| last_notify_time | int(10) unsigned      | NO   |     | 0       |                |
++------------------+-----------------------+------+-----+---------+----------------+
+9 rows in set (0.001 sec)
+
+MariaDB [iredapd]> describe wblist_rdns;
++-------+---------------------+------+-----+---------+----------------+
+| Field | Type                | Null | Key | Default | Extra          |
++-------+---------------------+------+-----+---------+----------------+
+| id    | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| rdns  | varchar(255)        | NO   | UNI |         |                |
+| wb    | varchar(10)         | NO   | MUL | B       |                |
++-------+---------------------+------+-----+---------+----------------+
+3 rows in set (0.003 sec)

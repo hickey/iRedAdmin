@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>Admin Log</title>
+
+    
+    <link rel="stylesheet" type="text/css" href="Admin%20Log_files/reset.css">
+    <link rel="stylesheet" type="text/css" href="Admin%20Log_files/fancybox.css">
+    <link rel="stylesheet" type="text/css" href="Admin%20Log_files/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="Admin%20Log_files/screen.css">
+    <link rel="icon" type="image/x-icon" href="https://demo-sql.iredmail.org/static/favicon.ico">
+<style>@media print {#ghostery-tracker-tally {display:none !important}}</style></head>
+
+<body>
+    <div class="pagetop">
+        <div class="head pagesize">
+            <div class="head_top">
+                <div class="topbuts">
+                    <ul class="clear">
+                        
+                            
+                        
+
+                        
+                        <li>
+                            <form method="post" action="/search" class="search_form">
+                            
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                            <i class="fa fa-search-plus fa-lg color-green"></i>
+                            <input type="text" name="searchString" size="30" placeholder="Search mail accounts" class="search_field">
+                            </form>
+                        </li>
+                        
+
+                        <li><a href="https://demo-sql.iredmail.org/profile/user/general/postmaster@example.com">Preferences</a></li>
+                        
+                            
+                                <li><a href="https://demo-sql.iredmail.org/system/license">License</a></li>
+                            
+                        
+                        <li><a href="https://demo-sql.iredmail.org/logout" class="red">Logout</a></li>
+                    </ul>
+
+                    <div class="user clear">
+                        <span class="user-detail">
+                            <span class="text">Logged in as postmaster@example.com</span>
+                            <i class="fas fa-download" style="color: #00A5C4;"></i>
+                            <a href="https://demo-sql.iredmail.org/export/managed_accounts/postmaster@example.com" target="_blank" rel="noopener" style="color: #00A5C4;">Export all managed accounts</a><br>
+
+                           
+                            <i class="fas fa-download" style="color: #00A5C4;"></i>
+                            <a href="https://demo-sql.iredmail.org/export/statistics/admins" target="_blank" rel="noopener" style="color: #00A5C4;">Export statistics of admins</a>
+                           
+                        </span>
+                    </div>
+                </div>
+
+                <div class="logo clear">
+                    <a href="https://demo-sql.iredmail.org/">
+                        
+                        
+                        <span class="textlogo">
+                            <span class="title">iRedAdmin-Pro</span>
+                            <span class="text">iRedMail Admin Panel</span>
+                        </span>
+                    </a>
+                </div>
+            </div> <!-- *** End head_top *** -->
+
+            <div class="menu"><!-- menu -->
+                <ul class="clear">
+                    <li><a href="https://demo-sql.iredmail.org/dashboard">Dashboard</a></li>
+                    <li><a href="https://demo-sql.iredmail.org/domains">Domains and Accounts</a></li>
+
+                    
+                    
+                        <li><a href="https://demo-sql.iredmail.org/admins">Admins</a></li>
+                    
+
+                    <li class="active"><a href="#">Activities</a>
+                        <ul>
+                            <li><a href="https://demo-sql.iredmail.org/activities/admins">Admin Log</a></li>
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/fail2ban/banned">Banned IP Addresses</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions">SMTP Sessions</a>
+                                    <ul>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions">All SMTP Sessions</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions/rejected">Rejected SMTP Sessions</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions/outbound">Outbound SMTP Sessions</a></li>
+                                    </ul>
+                                </li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/sent">Sent Mails</a></li>
+                                <li><a href="https://demo-sql.iredmail.org/activities/received">Received Mails</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/quarantined">Quarantined Mails</a>
+                                    <ul>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/quarantined/spam">Spam</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/virus">Virus</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/banned">Banned</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/badheader">Bad Header</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/clean">Clean</a>
+                                    </li></ul>
+                                </li>
+                            
+                        </ul>
+                    </li>
+
+                    
+                    <li><a href="https://demo-sql.iredmail.org/activities/admins">System</a>
+                        <ul>
+                            
+                                <li><a href="https://demo-sql.iredmail.org/system/settings">Settings</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/verify/domain_ownership">Domain ownership verification</a></li>
+                            
+
+                            
+                                
+                                    
+                                        <li><a href="https://demo-sql.iredmail.org/system/spampolicy">Global Spam Policy</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/system/wblist">Whitelists &amp; Blacklists</a></li>
+                                    
+
+                                    
+                                        <li><a href="https://demo-sql.iredmail.org/system/greylisting">Greylisting</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/system/throttle">Throttle</a></li>
+                                    
+                                
+                            
+                        </ul>
+                    </li>
+                    
+
+                    <li>
+                        <a href="#"><i class="fa fa-plus fa-lg"></i> Add...</a>
+                        <ul>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/domain">Domain</a></li>
+                            
+
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/admin">Admin</a></li>
+                            
+
+                            <li><a href="https://demo-sql.iredmail.org/create/user">User</a></li>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/ml">Mailing List (Subscribable)</a></li>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/alias">Alias</a></li>
+
+                            
+                                
+                                    <li><a href="https://demo-sql.iredmail.org/create/wblist">Whitelists &amp; Blacklists</a></li>
+                                
+                            
+                        </ul>
+                    </li>
+
+                </ul>
+            </div> <!-- End menu -->
+
+        </div> <!-- End head layout -->
+    </div><!-- End page top -->
+
+    
+
+    <div class="main pagesize"> <!-- *** mainpage layout *** -->
+        <div class="main-wrap">
+            <div class="page clear">
+                
+                
+
+
+
+<div class="content-box">
+    <div class="box-body">
+        <div class="box-header clear">
+                <h2>Admin Log
+                    
+                        (1-50/1888)
+                    
+                </h2>
+        </div>
+
+<div class="clear"></div>
+
+
+<div class="top-space5 bt-space5 left-space5">
+    <form name="pages" method="get" action="/activities/admins">
+        <i class="fa fa-filter"></i> Filter:
+        <select name="domain">
+            <option value="all" selected="selected">Domains</option>
+            
+                <option value="123.com">123.com</option>
+            
+                <option value="duck.com">duck.com</option>
+            
+                <option value="example.com">example.com</option>
+            
+                <option value="fhoding.vn">fhoding.vn</option>
+            
+                <option value="google.com">google.com</option>
+            
+                <option value="ict.om">ict.om</option>
+            
+                <option value="mdp.loc">mdp.loc</option>
+            
+                <option value="pippo.it">pippo.it</option>
+            
+                <option value="prueba.com">prueba.com</option>
+            
+                <option value="test.by">test.by</option>
+            
+                <option value="test.com">test.com</option>
+            
+        </select>
+
+        
+            <select name="admin">
+                <option value="all" selected="selected">Admins</option>
+                
+                    <option value="admin123@123.com">admin123@123.com</option>
+                
+                    <option value="cuongnt@google.com">cuongnt@google.com</option>
+                
+                    <option value="postmaster@example.com">postmaster@example.com</option>
+                
+                    <option value="postmaster@test.com">postmaster@test.com</option>
+                
+                    <option value="test@123test.com">test@123test.com</option>
+                
+            </select>
+        
+
+        <select name="event">
+            
+                <option value="all" selected="selected">
+
+    
+        Events
+    </option>
+            
+                <option value="login">
+
+    
+        Admin login
+    </option>
+            
+                <option value="user_login">
+
+    
+        User login (self-service)
+    </option>
+            
+                <option value="active">
+
+    
+        Activate account
+    </option>
+            
+                <option value="disable">
+
+    
+        Disable account
+    </option>
+            
+                <option value="create">
+
+    
+        Add account
+    </option>
+            
+                <option value="delete">
+
+    
+        Delete account
+    </option>
+            
+                <option value="update">
+
+    
+        Edit account profile
+    </option>
+            
+                <option value="grant">
+
+    
+        Grant admin
+    </option>
+            
+                <option value="revoke">
+
+    
+        Revoke admin privilege
+    </option>
+            
+                <option value="backup">
+
+    
+        Backup
+    </option>
+            
+                <option value="delete_mailboxes">
+
+    
+        Delete mailboxes
+    </option>
+            
+                <option value="update_wblist">
+
+    
+        Update whitelists and blacklists
+    </option>
+            
+                <option value="iredapd">
+
+    
+        iRedAPD
+    </option>
+            
+                <option value="unban">
+
+    
+        Unban IP address
+    </option>
+            
+        </select>
+
+        <input type="submit" value="Submit" class="button">
+    </form>
+</div>
+
+
+<form name="log" id="list_table" method="post" action="/activities/admins">
+    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+    <input type="hidden" name="domain" value="all">
+    <input type="hidden" name="admin" value="all">
+    <input type="hidden" name="event" value="all">
+
+    <table class="style1">
+        <thead>
+            <tr>
+                
+                    <th class="checkbox"><input type="checkbox" class="checkbox select-all"></th>
+                
+                <th data-sort="string-ins">Time</th>
+                <th data-sort="string-ins">Admin</th>
+                <th data-sort="string-ins">IP Address</th>
+                <th data-sort="string-ins">Message</th>
+            </tr>
+        </thead>
+
+        
+        <tbody>
+            
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33751" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 08:28:25</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@test.com">postmaster@test.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33750" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 08:23:00</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33749" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 07:05:53</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33748" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 07:00:45</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33747" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 05:37:22</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33746" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 05:08:07</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@test.com">postmaster@test.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33745" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 03:41:52</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33739" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 03:40:02</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?event=backup">cron_backup_sql</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="backup_info">Database: mysql, size: 104K (original: 556K)</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33740" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 03:40:02</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?event=backup">cron_backup_sql</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="backup_info">Database: vmail, size: 24K (original: 120K)</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33741" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 03:40:02</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?event=backup">cron_backup_sql</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="backup_info">Database: amavisd, size: 32K (original: 220K)</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33742" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 03:40:02</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?event=backup">cron_backup_sql</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="backup_info">Database: iredapd, size: 8.0K (original: 64K)</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33743" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 03:40:02</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?event=backup">cron_backup_sql</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="backup_info">Database: iredadmin, size: 16K (original: 268K)</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33744" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 03:40:02</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?event=backup">cron_backup_sql</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="backup_info">Remove old backup: /var/vmail/backup/mysql/2020/12/25.</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33738" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 02:08:32</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33737" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-25 02:01:02</td>
+
+                        
+                        
+                            <td>cleanup_amavisd_db</td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="cleanup_db_info">Removed records: 0 in msgs, 100 in msgrcpt, 0 in quarantine, 0 in maddr, 0 in mailaddr.</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33736" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 23:32:29</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=admin123@123.com">admin123@123.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33735" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 23:32:10</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="update_info">Update user profile (password): admin123@123.com.</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33733" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 23:31:48</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="grant_info">User admin123@123.com is marked as normal domain admin.</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33734" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 23:31:48</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="update_info">Update user profile (general): admin123@123.com.</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33732" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 23:30:03</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33731" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 22:12:58</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@test.com">postmaster@test.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33730" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 22:09:32</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33729" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 21:54:19</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33728" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 21:02:13</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33727" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 20:17:34</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33726" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 19:08:23</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33725" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 17:00:49</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@test.com">postmaster@test.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33724" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 14:11:03</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33723" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 14:03:19</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33722" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 13:24:23</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@test.com">postmaster@test.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33721" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 13:23:20</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33720" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 12:48:00</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@test.com">postmaster@test.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33719" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 12:47:05</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33718" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 12:40:28</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33717" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 11:25:26</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33716" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 10:28:36</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33715" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 10:20:38</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="update_info">Update domain profile: 123.com (throttle).</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33714" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 10:13:39</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33713" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 10:12:47</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33712" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 09:32:43</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33711" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 08:40:28</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33710" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 08:38:09</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33709" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 08:35:08</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33708" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 07:55:04</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@test.com">postmaster@test.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="update_info">Update domain profile: test.com (throttle).</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33707" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 07:25:09</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@test.com">postmaster@test.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33706" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 07:21:05</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33705" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 07:08:11</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33704" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 05:55:44</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="create_info">Create mailing list: prueba@duck.com.</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33703" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 05:50:38</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+                    <tr>
+                        
+                            <td class="checkbox"><input type="checkbox" name="id" value="33702" class="checkbox"></td>
+                        
+                        <td style="white-space: nowrap;">2021-03-24 04:47:43</td>
+
+                        
+                        
+                            <td><a href="https://demo-sql.iredmail.org/activities/admins?admin=postmaster@example.com">postmaster@example.com</a></td>
+                        
+
+                        <td>REMOVED DUE TO PRIVARCY CONCERN</td>
+                        <td class="login_info">Admin login success</td>
+                    </tr>
+                
+            
+        </tbody>
+    </table>
+
+    <div class="tab-footer clear f1">
+        
+            <div class="fl">
+                <select name="action" class="fl-space">
+                    <option selected="selected">Choose Action</option>
+                    <option disabled="disabled">----</option>
+                    <option value="delete">Delete selected log</option>
+                    <option value="deleteAll">Delete all in database</option>
+                </select>
+                <input type="submit" value="Apply" class="button fl-space">
+            </div>
+        
+
+        
+        
+    
+
+    
+    
+
+    <div class="pager fr">
+        <span class="nav">
+                
+                    <a href="https://demo-sql.iredmail.org/activities/admins?domain=all&amp;event=all&amp;admin=all&amp;page=1" class="first"><span>First Page</span></a>
+                
+
+                
+            </span><span class="pages">
+        
+            
+            
+                
+                
+                    
+                
+
+                
+                    
+                        <a href="#" class="active"><span>1</span></a>
+                    
+                
+                    
+                        <a href="https://demo-sql.iredmail.org/activities/admins?domain=all&amp;event=all&amp;admin=all&amp;page=2"><span>2</span></a>
+                    
+                
+                    
+                        <a href="https://demo-sql.iredmail.org/activities/admins?domain=all&amp;event=all&amp;admin=all&amp;page=3"><span>3</span></a>
+                    
+                
+                    
+                        <a href="https://demo-sql.iredmail.org/activities/admins?domain=all&amp;event=all&amp;admin=all&amp;page=4"><span>4</span></a>
+                    
+                
+
+                
+                
+                    <a href="#"><span>...</span></a>
+                
+                <a href="https://demo-sql.iredmail.org/activities/admins?domain=all&amp;event=all&amp;admin=all&amp;page=38"><span>38</span></a>
+            
+        
+        </span>
+
+        
+        
+        <span class="nav">
+            
+                <a href="https://demo-sql.iredmail.org/activities/admins?domain=all&amp;event=all&amp;admin=all&amp;page=2" class="next"><span>Next Page</span></a>
+            
+
+            
+                <a href="https://demo-sql.iredmail.org/activities/admins?domain=all&amp;event=all&amp;admin=all&amp;page=38" class="last"><span>Last Page</span></a>
+            
+        </span>
+        
+    </div>
+    </div>
+</form>
+</div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <div class="footer">
+        <div class="pagesize clear">
+            <p class="bt-space0">
+                © <a href="https://www.iredmail.org/" target="_blank" rel="noopener">iRedMail</a>
+                
+                    | <a href="https://forum.iredmail.org/" target="_blank" rel="noopener">News &amp; Announcements</a>
+                    | <a href="https://www.iredmail.org/support.html" target="_blank" rel="noopener">Support</a>
+                
+            </p>
+        </div>
+    </div>
+    
+
+    
+    <script type="text/javascript">
+        // redirect to url
+        function change_url(domain, baseurl) {
+            if ( domain.options[domain.selectedIndex].value != 'none' ) {
+                location.href = baseurl + domain.options[domain.selectedIndex].value;
+            }
+        };
+    </script>
+        <script type="text/javascript" src="Admin%20Log_files/jquery-1.js"></script><div id="ghostery-tracker-tally" class="ghostery-bottom ghostery-right ghostery-none ghostery-collapsed"><div id="ghostery-box"><div id="ghostery-count" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; color: rgb(255, 255, 255);">0</div><div id="ghostery-pb-icons-container"><span id="ghostery-breaking-tracker" class="ghostery-pb-tracker" style="background: rgba(0, 0, 0, 0) url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4NCiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQwICgzMzc2MikgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+DQogICAgPHRpdGxlPmJyZWFraW5ncGFnZTwvdGl0bGU+DQogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+DQogICAgPGRlZnM+PC9kZWZzPg0KICAgIDxnIGlkPSJQdXJwbGUtQm94IiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4NCiAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQxNi4wMDAwMDAsIC00NTMuMDAwMDAwKSIgaWQ9ImJhbSEtYnJlYWtpbmctdGhlLXBhZ2UtY29weS0yIiBmaWxsPSIjRkNCQTMzIj4NCiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQxNi4wMDAwMDAsIDQ1My4wMDAwMDApIj4NCiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNOSwwLjE5NTY1MjE3NCBDNC4xNDQzNjAyNSwwLjE5NTY1MjE3NCAwLjE5NTY1MjE3NCw0LjE0NDM2MDI1IDAuMTk1NjUyMTc0LDkgQzAuMTk1NjUyMTc0LDEzLjg1NTYzOTggNC4xNDQzNjAyNSwxNy44MDQzNDc4IDksMTcuODA0MzQ3OCBDMTMuODU1NjM5OCwxNy44MDQzNDc4IDE3LjgwNDM0NzgsMTMuODU1NjM5OCAxNy44MDQzNDc4LDkgQzE3LjgwNDM0NzgsNC4xNDQzNjAyNSAxMy44NTU2Mzk4LDAuMTk1NjUyMTc0IDksMC4xOTU2NTIxNzQgWiBNMTEuNDg1NTg5OSwxMy40MTA0NDQxIEwxMS4wNzcwNzk4LDEzLjAyMDY3NjggTDEyLjEwMDQ3MTEsMTIuMjE2OTU3OSBMMTEuMDQ2MjQ1MSwxMi4yMTY5NTc5IEwxMS4yMzQ0NzgxLDEwLjg3MDcwODcgTDkuODAzMTgxNDIsMTEuNzk1NzUxMiBMOS40MDMzMzczNCw5LjM0NTA5MzkyIEw4LjY5NDc0MjY5LDExLjA4NjU1MTkgTDcuMzI1NzIwMDksMTAuMTcwOTgxNSBMNy43NTI1Njk3NywxMS45Mjk1NyBMNi41NTQyNDY3MywxMi4zMTE0Nzc1IEw3Ljg4MjM1Nzg3LDEzLjQxMDQ0NDEgTDExLjQ4NTU4OTksMTMuNDEwNDQ0MSBaIE02LjcxNTY3NTcyLDEzLjQxMDQ0NDEgTDUuMDI4NjMxOTcsMTIuMDA2NzU3NiBMNi44Njg0Mzg3MywxMS40MzE5ODE4IEw2LjE2Mzg3NDc3LDguNDg4NTczMDkgTDguMzQ5MzEyODgsOS45NTk5NzUxMiBMOS43MDQwMjY1NCw2LjYxMjQ5MDE1IEwxMC4zNTAzNDcxLDEwLjU1NjcxODIgTDEyLjE5NDk5MDcsOS4zNzY1MzMyOCBMMTEuODk4OTM2OCwxMS40NzY5MjM5IEwxNC4yNjI5MzQzLDExLjQ3NjkyMzkgTDEyLjIxMjkyNzIsMTMuMDc4OTIwMiBMMTIuNTY3MjI0NSwxMy40MTA0NDQxIEwxNS4zMzEyNjc3LDEzLjQxMDQ0NDEgTDE0LjQ3Mzk0MDcsMTIuNTk4NjYzOSBMMTcuMjA3MzUwNiwxMC40NjY4MzM5IEwxMy4wNjA3ODIxLDEwLjQ2NjgzMzkgTDEzLjQ5NjI5NzcsNy4zNDg2OTUgTDExLjA5OTg1MzIsOC44Nzg5NDUwNSBMMTAuMTIxMjAyNiwyLjg5Mjc3MTMgTDcuODc3NzIyNTgsOC40MjU0OTI4NSBMNC41NzA1NDQ0Nyw2LjIwMzk4MDEgTDUuNjY1NDgwNDEsMTAuNzUwMzkyNyBMMi45NTEwMTQ3MiwxMS41OTgyNDc2IEw1LjEzNjQ1MjgzLDEzLjQxMDQ0NDEgTDYuNzE1Njc1NzIsMTMuNDEwNDQ0MSBaIiBpZD0iYnJlYWtpbmdwYWdlIj48L3BhdGg+DQogICAgICAgICAgICA8L2c+DQogICAgICAgIDwvZz4NCiAgICA8L2c+DQo8L3N2Zz4=&quot;) repeat scroll 0% 0%; opacity: 0.5;"></span><span id="ghostery-slow-tracker" class="ghostery-pb-tracker" style="background: rgba(0, 0, 0, 0) url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxN3B4IiBoZWlnaHQ9IjE3cHgiIHZpZXdCb3g9IjAgMCAxNyAxNyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4NCiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQwICgzMzc2MikgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+DQogICAgPHRpdGxlPnNsb3d0cmFja2VyczwvdGl0bGU+DQogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+DQogICAgPGRlZnM+PC9kZWZzPg0KICAgIDxnIGlkPSJQdXJwbGUtQm94IiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4NCiAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM5NS4wMDAwMDAsIC00NTQuMDAwMDAwKSIgaWQ9InNsb3d0cmFja2VycyIgZmlsbD0iI0ZDQkEzMyI+DQogICAgICAgICAgICA8cGF0aCBkPSJNNDAzLjUsNDU0IEMzOTguODEyMjEsNDU0IDM5NSw0NTcuODEyMjEgMzk1LDQ2Mi41IEMzOTUsNDY3LjE4Nzc5IDM5OC44MTIyMSw0NzEgNDAzLjUsNDcxIEM0MDguMTg3NzksNDcxIDQxMiw0NjcuMTg3NzkgNDEyLDQ2Mi41IEM0MTIsNDU3LjgxMjIxIDQwOC4xODc3OSw0NTQgNDAzLjUsNDU0IFogTTQwOS42MDk1ODQsNDY1LjE3ODY1NCBDNDA5LjUzMDI1OSw0NjUuMTU0MDkgNDA4LjY3NzI4Myw0NjQuNzQ2NDIgNDA3LjU2MTA5MSw0NjQuMzYyNjM3IEM0MDguNDg0Mzc4LDQ2My43NDU2MSA0MDkuMDk0NDE4LDQ2Mi42OTM2NDUgNDA5LjA5NDQxOCw0NjEuNTAxNzMzIEM0MDkuMDk0NDE4LDQ1OS42MDU1ODEgNDA3LjU1MTQwMSw0NTguMDYyMzM4IDQwNS42NTUyNDksNDU4LjA2MjMzOCBDNDAzLjc1OTA5Nyw0NTguMDYyMzM4IDQwMi4yMTU4NTQsNDU5LjYwNTU4MSA0MDIuMjE1ODU0LDQ2MS41MDE3MzMgQzQwMi4yMTU4NTQsNDYyLjA0OTM1IDQwMi4zNDUyMDgsNDYyLjU2Njc2OSA0MDIuNTczMjY5LDQ2My4wMjY0OTcgQzQwMi43ODgwMzQsNDYzLjA2ODYzOCA0MDMuMzQ0NDQsNDYzLjE3NTIzMiA0MDQuMjIzNzgyLDQ2My4zMjM5NjggQzQwNS4yMDQ1MzUsNDYzLjQ5MDI4MSA0MDUuODUyNDM2LDQ2My4zNTY0MTkgNDA2LjM5MTAzOSw0NjIuODc2NjM0IEM0MDYuNzI4MTcyLDQ2Mi41NzY0NTkgNDA2LjkyODA2NCw0NjIuMTYzNjA2IDQwNi45NTM1MjksNDYxLjcxMzc5NCBDNDA2Ljk4MDEyMSw0NjEuMjYzOTgxIDQwNi44Mjk1ODMsNDYwLjgyOTk0NCA0MDYuNTI5NDA4LDQ2MC40OTM3MTIgQzQwNi4wNDY5MTksNDU5Ljk1MjQwNSA0MDUuMjE1MTI3LDQ1OS45MDM5NTMgNDA0LjY3MjY5Myw0NjAuMzg1NTQxIEM0MDQuMjM5NTU3LDQ2MC43NzExMjYgNDA0LjE4NTAyMSw0NjEuNDQ0NDkyIDQwNC41NTIxMjcsNDYxLjg1NzM0NiBDNDA0Ljg0MDEzMyw0NjIuMTgwNTA3IDQwNS4zNjk5NDcsNDYyLjIxNzQ2NiA0MDUuNjg2Nzk5LDQ2MS45MzU3NyBDNDA1LjgwMzk4NCw0NjEuODMxODggNDA1Ljg3MzM5NCw0NjEuNjkyODM1IDQwNS44ODA2MDYsNDYxLjU0NDc3NiBDNDA1Ljg4NjY5LDQ2MS40MjQyMSA0MDUuODUwNjMzLDQ2MS4zMTA2MyA0MDUuNzgwOTk4LDQ2MS4yMzQwMDkgQzQwNS43MTg1NzQsNDYxLjE2NTUgNDA1LjYxOTE5Miw0NjEuMTI3NjQxIDQwNS41MTY4OCw0NjEuMTI4NTQyIEM0MDUuNDI5ODkyLDQ2MS4xMzEwMjEgNDA1LjMxNzIxNCw0NjEuMTY1NSA0MDUuMjQ0MTk4LDQ2MS4yMzc2MTUgQzQwNS4yMjYzOTUsNDYxLjI1NDI5MSA0MDUuMjA0NTM1LDQ2MS4yNjQ4ODMgNDA1LjE3OTc0Niw0NjEuMjY0ODgzIEM0MDUuMTI2MTExLDQ2MS4yNjQ4ODMgNDA1LjA4MzA2OCw0NjEuMjE2NDMxIDQwNS4wODMwNjgsNDYxLjE1NzYxMyBDNDA1LjA4MzA2OCw0NjEuMTIxMzMxIDQwNS4wOTc5NDEsNDYxLjA5NDk2NCA0MDUuMTE2NDIxLDQ2MS4wNjk0OTggQzQwNS4yMjYzOTUsNDYwLjkxODk2IDQwNS4zODE0NCw0NjAuODMxNzQ3IDQwNS41MzUzNTksNDYwLjgxODY3NiBDNDA1Ljc0NDAzOSw0NjAuODAxMDk5IDQwNS45MTMwNTcsNDYwLjg2MDgxOCA0MDYuMDQ2OTE5LDQ2MS4wMDc3NTEgQzQwNi4xNzk4NzksNDYxLjE1NDAwNyA0MDYuMjQ5Mjg5LDQ2MS4zNDg0OSA0MDYuMjM3MTIsNDYxLjU2MzI1NSBDNDA2LjIyMzgyNCw0NjEuODA2MTkgNDA2LjExMjk0OCw0NjIuMDMyNDQ4IDQwNS45MjM2NDksNDYyLjIwMDU2NCBDNDA1LjQ1NzE2LDQ2Mi42MTYxMjIgNDA0LjcwNzE3Myw0NjIuNTY2MDkzIDQwNC4yODU1Myw0NjIuMDkzMjk0IEM0MDMuNzg5NzQ1LDQ2MS41MzU5ODcgNDAzLjg1ODQ3OSw0NjAuNjMyMDgxIDQwNC40MzUxNjcsNDYwLjExNzgxNyBDNDA1LjEyMzQwNyw0NTkuNTA1Mjk3IDQwNi4xODI1ODQsNDU5LjU2NjgyIDQwNi43OTQyMDIsNDYwLjI1NTI4NCBDNDA3LjE1NzAyNiw0NjAuNjYyNzMgNDA3LjM0MDAxNiw0NjEuMTg4MjYyIDQwNy4zMDg0NjYsNDYxLjczMzE3NCBDNDA3LjI3NjY5MSw0NjIuMjc4OTg4IDQwNy4wMzQ2NTgsNDYyLjc3OTA1NSA0MDYuNjI2OTg3LDQ2My4xNDE2NTQgQzQwNi4xNjgzODYsNDYzLjU1MDIyNiA0MDUuNjMyMjYyLDQ2My43NDY1MTIgNDA0Ljk0NjUwMiw0NjMuNzQ2NTEyIEM0MDQuNzA1MzcsNDYzLjc0NjUxMiA0MDQuNDQ0ODU3LDQ2My43MjE3MjIgNDA0LjE2MzE2Miw0NjMuNjc0Mzk3IEM0MDMuMTkyMDk5LDQ2My41MDk2NjIgNDAyLjE1NTAwNyw0NjMuMzI0ODY5IDQwMi4wMTU5NjIsNDYzLjMwNTQ4OCBDNDAxLjMxNzEzMSw0NjMuMjEyMTkxIDQwMC43MzYxNjEsNDYyLjczNzU4OSA0MDAuNzE3NjgyLDQ2Mi4wMzk2NTkgTDQwMC44OTQ1ODcsNDU4Ljk4NzY1MyBDNDAwLjg5NDU4Nyw0NTguNzkxMzY3IDQwMC43MzUyNiw0NTguNjMxMTM4IDQwMC41MzgwNzIsNDU4LjYzMTEzOCBDNDAwLjM0MDg4NSw0NTguNjMxMTM4IDQwMC4xODE1NTgsNDU4Ljc5MDQ2NSA0MDAuMTgxNTU4LDQ1OC45ODc2NTMgQzQwMC4xODE1NTgsNDU4Ljk4NzY1MyA0MDAuMjg1NDQ3LDQ2MC44NDE0MzcgNDAwLjI5NzYxNyw0NjEuMDc1NTgzIEM0MDAuMzIwNjAzLDQ2MS41MjAyMTIgMzk5LjkxMTEzLDQ2MS44NzY3MjYgMzk5LjQ2MDQxNiw0NjEuODc2NzI2IEMzOTguOTk4NDM1LDQ2MS44NzY3MjYgMzk4LjU4NzE1OSw0NjEuNTAwODMxIDM5OC42MjM0NDEsNDYxLjAzOTUyNiBDMzk4LjY0MzQ5OCw0NjAuNzg0MTk3IDM5OC42NjQ2ODIsNDYwLjUyMDA3OSAzOTguNjg1ODY1LDQ2MC4yNzI4NjIgTDM5OC43NTk3ODIsNDU5LjAwOTUxMiBDMzk4Ljc1OTc4Miw0NTguODEzMjI2IDM5OC42MDA0NTUsNDU4LjY1Mjk5OCAzOTguNDAzMjY4LDQ1OC42NTI5OTggQzM5OC4yMDYwOCw0NTguNjUyOTk4IDM5OC4wNDY3NTMsNDU4LjgxMjMyNSAzOTguMDQ2NzUzLDQ1OS4wMDk1MTIgTDM5OC4yMjAyNzgsNDYxLjk5OTk5NyBMMzk4LjIyMDI3OCw0NjIuMDA1MTggQzM5OC4yMjAyNzgsNDY0LjA5NzYxNyAzOTkuNDE3MzczLDQ2NS44MDI4OTIgNDAxLjUxMDcxMiw0NjUuODAxMDg5IEM0MDMuNjIyNTMxLDQ2NS43OTgzODUgNDA5LjYwODY4Myw0NjUuODAxMDg5IDQwOS42MDg2ODMsNDY1LjgwMTA4OSBDNDA5Ljc4MTA4MSw0NjUuODAxMDg5IDQwOS45MjAzNTEsNDY1LjY2MTE0MyA0MDkuOTIwMzUxLDQ2NS40ODk0MjEgQzQwOS45MjAzNTEsNDY1LjMxNzAyMyA0MDkuNzczMTkzLDQ2NS4yMzA3MTEgNDA5LjYwOTU4NCw0NjUuMTc4NjU0IFoiPjwvcGF0aD4NCiAgICAgICAgPC9nPg0KICAgIDwvZz4NCjwvc3ZnPg==&quot;) repeat scroll 0% 0%; opacity: 0.5;"></span><span id="ghostery-non-secure-tracker" class="ghostery-pb-tracker" style="background: rgba(0, 0, 0, 0) url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4NCiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQwICgzMzc2MikgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+DQogICAgPHRpdGxlPndhcm5pbmc8L3RpdGxlPg0KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPg0KICAgIDxkZWZzPjwvZGVmcz4NCiAgICA8ZyBpZD0iUHVycGxlLUJveCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+DQogICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zNzMuMDAwMDAwLCAtNDUzLjAwMDAwMCkiIGlkPSJ3YXJuaW5nIiBmaWxsPSIjRkVCMDMyIj4NCiAgICAgICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM3My4wMDAwMDAsIDQ1My4wMDAwMDApIj4NCiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNOSwwLjYzMDQzNDc4MyBDNC4zODQxNDQ5MywwLjYzMDQzNDc4MyAwLjYzMDQzNDc4Myw0LjM4NDE0NDkzIDAuNjMwNDM0NzgzLDkgQzAuNjMwNDM0NzgzLDEzLjYxNTg1NTEgNC4zODQxNDQ5MywxNy4zNjk1NjUyIDksMTcuMzY5NTY1MiBDMTMuNjE1ODU1MSwxNy4zNjk1NjUyIDE3LjM2OTU2NTIsMTMuNjE1ODU1MSAxNy4zNjk1NjUyLDkgQzE3LjM2OTU2NTIsNC4zODQxNDQ5MyAxMy42MTU4NTUxLDAuNjMwNDM0NzgzIDksMC42MzA0MzQ3ODMgWiBNNC42NDI5MjgxMSwxMS43ODk4NTUxIEM1LjI1MDQxMTY1LDExLjc4OTg1NTEgNS43NTY5NTIzNCwxMS4zNjA3NTY3IDUuODc4NzE2OTMsMTAuODgxMzY5NSBDNi4wMDA0ODE1MiwxMS4zNjEyNDM3IDYuNTA3MDIyMjIsMTEuNzIzNzM2OSA3LjExNDM4NCwxMS43MjM3MzY5IEM3LjcyNDE4MTA2LDExLjcyMzczNjkgOC4yMzI2Njk5OSwxMS4zNjUwMTg0IDguMzUxNTEyMjMsMTAuODgyNzA4OSBDOC40NzA5NjMzLDExLjM2NTAxODQgOC45Nzk0NTIyMywxMS43MzY1MjIyIDkuNTg4NzYyMjQsMTEuNzM2NTIyMiBDMTAuMTk0NjYyOCwxMS43MzY1MjIyIDEwLjcwMTIwMzUsMTEuMzk0OTcyNSAxMC44MjM0NTUyLDEwLjkxNjU1OTQgQzEwLjk0NTcwNjgsMTEuMzk0OTcyNSAxMS40NTIyNDc1LDExLjc4OTM2OCAxMi4wNTgyNjk5LDExLjc4OTM2OCBDMTIuMzUzNjcwOCwxMS43ODkzNjggMTIuNjI0NzE4OCwxMS42OTkzODQgMTIuODM5NzU1LDExLjU1OTU5ODIgQzExLjAwOTUxMTUsOC43MTgwOTk3NSAxMi4xNDUzMzE2LDQuMTM3NjgxMTYgMTIuMTQ1MzMxNiw0LjEzNzY4MTE2IEM2Ljk0NjQ3MDYzLDUuMjMxNjE0MjQgNC42NjU4MTk4NSwxMC4xMDAzNzE0IDQuMDU3OTcxMDEsMTEuNjY2MTQyMiBDNC4yMzI5NDY3MywxMS43NDMyMTkyIDQuNDMxNzg4MzEsMTEuNzg5ODU1MSA0LjY0MjkyODExLDExLjc4OTg1NTEgWiIgaWQ9Indhcm5pbmd0cmFja2VycyI+PC9wYXRoPg0KICAgICAgICAgICAgPC9nPg0KICAgICAgICA8L2c+DQogICAgPC9nPg0KPC9zdmc+&quot;) repeat scroll 0% 0%; opacity: 0.5;"></span></div><div id="ghostery-title">Looking</div><div id="ghostery-minimize"><span id="ghostery-minimize-icon"></span></div><span id="ghostery-close" style="background: rgba(0, 0, 0, 0) url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxNXB4IiBoZWlnaHQ9IjE1cHgiIHZpZXdCb3g9IjAgMCAxNSAxNSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4NCiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDMuNy4yICgyODI3NikgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+DQogICAgPHRpdGxlPmNvbGxhcHNlIGNvcHkgMjwvdGl0bGU+DQogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+DQogICAgPGRlZnM+PC9kZWZzPg0KICAgIDxnIGlkPSJQdXJwbGUtQm94IiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4NCiAgICAgICAgPGcgaWQ9ImNvbGxhcHNlLWNvcHktMiI+DQogICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsLTMxNSIgZmlsbC1vcGFjaXR5PSIwLjI3MDE1Mzk4NiIgZmlsbD0iI0Q4RDhEOCIgY3g9IjcuNSIgY3k9IjcuNSIgcj0iNy41Ij48L2NpcmNsZT4NCiAgICAgICAgICAgIDxwYXRoIGQ9Ik00LjM2LDQuMzYgTDEwLjU3NDU2MzQsMTAuNTc0NTYzNCIgaWQ9IkxpbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSI+PC9wYXRoPg0KICAgICAgICAgICAgPHBhdGggZD0iTTQuMzYsNC4zNiBMMTAuNTc0NTYzNCwxMC41NzQ1NjM0IiBpZD0iTGluZS1Db3B5IiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcuNjAwMDAwLCA3LjYwMDAwMCkgc2NhbGUoLTEsIDEpIHRyYW5zbGF0ZSgtNy42MDAwMDAsIC03LjYwMDAwMCkgIj48L3BhdGg+DQogICAgICAgIDwvZz4NCiAgICA8L2c+DQo8L3N2Zz4=&quot;) repeat scroll 0% 0%;"></span></div><div id="ghostery-pb-background"><div id="ghostery-trackerList"></div></div></div>
+    <script type="text/javascript" src="Admin%20Log_files/jquery_002.js"></script>
+    <script type="text/javascript" src="Admin%20Log_files/jquery_004.js"></script>
+    <script type="text/javascript" src="Admin%20Log_files/jquery.js"></script>
+    <script type="text/javascript" src="Admin%20Log_files/jquery_003.js"></script>
+    <script type="text/javascript" src="Admin%20Log_files/stupidtable.js"></script>
+
+    <script type="text/javascript">
+        function remove_element_by_id(css_id) {
+            document.getElementById(css_id).remove();
+        }
+
+        
+        function add_input_inside_id(css_id, name) {
+            
+            var e = document.getElementById(css_id);
+            var length = e.children.length;
+
+            
+            var new_id = name + '_' + (length + 1);
+
+            var elem = document.createElement('div');
+            elem.innerHTML = '<div class="form-field clear" id="' + new_id + '">' +
+                             '<h4 class="size-250 fl-space">&nbsp;</h4>' +
+                             '<input type="text" size="35" class="text" ' +
+                                'name="' + name + '" ' +
+                                'value="" />' +
+                             '<input type="button" value="+" onclick="add_input_inside_id(\'' + css_id + '\', \'' + name + '\')" />' +
+                             '<input type="button" value="-" onclick="remove_element_by_id(\'' + new_id  + '\')" />' +
+                             '</div>';
+
+            document.getElementById(css_id).appendChild(elem);
+        }
+
+    
+    $(document).ready(function() {
+        
+        $('.menu li').hover(function () {
+            $(this).find('ul:first').css({'visibility': 'visible', 'display': 'none'}).slideDown();
+        }, function () {
+            $(this).find('ul:first').css({visibility: "hidden"});
+        });
+
+        
+        
+        $('.content-box .select-all').click(function () {
+            if ($(this).is(':checked'))
+                $(this).parent().parent().parent().parent().find('[type="checkbox"]').prop('checked', true);
+            else
+                $(this).parent().parent().parent().parent().find('[type="checkbox"]').prop('checked', false);
+        });
+
+        
+        $('.content-box .tabs').idTabs();
+
+        
+        $('.notification .close').click(function () {
+            $(this).parent().fadeOut(100);
+            return false;
+        });
+
+        
+        $("a[title], img[title], span[title], input[title], i[title]").tooltip({
+            position: "top center",
+            offset: [-5, 0],
+            predelay: 200,
+            delay: 100,
+            effect: "fade",
+            opacity: 1
+        });
+
+        
+        $('.modal-link').fancybox({
+            'modal'                 : false,
+            'hideOnOverlayClick'    : true,
+            'hideOnContentClick'    : false,
+            'enableEscapeButton'    : true,
+            'showCloseButton'       : true,
+            'speedOut'              : 0
+        });
+        $("a[href$='gif']").fancybox();
+        $("a[href$='jpg']").fancybox();
+        $("a[href$='png']").fancybox();
+
+        
+        $("table").stupidtable();
+
+        
+        $('.box-slide-head > td > span').click(function (event) {
+            tgt = $(event.target);
+            if (tgt.hasClass('clickable')) {
+                return;
+            }
+
+            mailid = $(this).parents('tr').attr('id');
+            mailid_orig = $(this).parents('tr').attr('mailid');
+            body = $('#box-tr-'+mailid);
+            if (!body.hasClass('box-slide-tr')) {
+                $.get('/activities/quarantined/raw/'+mailid_orig, function(data) {
+                    if (data != ''){
+                        $('#'+mailid).after(data);
+                    }
+                });
+            }
+            if (body.is(':visible')) {
+                body.hide();
+            } else {
+                body.show();
+            }
+            return false;
+        });
+
+        
+        $('#account_delete_date').hide()
+        $('#account_list_actions').change(function(){
+            if ($(this).val() == 'delete') {
+                $('#account_delete_date').show();
+            } else {
+                $("#account_delete_date").hide();
+            }
+        });
+
+        $('#domain_delete_date').hide()
+        $('#domain_list_actions').change(function(){
+            if ($(this).val() == 'delete') {
+                $('#domain_delete_date').show();
+            } else {
+                $("#domain_delete_date").hide();
+            }
+        });
+
+        
+        if ($('#mark_as_global_admin').is(':checked') == false) {
+            $('.normal_admin_create_domain_options').show();
+        } else {
+            $(".normal_admin_create_domain_options").hide();
+        }
+        $('#mark_as_global_admin').change(function(){
+            if ($(this).is(':checked') == true) {
+                $('.normal_admin_create_domain_options').hide();
+            } else {
+                $(".normal_admin_create_domain_options").show();
+            }
+        });
+
+        
+        if ($('#normal_admin_options').is(':checked') == true) {
+            $('.normal_admin_options').show();
+        } else {
+            $(".normal_admin_options").hide();
+        }
+        $('#normal_admin_options').change(function(){
+            if ($(this).is(':checked') == true) {
+                $('.normal_admin_options').show();
+                $('.normal_admin_options').show();
+            } else {
+                $(".normal_admin_options").hide();
+            }
+        });
+    });
+    </script>
+    
+
+    
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div></body></html>

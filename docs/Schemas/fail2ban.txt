@@ -1,0 +1,26 @@
+MariaDB [fail2ban]> show tables;
++--------------------+
+| Tables_in_fail2ban |
++--------------------+
+| banned             |
++--------------------+
+1 row in set (0.005 sec)
+
+MariaDB [fail2ban]> describe banned;
++-----------+---------------------+------+-----+---------------------+----------------+
+| Field     | Type                | Null | Key | Default             | Extra          |
++-----------+---------------------+------+-----+---------------------+----------------+
+| id        | bigint(20) unsigned | NO   | PRI | NULL                | auto_increment |
+| ip        | varchar(46)         | NO   | MUL |                     |                |
+| ports     | varchar(255)        | NO   |     |                     |                |
+| protocol  | varchar(10)         | NO   |     | tcp                 |                |
+| jail      | varchar(50)         | NO   | MUL |                     |                |
+| hostname  | varchar(255)        | NO   | MUL |                     |                |
+| country   | varchar(255)        | NO   | MUL |                     |                |
+| rdns      | varchar(255)        | NO   | MUL |                     |                |
+| failures  | int(2)              | NO   |     | 0                   |                |
+| loglines  | text                | YES  |     | NULL                |                |
+| timestamp | timestamp           | NO   | MUL | current_timestamp() |                |
+| remove    | tinyint(1)          | YES  | MUL | 0                   |                |
++-----------+---------------------+------+-----+---------------------+----------------+
+12 rows in set (0.140 sec)

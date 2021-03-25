@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>Domains and Accounts</title>
+
+    
+    <link rel="stylesheet" type="text/css" href="Domains%20and%20Accounts_files/reset.css">
+    <link rel="stylesheet" type="text/css" href="Domains%20and%20Accounts_files/fancybox.css">
+    <link rel="stylesheet" type="text/css" href="Domains%20and%20Accounts_files/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="Domains%20and%20Accounts_files/screen.css">
+    <link rel="icon" type="image/x-icon" href="https://demo-sql.iredmail.org/static/favicon.ico">
+<style>@media print {#ghostery-tracker-tally {display:none !important}}</style></head>
+
+<body>
+    <div class="pagetop">
+        <div class="head pagesize">
+            <div class="head_top">
+                <div class="topbuts">
+                    <ul class="clear">
+                        
+                            
+                        
+
+                        
+                        <li>
+                            <form method="post" action="/search" class="search_form">
+                            
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                            <i class="fa fa-search-plus fa-lg color-green"></i>
+                            <input type="text" name="searchString" size="30" placeholder="Search mail accounts" class="search_field">
+                            </form>
+                        </li>
+                        
+
+                        <li><a href="https://demo-sql.iredmail.org/profile/user/general/postmaster@example.com">Preferences</a></li>
+                        
+                            
+                                <li><a href="https://demo-sql.iredmail.org/system/license">License</a></li>
+                            
+                        
+                        <li><a href="https://demo-sql.iredmail.org/logout" class="red">Logout</a></li>
+                    </ul>
+
+                    <div class="user clear">
+                        <span class="user-detail">
+                            <span class="text">Logged in as postmaster@example.com</span>
+                            <i class="fas fa-download" style="color: #00A5C4;"></i>
+                            <a href="https://demo-sql.iredmail.org/export/managed_accounts/postmaster@example.com" target="_blank" rel="noopener" style="color: #00A5C4;">Export all managed accounts</a><br>
+
+                           
+                            <i class="fas fa-download" style="color: #00A5C4;"></i>
+                            <a href="https://demo-sql.iredmail.org/export/statistics/admins" target="_blank" rel="noopener" style="color: #00A5C4;">Export statistics of admins</a>
+                           
+                        </span>
+                    </div>
+                </div>
+
+                <div class="logo clear">
+                    <a href="https://demo-sql.iredmail.org/">
+                        
+                        
+                        <span class="textlogo">
+                            <span class="title">iRedAdmin-Pro</span>
+                            <span class="text">iRedMail Admin Panel</span>
+                        </span>
+                    </a>
+                </div>
+            </div> <!-- *** End head_top *** -->
+
+            <div class="menu"><!-- menu -->
+                <ul class="clear">
+                    <li><a href="https://demo-sql.iredmail.org/dashboard">Dashboard</a></li>
+                    <li class="active"><a href="https://demo-sql.iredmail.org/domains">Domains and Accounts</a></li>
+
+                    
+                    
+                        <li><a href="https://demo-sql.iredmail.org/admins">Admins</a></li>
+                    
+
+                    <li><a href="#">Activities</a>
+                        <ul>
+                            <li><a href="https://demo-sql.iredmail.org/activities/admins">Admin Log</a></li>
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/fail2ban/banned">Banned IP Addresses</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions">SMTP Sessions</a>
+                                    <ul>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions">All SMTP Sessions</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions/rejected">Rejected SMTP Sessions</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions/outbound">Outbound SMTP Sessions</a></li>
+                                    </ul>
+                                </li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/sent">Sent Mails</a></li>
+                                <li><a href="https://demo-sql.iredmail.org/activities/received">Received Mails</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/quarantined">Quarantined Mails</a>
+                                    <ul>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/quarantined/spam">Spam</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/virus">Virus</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/banned">Banned</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/badheader">Bad Header</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/clean">Clean</a>
+                                    </li></ul>
+                                </li>
+                            
+                        </ul>
+                    </li>
+
+                    
+                    <li><a href="https://demo-sql.iredmail.org/activities/admins">System</a>
+                        <ul>
+                            
+                                <li><a href="https://demo-sql.iredmail.org/system/settings">Settings</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/verify/domain_ownership">Domain ownership verification</a></li>
+                            
+
+                            
+                                
+                                    
+                                        <li><a href="https://demo-sql.iredmail.org/system/spampolicy">Global Spam Policy</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/system/wblist">Whitelists &amp; Blacklists</a></li>
+                                    
+
+                                    
+                                        <li><a href="https://demo-sql.iredmail.org/system/greylisting">Greylisting</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/system/throttle">Throttle</a></li>
+                                    
+                                
+                            
+                        </ul>
+                    </li>
+                    
+
+                    <li>
+                        <a href="#"><i class="fa fa-plus fa-lg"></i> Add...</a>
+                        <ul>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/domain">Domain</a></li>
+                            
+
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/admin">Admin</a></li>
+                            
+
+                            <li><a href="https://demo-sql.iredmail.org/create/user">User</a></li>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/ml">Mailing List (Subscribable)</a></li>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/alias">Alias</a></li>
+
+                            
+                                
+                                    <li><a href="https://demo-sql.iredmail.org/create/wblist">Whitelists &amp; Blacklists</a></li>
+                                
+                            
+                        </ul>
+                    </li>
+
+                </ul>
+            </div> <!-- End menu -->
+
+        </div> <!-- End head layout -->
+    </div><!-- End page top -->
+
+    
+
+    <div class="main pagesize"> <!-- *** mainpage layout *** -->
+        <div class="main-wrap">
+            <div class="page clear">
+                
+                
+
+
+
+    <div class="filter_by_first_char center">
+        <i class="fa fa-filter"></i>
+
+        
+
+        
+            <a href="https://demo-sql.iredmail.org/domains?starts_with=1">1</a>
+        
+            <a href="https://demo-sql.iredmail.org/domains?starts_with=D">D</a>
+        
+            <a href="https://demo-sql.iredmail.org/domains?starts_with=E">E</a>
+        
+            <a href="https://demo-sql.iredmail.org/domains?starts_with=F">F</a>
+        
+            <a href="https://demo-sql.iredmail.org/domains?starts_with=G">G</a>
+        
+            <a href="https://demo-sql.iredmail.org/domains?starts_with=I">I</a>
+        
+            <a href="https://demo-sql.iredmail.org/domains?starts_with=M">M</a>
+        
+            <a href="https://demo-sql.iredmail.org/domains?starts_with=P">P</a>
+        
+            <a href="https://demo-sql.iredmail.org/domains?starts_with=T">T</a>
+        
+
+        
+            | <a href="https://demo-sql.iredmail.org/domains/disabled"><i class="fa fa-ban color-red"></i> Disabled</a>
+        
+    </div>
+
+    
+    <div class="content-box">
+        <div class="box-body">
+            <div class="box-header clear">
+                
+                    <ul class="tabs clear">
+                        <li><a href="https://demo-sql.iredmail.org/create/domain"><i class="fa fa-plus"></i> Add domain</a></li>
+                    </ul>
+                
+
+                <h2>
+                    All domains under your control. 
+                    
+                        (1-11/11)
+                    
+                </h2>
+            </div>
+
+            <form id="form_domains" method="post" action="/domains">
+                
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                <table class="style1">
+                    <thead>
+                        <tr>
+                            
+                                <th class="checkbox"><input type="checkbox" class="checkbox select-all"></th>
+                            
+                            <th data-sort="string-ins">Domain</th>
+                            <th data-sort="string-ins">Display Name</th>
+                            <th data-sort="int">Quota</th>
+                            <th data-sort="int">Users</th>
+                            <th data-sort="int">Mailing Lists</th>
+                            <th data-sort="int">Aliases</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="123.com">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/123.com">123.com</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/123.com">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/123.com"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/123.com">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <i class="fas fa-check fa-lg color-link fr-space"></i>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter"></td><td class="vcenter" data-sort-value="10240">
+                                        
+
+                                        
+                                            
+                                            
+                                            <a href="https://demo-sql.iredmail.org/profile/domain/general/123.com" style="text-decoration: none;"><span>20%</span> <span class="color-grey"><span>(0</span> / <span>2 GB</span>) <span>
+        <span class="color-grey">/ <em>10 GB</em></span>
+    </span></span></a>
+                                            
+
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        <div class="progress-container" title="Allocated (20%)" style="width: 100%; height: 3px;">
+            <div class="progress-bar" style="height: 3px; width: 20%; background-color: #ACE97C;"></div>
+        </div>
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/users/123.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">2</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/mls/123.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">4</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/aliases/123.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">3</a>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="duck.com">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/duck.com">duck.com</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/duck.com">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/duck.com"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/duck.com">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <i class="fas fa-check fa-lg color-link fr-space"></i>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter"></td><td class="vcenter" data-sort-value="0">
+                                        
+
+                                        
+                                            
+                                                <span>0</span> / <span>1 GB</span> / <a href="https://demo-sql.iredmail.org/profile/domain/general/duck.com" style="text-decoration: none;">Unlimited</a>
+                                            
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/users/duck.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">1</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/mls/duck.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">1</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/aliases/duck.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="example.com">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/example.com">example.com</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/example.com">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/example.com"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/example.com">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <i class="fas fa-check fa-lg color-link fr-space"></i>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter"></td><td class="vcenter" data-sort-value="0">
+                                        
+
+                                        
+                                            
+                                                <span>1007 KB</span> / <span>100 MB</span> / <a href="https://demo-sql.iredmail.org/profile/domain/general/example.com" style="text-decoration: none;">Unlimited</a>
+                                            
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/users/example.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">1</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/mls/example.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">3</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/aliases/example.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="fhoding.vn">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/fhoding.vn">fhoding.vn</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/fhoding.vn">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/fhoding.vn"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/fhoding.vn">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <i class="fas fa-check fa-lg color-link fr-space"></i>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter"></td><td class="vcenter" data-sort-value="0">
+                                        
+
+                                        
+                                            
+                                                <span>0</span> / <span>0</span> / <a href="https://demo-sql.iredmail.org/profile/domain/general/fhoding.vn" style="text-decoration: none;">Unlimited</a>
+                                            
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/users/fhoding.vn" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/mls/fhoding.vn" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/aliases/fhoding.vn" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="google.com">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/google.com">google.com</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/google.com">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/google.com"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/google.com">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <i class="fas fa-check fa-lg color-link fr-space"></i>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter"></td><td class="vcenter" data-sort-value="1048576">
+                                        
+
+                                        
+                                            
+                                            
+                                            <a href="https://demo-sql.iredmail.org/profile/domain/general/google.com" style="text-decoration: none;"><span>0%</span> <span class="color-grey"><span>(0</span> / <span>3 GB</span>) <span>
+        <span class="color-grey">/ <em>1 TB</em></span>
+    </span></span></a>
+                                            
+
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/users/google.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">3</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/mls/google.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">1</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/aliases/google.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="ict.om">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/ict.om">ict.om</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/ict.om">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/ict.om"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/ict.om">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <i class="fas fa-check fa-lg color-link fr-space"></i>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter">MyDomain ICT</td><td class="vcenter" data-sort-value="2097152">
+                                        
+
+                                        
+                                            
+                                            
+                                            <a href="https://demo-sql.iredmail.org/profile/domain/general/ict.om" style="text-decoration: none;"><span>0%</span> <span class="color-grey"><span>(0</span> / <span>0</span>) <span>
+        <span class="color-grey">/ <em>2 TB</em></span>
+    </span></span></a>
+                                            
+
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="100000">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/users/ict.om" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0% <span class="color-grey">(0 
+        <span class="color-grey">/ <em>100000</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/mls/ict.om" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="100000">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/aliases/ict.om" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0% <span class="color-grey">(0 
+        <span class="color-grey">/ <em>100000</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="mdp.loc">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/mdp.loc">mdp.loc</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/mdp.loc">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/mdp.loc"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/mdp.loc">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <span class="fr-space small_label bgcolor-green" style="vertical-align: middle;">Relay</span>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter">MDP</td><td class="vcenter" data-sort-value="10240">
+                                        
+
+                                        
+                                            
+                                            
+                                            <a href="https://demo-sql.iredmail.org/profile/domain/general/mdp.loc" style="text-decoration: none;"><span>20%</span> <span class="color-grey"><span>(0</span> / <span>2 GB</span>) <span>
+        <span class="color-grey">/ <em>10 GB</em></span>
+    </span></span></a>
+                                            
+
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        <div class="progress-container" title="Allocated (20%)" style="width: 100%; height: 3px;">
+            <div class="progress-bar" style="height: 3px; width: 20%; background-color: #ACE97C;"></div>
+        </div>
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="10">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/users/mdp.loc" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">20% <span class="color-grey">(2 
+        <span class="color-grey">/ <em>10</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        <div class="progress-container" title="20%" style="width: 100%; height: 3px;">
+            <div class="progress-bar" style="height: 3px; width: 20%; background-color: #ACE97C;"></div>
+        </div>
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="20">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/mls/mdp.loc" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0% <span class="color-grey">(0 
+        <span class="color-grey">/ <em>20</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="10">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/aliases/mdp.loc" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0% <span class="color-grey">(0 
+        <span class="color-grey">/ <em>10</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="pippo.it">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/pippo.it">pippo.it</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/pippo.it">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/pippo.it"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/pippo.it">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <i class="fas fa-check fa-lg color-link fr-space"></i>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter">lu ragne</td><td class="vcenter" data-sort-value="0">
+                                        
+
+                                        
+                                            
+                                                <span>0</span> / <span>2 GB</span> / <a href="https://demo-sql.iredmail.org/profile/domain/general/pippo.it" style="text-decoration: none;">Unlimited</a>
+                                            
+                                        
+                                    </td><td class="vcenter" data-sort-value="10">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/users/pippo.it" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">20% <span class="color-grey">(2 
+        <span class="color-grey">/ <em>10</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        <div class="progress-container" title="20%" style="width: 100%; height: 3px;">
+            <div class="progress-bar" style="height: 3px; width: 20%; background-color: #ACE97C;"></div>
+        </div>
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/mls/pippo.it" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="10">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/aliases/pippo.it" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0% <span class="color-grey">(0 
+        <span class="color-grey">/ <em>10</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="prueba.com">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/prueba.com">prueba.com</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/prueba.com">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/prueba.com"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/prueba.com">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <i class="fas fa-check fa-lg color-link fr-space"></i>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter">Prueba</td><td class="vcenter" data-sort-value="2048">
+                                        
+
+                                        
+                                            
+                                            
+                                            <a href="https://demo-sql.iredmail.org/profile/domain/general/prueba.com" style="text-decoration: none;"><span>50%</span> <span class="color-grey"><span>(0</span> / <span>1 GB</span>) <span>
+        <span class="color-grey">/ <em>2 GB</em></span>
+    </span></span></a>
+                                            
+
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        <div class="progress-container" title="Allocated (50%)" style="width: 100%; height: 3px;">
+            <div class="progress-bar" style="height: 3px; width: 50%; background-color: #ACE97C;"></div>
+        </div>
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="3">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/users/prueba.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">33% <span class="color-grey">(1 
+        <span class="color-grey">/ <em>3</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        <div class="progress-container" title="33%" style="width: 100%; height: 3px;">
+            <div class="progress-bar" style="height: 3px; width: 33%; background-color: #ACE97C;"></div>
+        </div>
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="3">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/mls/prueba.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0% <span class="color-grey">(0 
+        <span class="color-grey">/ <em>3</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="3">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/aliases/prueba.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0% <span class="color-grey">(0 
+        <span class="color-grey">/ <em>3</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="test.by">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/test.by">test.by</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/test.by">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/test.by"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/test.by">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <i class="fas fa-check fa-lg color-link fr-space"></i>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter">test</td><td class="vcenter" data-sort-value="0">
+                                        
+
+                                        
+                                            
+                                                <span>0</span> / <span>0</span> / <a href="https://demo-sql.iredmail.org/profile/domain/general/test.by" style="text-decoration: none;">Unlimited</a>
+                                            
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/users/test.by" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/mls/test.by" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/aliases/test.by" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0</a>
+                                        
+                                    </td>
+                                </tr>
+                            
+                                
+
+                                <tr>
+                                    
+                                        <td class="checkbox vcenter">
+                                            <input type="checkbox" class="checkbox" name="domainName" value="test.com">
+                                        </td>
+                                    
+
+                                    <td class="vcenter">
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/test.com">test.com</a>
+
+                                        <a href="https://demo-sql.iredmail.org/profile/domain/general/test.com">
+                                            <i class="fa fa-cog fa-lg fr-space"></i>
+                                        </a>
+                                        <a href="https://demo-sql.iredmail.org/export/domain/test.com"><i class="fas fa-download fr-space"></i></a>
+
+                                        
+
+                                        
+                                        
+
+                                        
+        <a href="https://demo-sql.iredmail.org/activities/sent/domain/test.com">
+            <i class="far fa-chart-bar fa-lg fr-space"></i>
+        </a>
+    
+
+                                        
+                                        
+                                        
+
+                                        
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+            <i class="fas fa-check fa-lg color-link fr-space"></i>
+        
+    
+
+                                        
+
+                                        
+                                    </td>
+
+                                    <td class="vcenter"></td><td class="vcenter" data-sort-value="10240">
+                                        
+
+                                        
+                                            
+                                            
+                                            <a href="https://demo-sql.iredmail.org/profile/domain/general/test.com" style="text-decoration: none;"><span>0%</span> <span class="color-grey"><span>(0</span> / <span>100 MB</span>) <span>
+        <span class="color-grey">/ <em>10 GB</em></span>
+    </span></span></a>
+                                            
+
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="100">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/users/test.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">1% <span class="color-grey">(1 
+        <span class="color-grey">/ <em>100</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        <div class="progress-container" title="1%" style="width: 100%; height: 3px;">
+            <div class="progress-bar" style="height: 3px; width: 1%; background-color: #ACE97C;"></div>
+        </div>
+    
+                                        
+                                    </td><td class="vcenter" data-sort-value="0">
+                                        
+                                            
+                                        
+
+                                        
+                                            <a href="https://demo-sql.iredmail.org/mls/test.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">6</a>
+                                        
+                                    </td><td class="vcenter" data-sort-value="20">
+                                        
+                                            
+                                        
+
+                                        
+                                            
+
+                                            <a href="https://demo-sql.iredmail.org/aliases/test.com" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">0% <span class="color-grey">(0 
+        <span class="color-grey">/ <em>20</em></span>
+    )</span></a>
+                                            
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+        
+    
+
+    
+                                        
+                                    </td>
+                                </tr>
+                            
+                        
+
+                    </tbody>
+                </table>
+
+                <div class="tab-footer clear f1">
+                    
+                        <div class="fl">
+                            <select name="action" class="fl-space" id="account_list_actions">
+                                <option selected="selected">Choose Action</option>
+                                <option disabled="disabled">----</option>
+                                <option value="enable">Enable</option>
+                                <option value="disable">Disable</option>
+                                <option value="delete">Delete</option>
+                            </select>
+
+                            <select name="keep_mailbox_days" class="fl-space" id="account_delete_date" style="display: none;">
+                                
+                                    <option value="0" selected="selected">
+        Keep mailbox forever
+    
+</option>
+                                
+                                    <option value="1">
+        Keep mailbox for 1 day
+    
+</option>
+                                
+                                    <option value="7">
+        
+            Keep mailbox for 1 week
+        
+    
+</option>
+                                
+                                    <option value="14">
+        
+            
+            
+                Keep mailbox for 2 weeks
+            
+        
+    
+</option>
+                                
+                                    <option value="21">
+        
+            
+            
+                Keep mailbox for 3 weeks
+            
+        
+    
+</option>
+                                
+                                    <option value="30">
+        Keep mailbox for 1 month 
+    
+</option>
+                                
+                                    <option value="60">
+        
+        
+            Keep mailbox for 2 months
+        
+    
+</option>
+                                
+                                    <option value="90">
+        
+        
+            Keep mailbox for 3 months
+        
+    
+</option>
+                                
+                                    <option value="180">
+        
+        
+            Keep mailbox for 6 months
+        
+    
+</option>
+                                
+                                    <option value="365">
+        Keep mailbox for 1 year
+    
+</option>
+                                
+                                    <option value="730">
+        
+        
+        
+            Keep mailbox for 2 years
+        
+    
+</option>
+                                
+                                    <option value="1095">
+        
+        
+        
+            Keep mailbox for 3 years
+        
+    
+</option>
+                                
+                            </select>
+
+                            <input type="submit" name="submit_domains" value="Apply" class="button fl-space">
+                        </div>
+                    
+
+                    
+
+                    
+
+                    
+                    
+
+                    
+        
+    
+
+    
+    
+
+    <div class="pager fr">
+        <span class="nav">
+                
+
+                
+            </span><span class="pages">
+        
+            
+            
+                <a href="https://demo-sql.iredmail.org/domains/page/1" class="active"><span>1</span></a>
+            
+        
+        </span>
+
+        
+        
+        <span class="nav">
+            
+
+            
+        </span>
+        
+    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <div class="footer">
+        <div class="pagesize clear">
+            <p class="bt-space0">
+                © <a href="https://www.iredmail.org/" target="_blank" rel="noopener">iRedMail</a>
+                
+                    | <a href="https://forum.iredmail.org/" target="_blank" rel="noopener">News &amp; Announcements</a>
+                    | <a href="https://www.iredmail.org/support.html" target="_blank" rel="noopener">Support</a>
+                
+            </p>
+        </div>
+    </div>
+    
+
+    
+    <script type="text/javascript">
+        // redirect to url
+        function change_url(domain, baseurl) {
+            if ( domain.options[domain.selectedIndex].value != 'none' ) {
+                location.href = baseurl + domain.options[domain.selectedIndex].value;
+            }
+        };
+    </script>
+        <script type="text/javascript" src="Domains%20and%20Accounts_files/jquery-1.js"></script>
+    <script type="text/javascript" src="Domains%20and%20Accounts_files/jquery_002.js"></script>
+    <script type="text/javascript" src="Domains%20and%20Accounts_files/jquery_004.js"></script>
+    <script type="text/javascript" src="Domains%20and%20Accounts_files/jquery.js"></script>
+    <script type="text/javascript" src="Domains%20and%20Accounts_files/jquery_003.js"></script>
+    <script type="text/javascript" src="Domains%20and%20Accounts_files/stupidtable.js"></script>
+
+    <script type="text/javascript">
+        function remove_element_by_id(css_id) {
+            document.getElementById(css_id).remove();
+        }
+
+        
+        function add_input_inside_id(css_id, name) {
+            
+            var e = document.getElementById(css_id);
+            var length = e.children.length;
+
+            
+            var new_id = name + '_' + (length + 1);
+
+            var elem = document.createElement('div');
+            elem.innerHTML = '<div class="form-field clear" id="' + new_id + '">' +
+                             '<h4 class="size-250 fl-space">&nbsp;</h4>' +
+                             '<input type="text" size="35" class="text" ' +
+                                'name="' + name + '" ' +
+                                'value="" />' +
+                             '<input type="button" value="+" onclick="add_input_inside_id(\'' + css_id + '\', \'' + name + '\')" />' +
+                             '<input type="button" value="-" onclick="remove_element_by_id(\'' + new_id  + '\')" />' +
+                             '</div>';
+
+            document.getElementById(css_id).appendChild(elem);
+        }
+
+    
+    $(document).ready(function() {
+        
+        $('.menu li').hover(function () {
+            $(this).find('ul:first').css({'visibility': 'visible', 'display': 'none'}).slideDown();
+        }, function () {
+            $(this).find('ul:first').css({visibility: "hidden"});
+        });
+
+        
+        
+        $('.content-box .select-all').click(function () {
+            if ($(this).is(':checked'))
+                $(this).parent().parent().parent().parent().find('[type="checkbox"]').prop('checked', true);
+            else
+                $(this).parent().parent().parent().parent().find('[type="checkbox"]').prop('checked', false);
+        });
+
+        
+        $('.content-box .tabs').idTabs();
+
+        
+        $('.notification .close').click(function () {
+            $(this).parent().fadeOut(100);
+            return false;
+        });
+
+        
+        $("a[title], img[title], span[title], input[title], i[title]").tooltip({
+            position: "top center",
+            offset: [-5, 0],
+            predelay: 200,
+            delay: 100,
+            effect: "fade",
+            opacity: 1
+        });
+
+        
+        $('.modal-link').fancybox({
+            'modal'                 : false,
+            'hideOnOverlayClick'    : true,
+            'hideOnContentClick'    : false,
+            'enableEscapeButton'    : true,
+            'showCloseButton'       : true,
+            'speedOut'              : 0
+        });
+        $("a[href$='gif']").fancybox();
+        $("a[href$='jpg']").fancybox();
+        $("a[href$='png']").fancybox();
+
+        
+        $("table").stupidtable();
+
+        
+        $('.box-slide-head > td > span').click(function (event) {
+            tgt = $(event.target);
+            if (tgt.hasClass('clickable')) {
+                return;
+            }
+
+            mailid = $(this).parents('tr').attr('id');
+            mailid_orig = $(this).parents('tr').attr('mailid');
+            body = $('#box-tr-'+mailid);
+            if (!body.hasClass('box-slide-tr')) {
+                $.get('/activities/quarantined/raw/'+mailid_orig, function(data) {
+                    if (data != ''){
+                        $('#'+mailid).after(data);
+                    }
+                });
+            }
+            if (body.is(':visible')) {
+                body.hide();
+            } else {
+                body.show();
+            }
+            return false;
+        });
+
+        
+        $('#account_delete_date').hide()
+        $('#account_list_actions').change(function(){
+            if ($(this).val() == 'delete') {
+                $('#account_delete_date').show();
+            } else {
+                $("#account_delete_date").hide();
+            }
+        });
+
+        $('#domain_delete_date').hide()
+        $('#domain_list_actions').change(function(){
+            if ($(this).val() == 'delete') {
+                $('#domain_delete_date').show();
+            } else {
+                $("#domain_delete_date").hide();
+            }
+        });
+
+        
+        if ($('#mark_as_global_admin').is(':checked') == false) {
+            $('.normal_admin_create_domain_options').show();
+        } else {
+            $(".normal_admin_create_domain_options").hide();
+        }
+        $('#mark_as_global_admin').change(function(){
+            if ($(this).is(':checked') == true) {
+                $('.normal_admin_create_domain_options').hide();
+            } else {
+                $(".normal_admin_create_domain_options").show();
+            }
+        });
+
+        
+        if ($('#normal_admin_options').is(':checked') == true) {
+            $('.normal_admin_options').show();
+        } else {
+            $(".normal_admin_options").hide();
+        }
+        $('#normal_admin_options').change(function(){
+            if ($(this).is(':checked') == true) {
+                $('.normal_admin_options').show();
+                $('.normal_admin_options').show();
+            } else {
+                $(".normal_admin_options").hide();
+            }
+        });
+    });
+    </script>
+    
+
+    
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div></body></html>

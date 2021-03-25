@@ -1,0 +1,115 @@
+MariaDB [iredadmin]> show tables;
++------------------------------+
+| Tables_in_iredadmin          |
++------------------------------+
+| deleted_mailboxes            |
+| domain_ownership             |
+| log                          |
+| newsletter_subunsub_confirms |
+| sessions                     |
+| settings                     |
+| tracking                     |
+| updatelog                    |
++------------------------------+
+8 rows in set (0.004 sec)
+
+MariaDB [iredadmin]> describe deleted_mailboxes;
++-------------+---------------------+------+-----+---------------------+----------------+
+| Field       | Type                | Null | Key | Default             | Extra          |
++-------------+---------------------+------+-----+---------------------+----------------+
+| id          | bigint(20) unsigned | NO   | PRI | NULL                | auto_increment |
+| timestamp   | timestamp           | NO   | MUL | current_timestamp() |                |
+| username    | varchar(255)        | NO   | MUL |                     |                |
+| domain      | varchar(255)        | NO   | MUL |                     |                |
+| maildir     | varchar(255)        | NO   |     |                     |                |
+| admin       | varchar(255)        | NO   | MUL |                     |                |
+| delete_date | date                | YES  | MUL | NULL                |                |
++-------------+---------------------+------+-----+---------------------+----------------+
+7 rows in set (0.003 sec)
+
+MariaDB [iredadmin]> describe domain_ownership;
++--------------+---------------------+------+-----+---------+----------------+
+| Field        | Type                | Null | Key | Default | Extra          |
++--------------+---------------------+------+-----+---------+----------------+
+| id           | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| admin        | varchar(255)        | NO   | MUL |         |                |
+| domain       | varchar(255)        | NO   |     |         |                |
+| alias_domain | varchar(255)        | NO   |     |         |                |
+| verify_code  | varchar(100)        | NO   |     |         |                |
+| verified     | tinyint(1)          | NO   | MUL | 0       |                |
+| message      | text                | YES  |     | NULL    |                |
+| last_verify  | timestamp           | YES  |     | NULL    |                |
+| expire       | int(10) unsigned    | YES  |     | 0       |                |
++--------------+---------------------+------+-----+---------+----------------+
+9 rows in set (0.006 sec)
+
+MariaDB [iredadmin]> describe log;
++-----------+---------------------+------+-----+---------------------+----------------+
+| Field     | Type                | Null | Key | Default             | Extra          |
++-----------+---------------------+------+-----+---------------------+----------------+
+| id        | bigint(20) unsigned | NO   | PRI | NULL                | auto_increment |
+| timestamp | timestamp           | NO   | MUL | current_timestamp() |                |
+| admin     | varchar(255)        | NO   | MUL | NULL                |                |
+| ip        | varchar(40)         | NO   | MUL | NULL                |                |
+| domain    | varchar(255)        | NO   | MUL |                     |                |
+| username  | varchar(255)        | NO   | MUL |                     |                |
+| event     | varchar(20)         | NO   | MUL |                     |                |
+| loglevel  | varchar(10)         | NO   | MUL | info                |                |
+| msg       | text                | YES  |     | NULL                |                |
++-----------+---------------------+------+-----+---------------------+----------------+
+9 rows in set (0.001 sec)
+
+MariaDB [iredadmin]> describe newsletter_subunsub_confirms;
++------------+---------------------+------+-----+---------+----------------+
+| Field      | Type                | Null | Key | Default | Extra          |
++------------+---------------------+------+-----+---------+----------------+
+| id         | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| mail       | varchar(255)        | NO   | MUL |         |                |
+| mlid       | varchar(255)        | NO   | MUL |         |                |
+| subscriber | varchar(255)        | NO   |     |         |                |
+| kind       | varchar(20)         | NO   |     |         |                |
+| token      | varchar(255)        | NO   | MUL |         |                |
+| expired    | int(10) unsigned    | YES  | MUL | 0       |                |
++------------+---------------------+------+-----+---------+----------------+
+7 rows in set (0.002 sec)
+
+MariaDB [iredadmin]> describe sessions;
++------------+-----------+------+-----+---------------------+-------+
+| Field      | Type      | Null | Key | Default             | Extra |
++------------+-----------+------+-----+---------------------+-------+
+| session_id | char(128) | NO   | PRI | NULL                |       |
+| atime      | timestamp | NO   |     | current_timestamp() |       |
+| data       | text      | YES  |     | NULL                |       |
++------------+-----------+------+-----+---------------------+-------+
+3 rows in set (0.002 sec)
+
+MariaDB [iredadmin]> describe settings;
++---------+---------------------+------+-----+---------+----------------+
+| Field   | Type                | Null | Key | Default | Extra          |
++---------+---------------------+------+-----+---------+----------------+
+| id      | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| account | varchar(255)        | NO   | MUL | global  |                |
+| k       | varchar(255)        | NO   |     | NULL    |                |
+| v       | text                | YES  |     | NULL    |                |
++---------+---------------------+------+-----+---------+----------------+
+4 rows in set (0.002 sec)
+
+MariaDB [iredadmin]> describe tracking;
++-------+---------------------+------+-----+---------------------+----------------+
+| Field | Type                | Null | Key | Default             | Extra          |
++-------+---------------------+------+-----+---------------------+----------------+
+| id    | bigint(20) unsigned | NO   | PRI | NULL                | auto_increment |
+| k     | varchar(255)        | NO   | UNI | NULL                |                |
+| v     | text                | YES  |     | NULL                |                |
+| time  | timestamp           | NO   |     | current_timestamp() |                |
++-------+---------------------+------+-----+---------------------+----------------+
+4 rows in set (0.001 sec)
+
+MariaDB [iredadmin]> describe updatelog;
++-------+---------------------+------+-----+---------+----------------+
+| Field | Type                | Null | Key | Default | Extra          |
++-------+---------------------+------+-----+---------+----------------+
+| id    | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| date  | date                | NO   | MUL | NULL    |                |
++-------+---------------------+------+-----+---------+----------------+
+2 rows in set (0.002 sec)

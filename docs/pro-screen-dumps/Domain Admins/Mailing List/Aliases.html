@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>Edit account profile</title>
+
+    
+    <link rel="stylesheet" type="text/css" href="Aliases_files/reset.css">
+    <link rel="stylesheet" type="text/css" href="Aliases_files/fancybox.css">
+    <link rel="stylesheet" type="text/css" href="Aliases_files/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="Aliases_files/screen.css">
+    <link rel="icon" type="image/x-icon" href="https://demo-sql.iredmail.org/static/favicon.ico">
+<style>@media print {#ghostery-tracker-tally {display:none !important}}</style></head>
+
+<body>
+    <div class="pagetop">
+        <div class="head pagesize">
+            <div class="head_top">
+                <div class="topbuts">
+                    <ul class="clear">
+                        
+                            
+                        
+
+                        
+                        <li>
+                            <form method="post" action="/search" class="search_form">
+                            
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                            <i class="fa fa-search-plus fa-lg color-green"></i>
+                            <input type="text" name="searchString" size="30" placeholder="Search mail accounts" class="search_field">
+                            </form>
+                        </li>
+                        
+
+                        <li><a href="https://demo-sql.iredmail.org/profile/user/general/postmaster@example.com">Preferences</a></li>
+                        
+                            
+                                <li><a href="https://demo-sql.iredmail.org/system/license">License</a></li>
+                            
+                        
+                        <li><a href="https://demo-sql.iredmail.org/logout" class="red">Logout</a></li>
+                    </ul>
+
+                    <div class="user clear">
+                        <span class="user-detail">
+                            <span class="text">Logged in as postmaster@example.com</span>
+                            <i class="fas fa-download" style="color: #00A5C4;"></i>
+                            <a href="https://demo-sql.iredmail.org/export/managed_accounts/postmaster@example.com" target="_blank" rel="noopener" style="color: #00A5C4;">Export all managed accounts</a><br>
+
+                           
+                            <i class="fas fa-download" style="color: #00A5C4;"></i>
+                            <a href="https://demo-sql.iredmail.org/export/statistics/admins" target="_blank" rel="noopener" style="color: #00A5C4;">Export statistics of admins</a>
+                           
+                        </span>
+                    </div>
+                </div>
+
+                <div class="logo clear">
+                    <a href="https://demo-sql.iredmail.org/">
+                        
+                        
+                        <span class="textlogo">
+                            <span class="title">iRedAdmin-Pro</span>
+                            <span class="text">iRedMail Admin Panel</span>
+                        </span>
+                    </a>
+                </div>
+            </div> <!-- *** End head_top *** -->
+
+            <div class="menu"><!-- menu -->
+                <ul class="clear">
+                    <li><a href="https://demo-sql.iredmail.org/dashboard">Dashboard</a></li>
+                    <li class="active"><a href="https://demo-sql.iredmail.org/domains">Domains and Accounts</a></li>
+
+                    
+                    
+                        <li><a href="https://demo-sql.iredmail.org/admins">Admins</a></li>
+                    
+
+                    <li><a href="#">Activities</a>
+                        <ul>
+                            <li><a href="https://demo-sql.iredmail.org/activities/admins">Admin Log</a></li>
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/fail2ban/banned">Banned IP Addresses</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions">SMTP Sessions</a>
+                                    <ul>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions">All SMTP Sessions</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions/rejected">Rejected SMTP Sessions</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/smtp/sessions/outbound">Outbound SMTP Sessions</a></li>
+                                    </ul>
+                                </li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/sent">Sent Mails</a></li>
+                                <li><a href="https://demo-sql.iredmail.org/activities/received">Received Mails</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/activities/quarantined">Quarantined Mails</a>
+                                    <ul>
+                                        <li><a href="https://demo-sql.iredmail.org/activities/quarantined/spam">Spam</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/virus">Virus</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/banned">Banned</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/badheader">Bad Header</a>
+                                        </li><li><a href="https://demo-sql.iredmail.org/activities/quarantined/clean">Clean</a>
+                                    </li></ul>
+                                </li>
+                            
+                        </ul>
+                    </li>
+
+                    
+                    <li><a href="https://demo-sql.iredmail.org/activities/admins">System</a>
+                        <ul>
+                            
+                                <li><a href="https://demo-sql.iredmail.org/system/settings">Settings</a></li>
+                            
+
+                            
+                                <li><a href="https://demo-sql.iredmail.org/verify/domain_ownership">Domain ownership verification</a></li>
+                            
+
+                            
+                                
+                                    
+                                        <li><a href="https://demo-sql.iredmail.org/system/spampolicy">Global Spam Policy</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/system/wblist">Whitelists &amp; Blacklists</a></li>
+                                    
+
+                                    
+                                        <li><a href="https://demo-sql.iredmail.org/system/greylisting">Greylisting</a></li>
+                                        <li><a href="https://demo-sql.iredmail.org/system/throttle">Throttle</a></li>
+                                    
+                                
+                            
+                        </ul>
+                    </li>
+                    
+
+                    <li>
+                        <a href="#"><i class="fa fa-plus fa-lg"></i> Add...</a>
+                        <ul style="visibility: hidden; display: block;">
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/domain">Domain</a></li>
+                            
+
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/admin">Admin</a></li>
+                            
+
+                            <li><a href="https://demo-sql.iredmail.org/create/user">User</a></li>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/ml">Mailing List (Subscribable)</a></li>
+                            
+                            <li><a href="https://demo-sql.iredmail.org/create/alias">Alias</a></li>
+
+                            
+                                
+                                    <li><a href="https://demo-sql.iredmail.org/create/wblist">Whitelists &amp; Blacklists</a></li>
+                                
+                            
+                        </ul>
+                    </li>
+
+                </ul>
+            </div> <!-- End menu -->
+
+        </div> <!-- End head layout -->
+    </div><!-- End page top -->
+
+    
+    
+    
+    
+        <div class="breadcrumb">
+            <div class="pagesize">
+                <ul id="breadcrumb">
+                    
+                        <li><a href="https://demo-sql.iredmail.org/domains">All domains</a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/profile/domain/general/duck.com">duck.com</a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/users/duck.com">Users</a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/mls/duck.com">Mailing Lists</a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/profile/ml/general/prueba@duck.com" class="inactive"><strong>Profile of mailing list:&nbsp;prueba@duck.com</strong></a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/aliases/duck.com">Aliases</a>/
+                        </li>
+                    
+                        <li><a href="https://demo-sql.iredmail.org/admins/duck.com">Admins</a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    
+
+
+    <div class="main pagesize"> <!-- *** mainpage layout *** -->
+        <div class="main-wrap">
+            <div class="page clear">
+                
+                
+
+
+
+
+
+
+
+
+<div id="add_subscribers" class="modal-window modal-400">
+    <form method="post" action="/profile/ml/add_subscribers/prueba@duck.com">
+    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+    <h2>Add new members</h2>
+    <div class="columns clear">
+
+        <div class="form-field clear">
+            <span class="clean-padding">
+                <input type="checkbox" name="require_confirm" checked="checked"> Send email to new members for subscription confirm
+            </span>
+        </div>
+
+        <div class="form-field clear">
+            <small>One mail address per line. Invalid address will be discarded.</small>
+            <textarea name="new_subscribers" rows="10" style="width: 90%" class="textarea"></textarea>
+        </div>
+
+        <div class="rule"></div>
+    </div>
+
+    <input type="submit" value="Add" class="button green">
+    </form>
+</div>
+
+
+
+    
+<div id="newsletter_html_code" class="modal-window modal-800">
+    <h2>Get a newsletter signup form</h2>
+
+    
+    
+
+    <p>You can embed a mailing list signup form (HTML code below) on any
+ page of your website. Feel free to customize the form to add your brand
+ name, logo image, or combine it with special offers to attract new 
+subscribers and boost engagement.</p>
+
+    <div class="rule"></div>
+    <pre style="font-style: italic;">&lt;h3&gt;Subscribe to our newsletter&lt;/h3&gt;
+&lt;form method="post" action="https://demo-sql.iredmail.org/newsletter/subscribe/f2fb87c6-abf7-4f78-b15e-8407b133f1a6"&gt;
+    &lt;input name="subscriber" value="" placeholder="Enter your email address" /&gt;
+    &lt;input type="submit" value="Subscribe" /&gt;
+&lt;/form&gt;</pre>
+
+    <div class="rule"></div>
+    <h2>Redirect user to subscription page</h2>
+    <p>If you prefer redirecting user to a subscription page, this is the url of subscription page.</p>
+    <div class="rule"></div>
+    <pre style="font-style: italic;">https://demo-sql.iredmail.org/newsletter/subscribe/f2fb87c6-abf7-4f78-b15e-8407b133f1a6</pre>
+</div>
+
+
+
+<div class="content-box">
+    <div class="box-body">
+        <div class="box-header clear">
+            <h2>Profile of mailing list: prueba@duck.com (0 Members)</h2>
+
+            <ul class="tabs clear">
+                
+                    
+                        <li><a href="#profile_general" class="">General</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_aliases" class="selected">Aliases</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_members">Members</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_owners">Owners and Moderators</a></li>
+                    
+                
+                    
+                        <li><a href="#profile_newsletter">Newsletter</a></li>
+                    
+                
+            </ul>
+        </div>
+
+        <div class="box-wrap clear">
+
+            <div id="profile_general" style="display: none;">
+                <form name="general" method="post" action="/profile/ml/general/prueba@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                    <div class="columns clear">
+                        <div class="col2-3 clear">
+                            
+    <div class="form-field clear">
+        
+            <h4 class="size-250 fl-space">Enable this account</h4>
+        
+
+        <div class="form-checkbox-item clear fl-space2">
+            <input name="accountStatus" type="checkbox" rel="checkboxhorizont" class="checkbox fl-space" checked="checked">
+        </div>
+    </div>
+                            
+
+    
+        
+        
+
+        
+            
+        
+
+        
+            
+        
+    
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Display Name</h4>
+
+        <span class="clean-padding bt-space20">
+            <input type="text" size="35" name="name" value="Prueba" class="text ">
+        </span>
+    </div>
+
+    
+                        </div>
+                        <div class="col1-3 lastcol">
+                            
+                                <div class="mark_blue bt-space10">
+                                    <p class="bt-space"><i class="fa fa-plus fa-lg"></i> <a href="#add_subscribers" class="modal-link"><span class="text">Add new members</span></a></p>
+                                </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="columns clear">
+                        
+
+    
+        
+    
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Prefix text to mail subject</h4>
+        <input type="text" size="35" name="subject_prefix" class="text ">
+
+        
+    </div>
+
+    
+    
+        
+        
+    
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Max message size</h4>
+        <input type="text" size="10" class="text" name="max_mail_size">
+
+        <input type="radio" name="max_mail_size_unit" value="MB" checked="checked"> MB
+        <input type="radio" name="max_mail_size_unit" value="KB"> KB
+    </div>
+
+    
+        
+    
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Footer text (plain text format)</h4>
+        
+        <textarea name="footer_text" rows="3" cols="60%" class="textarea "></textarea>
+    </div>
+
+    
+        
+    
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Footer text (HTML format)</h4>
+        
+        <textarea name="footer_html" rows="3" cols="60%" class="textarea "></textarea>
+    </div>
+
+    <div class="rule"></div>
+
+    
+        
+
+        
+
+        
+        
+    
+
+    
+
+    
+
+    
+    <div class="form-field clear">
+        
+            <h4 class="size-250 fl-space">Who can send email to this list</h4>
+        
+
+        <span class="clean-padding">
+            <input type="radio" name="accessPolicy" value="public" checked="checked"> Unrestricted.&nbsp;Everyone can send mail to this address
+        </span>
+    </div>
+    
+    <div class="form-field clear">
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <span class="clean-padding">
+            <input type="radio" name="accessPolicy" value="domain"> Users under same domain
+        </span>
+    </div>
+    
+    <div class="form-field clear">
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <span class="clean-padding">
+            <input type="radio" name="accessPolicy" value="subdomain"> Users under same domain and its sub-domains
+        </span>
+    </div>
+    
+    <div class="form-field clear">
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <span class="clean-padding">
+            <input type="radio" name="accessPolicy" value="membersonly"> Members
+        </span>
+    </div>
+    
+    <div class="form-field clear">
+        
+            <h4 class="size-250 fl-space">&nbsp;</h4>
+        
+
+        <span class="clean-padding">
+            <input type="radio" name="accessPolicy" value="moderatorsonly"> Moderators
+        </span>
+    </div>
+    
+
+    <div class="rule"></div>
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Archive</h4>
+        <input type="checkbox" class="checkbox " name="disable_archive">
+
+        
+            
+                Do not archive received emails
+            
+        
+
+        
+        <input type="hidden" name="hidden_disable_archive">
+        
+    </div>
+
+
+    <div class="rule"></div>
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Mail posting</h4>
+        <input type="checkbox" class="checkbox " name="disable_send_copy_to_sender">
+
+        
+            
+                Do not send a copy to sender
+            
+        
+
+        
+        <input type="hidden" name="hidden_disable_send_copy_to_sender">
+        
+    </div>
+
+
+    <div class="rule"></div>
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Subscription control</h4>
+        <input type="checkbox" class="checkbox " name="close_list">
+
+        
+            
+                Disable subscription and unsubscription via email (existing subscribers are still able to send to list)
+            
+        
+
+        
+        <input type="hidden" name="hidden_close_list">
+        
+    </div>
+
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <input type="checkbox" class="checkbox " name="disable_subscription">
+
+        
+            
+                Disable subscription but allow unsubscription via email
+            
+        
+
+        
+        <input type="hidden" name="hidden_disable_subscription">
+        
+    </div>
+
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <input type="checkbox" class="checkbox " name="disable_subscription_confirm">
+
+        
+            
+                Disable subscription confirm
+            
+        
+
+        
+        <input type="hidden" name="hidden_disable_subscription_confirm">
+        
+    </div>
+
+
+    <div class="rule"></div>
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Access control</h4>
+        <input type="checkbox" class="checkbox " name="moderated">
+
+        
+            
+                Moderate all posts (Moderators are required)
+            
+        
+
+        
+        <input type="hidden" name="hidden_moderated">
+        
+    </div>
+
+
+    <div class="rule"></div>
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Notifications</h4>
+        <input type="checkbox" class="checkbox " name="disable_notify_when_subscriber_only">
+
+        
+            
+                Do not notify sender when posting to a subscriber-only mailing list was denied
+            
+        
+
+        
+        <input type="hidden" name="hidden_disable_notify_when_subscriber_only">
+        
+    </div>
+
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <input type="checkbox" class="checkbox " name="disable_notify_when_moderator_only">
+
+        
+            
+                Do not notify sender when posting to a moderator-only mailing list was denied
+            
+        
+
+        
+        <input type="hidden" name="hidden_disable_notify_when_moderator_only">
+        
+    </div>
+
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <input type="checkbox" class="checkbox " name="disable_notify_subscription_moderated">
+
+        
+            
+                Do not notify subscription requestor when subscription is under moderated
+            
+        
+
+        
+        <input type="hidden" name="hidden_disable_notify_subscription_moderated">
+        
+    </div>
+
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <input type="checkbox" class="checkbox " name="disable_notify_when_exceeding_max_mail_size">
+
+        
+            
+                Do not notify sender when posting was denied due to exceed max message size
+            
+        
+
+        
+        <input type="hidden" name="hidden_disable_notify_when_exceeding_max_mail_size">
+        
+    </div>
+
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <input type="checkbox" class="checkbox " name="notify_sender_when_moderated">
+
+        
+            
+                Notify sender if email is under moderated
+            
+        
+
+        
+        <input type="hidden" name="hidden_notify_sender_when_moderated">
+        
+    </div>
+
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <input type="checkbox" class="checkbox " name="notify_owner_when_sub_unsub">
+
+        
+            
+                Notify owner(s) when someone subscribe to or unsubscribe from the mailing list
+            
+        
+
+        
+        <input type="hidden" name="hidden_notify_owner_when_sub_unsub">
+        
+    </div>
+
+                    </div>
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+
+            
+            <div id="profile_aliases" style="display: block;">
+                <form name="aliases" method="post" action="/profile/ml/aliases/prueba@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                    
+    
+        
+    
+
+    <div class="columns clear">
+        <div class="col2-3">
+            <div class="form-field clear">
+                <h4 class="size-250 fl-space">Alias email addresses</h4>
+                <small>One mail address per line. Invalid address will be discarded.</small>
+            </div>
+
+            <div class="form-field clear">
+                <h4 class="size-250 fl-space"></h4>
+                <textarea name="account_alias_addresses" rows="6" style="width: 50%" class="textarea"></textarea>
+            </div>
+        </div>
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue bt-space10">
+                <ul class="standard clean-padding bt-space10">
+                    <li class="bt-space5">Emails sent to alias addresses will be delivered to <strong>prueba@duck.com</strong>.</li>
+                    <li class="bt-space5">Alias addresses must end with domain name: <strong>duck.com</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+
+            
+            <div id="profile_members" style="margin-left: -10px; margin-right: -10px; margin-bottom: -10px; display: none;">
+                <form name="members" method="post" action="/profile/ml/members/prueba@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                    <div class="clear left-space5" style="margin-top: -10px; margin-bottom: 10px;">
+        <i class="fa fa-filter fa-lg"></i>
+        Filter: <input type="text" id="subscriber_search">
+
+        
+            <i class="fa fa-plus fa-lg"></i>
+            <a href="#add_subscribers" class="modal-link">Add new members</a>
+        
+    </div>
+
+    <table id="subscribers" class="style1 clear" style="margin-bottom: 10px;">
+        <thead>
+            <tr>
+                <th class="checkbox"><input type="checkbox" class="checkbox select-all"></th>
+                <th data-sort="string-ins">Email</th>
+                <th data-sort="string-ins">Domain</th>
+                <th data-sort="string-ins">Mail Delivery</th>
+            </tr>
+        </thead>
+
+        <tbody id="subscribers_tbody">
+            
+                <tr>
+                    <td></td>
+                    <td colspan="3">No members.</td>
+                </tr>
+            
+        </tbody>
+    </table>
+
+    
+
+                </form>
+            </div>
+
+            <div id="profile_owners" style="display: none;">
+                <form name="owners" method="post" action="/profile/ml/owners/prueba@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                    
+                    
+    
+
+    
+
+    <div class="columns clear">
+        <div class="col2-3 clear">
+            <div class="form-field clear">
+                <h4 class="size-250 fl-space">Owners</h4>
+                <small>One mail address per line. Invalid address will be discarded.</small>
+                <textarea name="owners" rows="6" style="width: 50%" class="textarea">postmaster@duck.com
+</textarea>
+            </div>
+        </div>
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue bt-space10">
+                <ul class="standard clean-padding bt-space10">
+                    <li class="bt-space5">Email addresses of the mailing
+ list owners which need to be contacted via email prueba+owner@duck.com,
+ either by the system or by end users.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="rule"></div>
+                    
+    
+
+    <div class="columns clear">
+        <div class="col2-3 clear">
+            <div class="form-field clear">
+                <h4 class="size-250 fl-space">Moderators</h4>
+                <small>One mail address per line. Invalid address will be discarded.</small>
+                <textarea name="moderators" rows="6" style="width: 50%" class="textarea">postmaster@duck.com
+</textarea>
+            </div>
+        </div>
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue bt-space10">
+                <ul class="standard clean-padding bt-space10">
+                    <li class="bt-space5">Email addresses of the mailing
+ list moderators which need to be contacted when there is some email 
+under moderated. If empty, mailing list owners will be used instead.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="rule"></div>
+                    
+    
+        
+    
+
+    <div class="columns clear">
+        <div class="col2-3 clear">
+            <div class="form-field clear">
+        <h4 class="size-250 fl-space">Moderate subscriptions</h4>
+        <input type="checkbox" class="checkbox " name="moderate_subscription">
+
+        
+
+        
+        <input type="hidden" name="hidden_moderate_subscription">
+        
+    </div>
+
+
+            <div class="form-field clear">
+                <h4 class="size-250 fl-space">Subscription Moderators</h4>
+                <small>One mail address per line. Invalid address will be discarded.</small>
+                <textarea name="subscription_moderators" rows="6" style="width: 50%" class="textarea"></textarea>
+            </div>
+        </div>
+
+        <div class="col1-3 lastcol">
+            <div class="mark_blue bt-space10">
+                <ul class="standard clean-padding bt-space10">
+                    <li class="bt-space5">Email addresses of the mailing
+ list moderators which need to be contacted when there is someone 
+subscribing to the list and under moderated. If empty, mailing list 
+moderators will be used instead.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+
+            <div id="profile_newsletter" style="display: none;">
+                <form name="newsletter" method="post" action="/profile/ml/newsletter/prueba@duck.com">
+                    
+        
+    
+
+    <!--suppress ALL -->
+    <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+
+                    
+        
+    
+
+    <div class="columns clear">
+        <div class="col2-3 clear">
+            <div class="form-field clear">
+        <h4 class="size-250 fl-space">Enable newsletter-style mailing list</h4>
+        <input type="checkbox" class="checkbox " name="is_newsletter">
+
+        
+            
+                Enable subscription and unsubscription from website
+            
+        
+
+        
+    </div>
+
+
+            
+        
+    
+
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">Text to introduce this newsletter on subscription page</h4>
+        
+        <textarea name="description" rows="4" cols="50%" class="textarea "></textarea>
+    </div>
+
+        </div>
+        <div class="col1-3 clear lastcol">
+            <div class="mark_blue bt-space5">
+                <p><i class="fa fa-code fa-lg"></i> <a href="#newsletter_html_code" class="modal-link"><span class="text">Get a newsletter signup form</span></a></p>
+            </div>
+        </div>
+    </div>
+
+                    <div class="rule2"></div>
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">&nbsp;</h4>
+        <span>
+            <input type="submit" class="button green
+                          " value="Save changes">
+        </span>
+    </div>
+                </form>
+            </div>
+
+        </div></div></div>
+
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <div class="footer">
+        <div class="pagesize clear">
+            <p class="bt-space0">
+                © <a href="https://www.iredmail.org/" target="_blank" rel="noopener">iRedMail</a>
+                
+                    | <a href="https://forum.iredmail.org/" target="_blank" rel="noopener">News &amp; Announcements</a>
+                    | <a href="https://www.iredmail.org/support.html" target="_blank" rel="noopener">Support</a>
+                
+            </p>
+        </div>
+    </div>
+    
+
+    
+    <script type="text/javascript">
+        // redirect to url
+        function change_url(domain, baseurl) {
+            if ( domain.options[domain.selectedIndex].value != 'none' ) {
+                location.href = baseurl + domain.options[domain.selectedIndex].value;
+            }
+        };
+    </script>
+        <script type="text/javascript" src="Aliases_files/jquery-1.js"></script>
+    <script type="text/javascript" src="Aliases_files/jquery_002.js"></script>
+    <script type="text/javascript" src="Aliases_files/jquery_004.js"></script>
+    <script type="text/javascript" src="Aliases_files/jquery.js"></script>
+    <script type="text/javascript" src="Aliases_files/jquery_003.js"></script>
+    <script type="text/javascript" src="Aliases_files/stupidtable.js"></script>
+
+    <script type="text/javascript">
+        function remove_element_by_id(css_id) {
+            document.getElementById(css_id).remove();
+        }
+
+        
+        function add_input_inside_id(css_id, name) {
+            
+            var e = document.getElementById(css_id);
+            var length = e.children.length;
+
+            
+            var new_id = name + '_' + (length + 1);
+
+            var elem = document.createElement('div');
+            elem.innerHTML = '<div class="form-field clear" id="' + new_id + '">' +
+                             '<h4 class="size-250 fl-space">&nbsp;</h4>' +
+                             '<input type="text" size="35" class="text" ' +
+                                'name="' + name + '" ' +
+                                'value="" />' +
+                             '<input type="button" value="+" onclick="add_input_inside_id(\'' + css_id + '\', \'' + name + '\')" />' +
+                             '<input type="button" value="-" onclick="remove_element_by_id(\'' + new_id  + '\')" />' +
+                             '</div>';
+
+            document.getElementById(css_id).appendChild(elem);
+        }
+
+    
+    $(document).ready(function() {
+        
+        $('.menu li').hover(function () {
+            $(this).find('ul:first').css({'visibility': 'visible', 'display': 'none'}).slideDown();
+        }, function () {
+            $(this).find('ul:first').css({visibility: "hidden"});
+        });
+
+        
+        
+        $('.content-box .select-all').click(function () {
+            if ($(this).is(':checked'))
+                $(this).parent().parent().parent().parent().find('[type="checkbox"]').prop('checked', true);
+            else
+                $(this).parent().parent().parent().parent().find('[type="checkbox"]').prop('checked', false);
+        });
+
+        
+        $('.content-box .tabs').idTabs();
+
+        
+        $('.notification .close').click(function () {
+            $(this).parent().fadeOut(100);
+            return false;
+        });
+
+        
+        $("a[title], img[title], span[title], input[title], i[title]").tooltip({
+            position: "top center",
+            offset: [-5, 0],
+            predelay: 200,
+            delay: 100,
+            effect: "fade",
+            opacity: 1
+        });
+
+        
+        $('.modal-link').fancybox({
+            'modal'                 : false,
+            'hideOnOverlayClick'    : true,
+            'hideOnContentClick'    : false,
+            'enableEscapeButton'    : true,
+            'showCloseButton'       : true,
+            'speedOut'              : 0
+        });
+        $("a[href$='gif']").fancybox();
+        $("a[href$='jpg']").fancybox();
+        $("a[href$='png']").fancybox();
+
+        
+        $("table").stupidtable();
+
+        
+        $('.box-slide-head > td > span').click(function (event) {
+            tgt = $(event.target);
+            if (tgt.hasClass('clickable')) {
+                return;
+            }
+
+            mailid = $(this).parents('tr').attr('id');
+            mailid_orig = $(this).parents('tr').attr('mailid');
+            body = $('#box-tr-'+mailid);
+            if (!body.hasClass('box-slide-tr')) {
+                $.get('/activities/quarantined/raw/'+mailid_orig, function(data) {
+                    if (data != ''){
+                        $('#'+mailid).after(data);
+                    }
+                });
+            }
+            if (body.is(':visible')) {
+                body.hide();
+            } else {
+                body.show();
+            }
+            return false;
+        });
+
+        
+        $('#account_delete_date').hide()
+        $('#account_list_actions').change(function(){
+            if ($(this).val() == 'delete') {
+                $('#account_delete_date').show();
+            } else {
+                $("#account_delete_date").hide();
+            }
+        });
+
+        $('#domain_delete_date').hide()
+        $('#domain_list_actions').change(function(){
+            if ($(this).val() == 'delete') {
+                $('#domain_delete_date').show();
+            } else {
+                $("#domain_delete_date").hide();
+            }
+        });
+
+        
+        if ($('#mark_as_global_admin').is(':checked') == false) {
+            $('.normal_admin_create_domain_options').show();
+        } else {
+            $(".normal_admin_create_domain_options").hide();
+        }
+        $('#mark_as_global_admin').change(function(){
+            if ($(this).is(':checked') == true) {
+                $('.normal_admin_create_domain_options').hide();
+            } else {
+                $(".normal_admin_create_domain_options").show();
+            }
+        });
+
+        
+        if ($('#normal_admin_options').is(':checked') == true) {
+            $('.normal_admin_options').show();
+        } else {
+            $(".normal_admin_options").hide();
+        }
+        $('#normal_admin_options').change(function(){
+            if ($(this).is(':checked') == true) {
+                $('.normal_admin_options').show();
+                $('.normal_admin_options').show();
+            } else {
+                $(".normal_admin_options").hide();
+            }
+        });
+    });
+    </script>
+    
+
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".tabs li").idTabs("profile_general");
+            $('#subscriber_search').quickfilter('#subscribers_tbody tr');
+        });
+    </script>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div></body></html>

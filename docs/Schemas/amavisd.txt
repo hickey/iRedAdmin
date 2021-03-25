@@ -1,0 +1,178 @@
+MariaDB [amavisd]> show tables;
++-------------------+
+| Tables_in_amavisd |
++-------------------+
+| maddr             |
+| mailaddr          |
+| msgrcpt           |
+| msgs              |
+| outbound_wblist   |
+| policy            |
+| quarantine        |
+| users             |
+| wblist            |
++-------------------+
+9 rows in set (0.001 sec)
+
+MariaDB [amavisd]> describe maddr;
++---------------+---------------------+------+-----+---------+----------------+
+| Field         | Type                | Null | Key | Default | Extra          |
++---------------+---------------------+------+-----+---------+----------------+
+| partition_tag | int(11)             | YES  | MUL | 0       |                |
+| id            | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| email         | varbinary(255)      | NO   | MUL | NULL    |                |
+| email_raw     | varbinary(255)      | NO   | MUL |         |                |
+| domain        | varchar(255)        | NO   | MUL | NULL    |                |
++---------------+---------------------+------+-----+---------+----------------+
+5 rows in set (0.002 sec)
+
+MariaDB [amavisd]> describe mailaddr;
++----------+------------------+------+-----+---------+----------------+
+| Field    | Type             | Null | Key | Default | Extra          |
++----------+------------------+------+-----+---------+----------------+
+| id       | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| priority | int(11)          | NO   |     | 7       |                |
+| email    | varbinary(255)   | NO   | UNI | NULL    |                |
++----------+------------------+------+-----+---------+----------------+
+3 rows in set (0.002 sec)
+
+MariaDB [amavisd]> describe msgrcpt;
++---------------+---------------------+------+-----+---------+-------+
+| Field         | Type                | Null | Key | Default | Extra |
++---------------+---------------------+------+-----+---------+-------+
+| partition_tag | int(11)             | NO   | PRI | 0       |       |
+| mail_id       | varbinary(16)       | NO   | PRI | NULL    |       |
+| rseqnum       | int(11)             | NO   | PRI | 0       |       |
+| rid           | bigint(20) unsigned | NO   | MUL | NULL    |       |
+| is_local      | char(1)             | NO   |     |         |       |
+| content       | char(1)             | NO   |     |         |       |
+| ds            | char(1)             | NO   |     | NULL    |       |
+| rs            | char(1)             | NO   |     | NULL    |       |
+| bl            | char(1)             | YES  |     |         |       |
+| wl            | char(1)             | YES  |     |         |       |
+| bspam_level   | float               | YES  |     | NULL    |       |
+| smtp_resp     | varchar(255)        | YES  |     |         |       |
++---------------+---------------------+------+-----+---------+-------+
+12 rows in set (0.002 sec)
+
+MariaDB [amavisd]> describe msgs;
++---------------+---------------------+------+-----+---------+-------+
+| Field         | Type                | Null | Key | Default | Extra |
++---------------+---------------------+------+-----+---------+-------+
+| partition_tag | int(11)             | NO   | PRI | 0       |       |
+| mail_id       | varbinary(16)       | NO   | PRI | NULL    |       |
+| secret_id     | varbinary(16)       | YES  |     |         |       |
+| am_id         | varchar(20)         | NO   |     | NULL    |       |
+| time_num      | int(10) unsigned    | NO   | MUL | NULL    |       |
+| time_iso      | char(16)            | NO   |     | NULL    |       |
+| sid           | bigint(20) unsigned | NO   | MUL | NULL    |       |
+| policy        | varchar(255)        | YES  |     |         |       |
+| client_addr   | varchar(255)        | YES  |     |         |       |
+| size          | int(10) unsigned    | NO   |     | NULL    |       |
+| originating   | char(1)             | NO   |     |         |       |
+| content       | char(1)             | YES  | MUL | NULL    |       |
+| quar_type     | char(1)             | YES  | MUL | NULL    |       |
+| quar_loc      | varbinary(255)      | YES  |     |         |       |
+| dsn_sent      | char(1)             | YES  |     | NULL    |       |
+| spam_level    | float               | YES  | MUL | NULL    |       |
+| message_id    | varchar(255)        | YES  | MUL |         |       |
+| from_addr     | varbinary(255)      | NO   |     |         |       |
+| subject       | varbinary(255)      | NO   |     |         |       |
+| host          | varchar(255)        | NO   |     | NULL    |       |
++---------------+---------------------+------+-----+---------+-------+
+20 rows in set (0.006 sec)
+
+MariaDB [amavisd]> describe outbound_wblist;
++-------+------------------+------+-----+---------+-------+
+| Field | Type             | Null | Key | Default | Extra |
++-------+------------------+------+-----+---------+-------+
+| rid   | int(10) unsigned | NO   | PRI | NULL    |       |
+| sid   | int(10) unsigned | NO   | PRI | NULL    |       |
+| wb    | varchar(10)      | NO   |     | NULL    |       |
++-------+------------------+------+-----+---------+-------+
+3 rows in set (0.005 sec)
+
+MariaDB [amavisd]> describe policy;
++------------------------------+------------------+------+-----+---------+----------------+
+| Field                        | Type             | Null | Key | Default | Extra          |
++------------------------------+------------------+------+-----+---------+----------------+
+| id                           | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| policy_name                  | varchar(255)     | YES  | UNI | NULL    |                |
+| virus_lover                  | char(1)          | YES  |     | NULL    |                |
+| spam_lover                   | char(1)          | YES  |     | NULL    |                |
+| unchecked_lover              | char(1)          | YES  |     | NULL    |                |
+| banned_files_lover           | char(1)          | YES  |     | NULL    |                |
+| bad_header_lover             | char(1)          | YES  |     | NULL    |                |
+| bypass_virus_checks          | char(1)          | YES  |     | NULL    |                |
+| bypass_spam_checks           | char(1)          | YES  |     | NULL    |                |
+| bypass_banned_checks         | char(1)          | YES  |     | NULL    |                |
+| bypass_header_checks         | char(1)          | YES  |     | NULL    |                |
+| virus_quarantine_to          | varchar(64)      | YES  |     | NULL    |                |
+| spam_quarantine_to           | varchar(64)      | YES  |     | NULL    |                |
+| banned_quarantine_to         | varchar(64)      | YES  |     | NULL    |                |
+| unchecked_quarantine_to      | varchar(64)      | YES  |     | NULL    |                |
+| bad_header_quarantine_to     | varchar(64)      | YES  |     | NULL    |                |
+| clean_quarantine_to          | varchar(64)      | YES  |     | NULL    |                |
+| archive_quarantine_to        | varchar(64)      | YES  |     | NULL    |                |
+| spam_tag_level               | float            | YES  |     | NULL    |                |
+| spam_tag2_level              | float            | YES  |     | NULL    |                |
+| spam_tag3_level              | float            | YES  |     | NULL    |                |
+| spam_kill_level              | float            | YES  |     | NULL    |                |
+| spam_dsn_cutoff_level        | float            | YES  |     | NULL    |                |
+| spam_quarantine_cutoff_level | float            | YES  |     | NULL    |                |
+| addr_extension_virus         | varchar(64)      | YES  |     | NULL    |                |
+| addr_extension_spam          | varchar(64)      | YES  |     | NULL    |                |
+| addr_extension_banned        | varchar(64)      | YES  |     | NULL    |                |
+| addr_extension_bad_header    | varchar(64)      | YES  |     | NULL    |                |
+| warnvirusrecip               | char(1)          | YES  |     | NULL    |                |
+| warnbannedrecip              | char(1)          | YES  |     | NULL    |                |
+| warnbadhrecip                | char(1)          | YES  |     | NULL    |                |
+| newvirus_admin               | varchar(64)      | YES  |     | NULL    |                |
+| virus_admin                  | varchar(64)      | YES  |     | NULL    |                |
+| banned_admin                 | varchar(64)      | YES  |     | NULL    |                |
+| bad_header_admin             | varchar(64)      | YES  |     | NULL    |                |
+| spam_admin                   | varchar(64)      | YES  |     | NULL    |                |
+| spam_subject_tag             | varchar(64)      | YES  |     | NULL    |                |
+| spam_subject_tag2            | varchar(64)      | YES  |     | NULL    |                |
+| spam_subject_tag3            | varchar(64)      | YES  |     | NULL    |                |
+| message_size_limit           | int(11)          | YES  |     | NULL    |                |
+| banned_rulenames             | varchar(64)      | YES  |     | NULL    |                |
+| disclaimer_options           | varchar(64)      | YES  |     | NULL    |                |
+| forward_method               | varchar(64)      | YES  |     | NULL    |                |
+| sa_userconf                  | varchar(64)      | YES  |     | NULL    |                |
+| sa_username                  | varchar(64)      | YES  |     | NULL    |                |
++------------------------------+------------------+------+-----+---------+----------------+
+45 rows in set (0.005 sec)
+
+MariaDB [amavisd]> describe quarantine;
++---------------+------------------+------+-----+---------+-------+
+| Field         | Type             | Null | Key | Default | Extra |
++---------------+------------------+------+-----+---------+-------+
+| partition_tag | int(11)          | NO   | PRI | 0       |       |
+| mail_id       | varbinary(16)    | NO   | PRI | NULL    |       |
+| chunk_ind     | int(10) unsigned | NO   | PRI | NULL    |       |
+| mail_text     | blob             | NO   |     | NULL    |       |
++---------------+------------------+------+-----+---------+-------+
+4 rows in set (0.002 sec)
+
+MariaDB [amavisd]> describe users;
++-----------+------------------+------+-----+---------+----------------+
+| Field     | Type             | Null | Key | Default | Extra          |
++-----------+------------------+------+-----+---------+----------------+
+| id        | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| priority  | int(11)          | NO   |     | 7       |                |
+| policy_id | int(10) unsigned | NO   |     | 1       |                |
+| email     | varbinary(255)   | NO   | UNI | NULL    |                |
+| fullname  | varchar(255)     | YES  |     | NULL    |                |
++-----------+------------------+------+-----+---------+----------------+
+5 rows in set (0.002 sec)
+
+MariaDB [amavisd]> describe wblist;
++-------+------------------+------+-----+---------+-------+
+| Field | Type             | Null | Key | Default | Extra |
++-------+------------------+------+-----+---------+-------+
+| rid   | int(10) unsigned | NO   | PRI | NULL    |       |
+| sid   | int(10) unsigned | NO   | PRI | NULL    |       |
+| wb    | varchar(10)      | NO   |     | NULL    |       |
++-------+------------------+------+-----+---------+-------+
+3 rows in set (0.001 sec)

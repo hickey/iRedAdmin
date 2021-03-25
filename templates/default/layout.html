@@ -26,7 +26,7 @@
                         <li>
                             <form method="post" action="/search" class="search_form">
                             <!--suppress ALL -->
-                            <input type="hidden" name="csrf_token" value="663p9K8FmEmmR6WxUpzdB4S5h8253n58">
+                            <input type="hidden" name="csrf_token" value="{{ input_csrf_token() }}">
                             <i class="fa fa-search-plus fa-lg color-green"></i>
                             <input type="text" name="searchString" size="30" placeholder="Search mail accounts" class="search_field">
                             </form>

@@ -62,6 +62,8 @@
                             <th data-sort="string-ins">{{ _('Display Name') }}</th>
                             <th data-sort="int">{{ _('Quota') }}</th>
                             <th data-sort="int">{{ _('Users') }}</th>
+                            <th data-sort="int">{{ _('Mailing Lists') }}</th>
+                            <th data-sort="int">{{ _('Aliases') }}</th>
                         </tr>
                     </thead>
 
@@ -119,6 +121,16 @@
                                         {% else %}
                                             <a href="{{ctx.homepath}}/users/{{domain}}" title="{{ _('List all mail users.') }}" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">{% if num_existing_users is not sameas none %}{{ num_existing_users }}{% else %}0{% endif %}</a>
                                         {% endif %}
+                                    </td>
+
+                                    {#-- Mailing Lists --#}
+                                    <td class="vcenter" data-sort-value="{{ r.mailboxes }}">
+                                        <a href="{{ctx.homepath}}/maillist/{{domain}}" title="{{ _('List all mailing lists.') }}" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">{{ r.maillists }}% <span class="color-grey">({% if num_existing_users is not sameas none %}{{ num_existing_users }}{% else %}0{% endif %} {{ display_number_of_account_limited(r.mailboxes) }})</span></a>
+                                    </td>
+
+                                    {#-- Aliases --#}
+                                    <td class="vcenter" data-sort-value="{{ r.mailboxes }}">
+                                        <a href="{{ctx.homepath}}/aliases/{{domain}}" title="{{ _('List all mail aliases.') }}" style="text-decoration: none; display: block; padding: 0 10px 0 10px;">{{ r.aliases }}% <span class="color-grey">({% if num_existing_users is not sameas none %}{{ num_existing_users }}{% else %}0{% endif %} {{ display_number_of_account_limited(r.mailboxes) }})</span></a>
                                     </td>
                                 </tr>
                             {% endfor %}

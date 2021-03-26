@@ -1,0 +1,13 @@
+domain attributes:
+    - domain
+    - description
+    - transport
+    - backupmx
+    - active
+    - aliases
+    - mailboxes
+    - maillists
+    - maxquota
+    - quota
+    - num_existing_users
+    - quota_count

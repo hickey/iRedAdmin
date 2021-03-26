@@ -1,0 +1,381 @@
+controllers/sql/utils.py:           def GET(self, account_type):
+controllers/sql/basic.py:           def GET(self):
+controllers/sql/basic.py:           def POST(self):
+controllers/sql/basic.py:           def GET(self):
+controllers/sql/basic.py:           def GET(self):
+controllers/sql/admin.py:           def GET(self, cur_page=1):
+controllers/sql/admin.py:           def POST(self):
+controllers/sql/admin.py:           def GET(self, profile_type, mail):
+controllers/sql/admin.py:           def POST(self, profile_type, mail):
+controllers/sql/admin.py:           def GET(self):
+controllers/sql/admin.py:           def POST(self):
+controllers/sql/domain.py:          def GET(self, cur_page=1, disabled_only=False):
+controllers/sql/domain.py:          def POST(self):
+controllers/sql/domain.py:          def GET(self, cur_page=1):
+controllers/sql/domain.py:          def GET(self, profile_type, domain):
+controllers/sql/domain.py:          def POST(self, profile_type, domain):
+controllers/sql/domain.py:          def GET(self):
+controllers/sql/domain.py:          def POST(self):
+controllers/utils.py:               def GET(self, path):
+controllers/decorators.py:          def require_login(func):
+controllers/decorators.py:          def proxyfunc(*args, **kw):
+controllers/decorators.py:          def require_global_admin(func):
+controllers/decorators.py:          def proxyfunc(*args, **kw):
+controllers/decorators.py:          def csrf_protected(f):
+controllers/decorators.py:          def decorated(*args, **kw):
+controllers/ldap/admin.py:          def GET(self, cur_page=1):
+controllers/ldap/admin.py:          def POST(self):
+controllers/ldap/admin.py:          def GET(self):
+controllers/ldap/admin.py:          def POST(self):
+controllers/ldap/admin.py:          def GET(self, profile_type, mail):
+controllers/ldap/admin.py:          def POST(self, profile_type, mail):
+libs/ldaplib/admin.py:              def get_profile(mail, attributes=None, conn=None):
+libs/ldaplib/admin.py:              def get_managed_domains(admin,
+libs/ldaplib/admin.py:              def get_standalone_admin_emails(conn=None):
+libs/ldaplib/admin.py:              def list_accounts(attributes=None, email_only=False, conn=None):
+libs/ldaplib/admin.py:              def num_managed_domains(admin=None, conn=None):
+libs/ldaplib/admin.py:              def add(form, conn=None):
+libs/ldaplib/admin.py:              def delete(mails, revoke_admin_privilege_from_user=True, conn=None):
+libs/ldaplib/admin.py:              def update_profile(form, mail, profile_type, conn=None):
+controllers/sql/user.py:            def GET(self, domain, cur_page=1, disabled_only=False):
+controllers/sql/user.py:            def POST(self, domain, page=1):
+controllers/sql/user.py:            def GET(self, domain, cur_page=1):
+controllers/sql/user.py:            def GET(self, profile_type, mail):
+controllers/sql/user.py:            def POST(self, profile_type, mail):
+controllers/sql/user.py:            def GET(self, domain):
+controllers/sql/user.py:            def POST(self, domain):
+controllers/ldap/user.py:           def GET(self, domain, cur_page=1, disabled_only=False):
+controllers/ldap/user.py:           def POST(self, domain, page=1):
+controllers/ldap/user.py:           def GET(self, domain, cur_page=1):
+controllers/ldap/user.py:           def GET(self, profile_type, mail):
+controllers/ldap/user.py:           def POST(self, profile_type, mail):
+controllers/ldap/user.py:           def GET(self, domain):
+controllers/ldap/user.py:           def POST(self, domain):
+libs/ldaplib/general.py:            def is_global_admin(admin, conn=None):
+libs/ldaplib/general.py:            def is_domain_admin(domain, admin=None, conn=None):
+libs/ldaplib/general.py:            def is_domain_exists(domain, conn=None):
+libs/ldaplib/general.py:            def check_account_existence(mail, account_type='mail', conn=None):
+libs/ldaplib/general.py:            def is_email_exists(mail, conn=None):
+libs/ldaplib/general.py:            def change_password(dn,
+libs/ldaplib/general.py:            def add_or_remove_attr_values(dn,
+libs/ldaplib/general.py:            def add_attr_values(dn, attr, values, conn=None):
+libs/ldaplib/general.py:            def remove_attr_values(dn, attr, values, conn=None):
+libs/ldaplib/general.py:            def replace_attr_value(dn, attr, old_value, new_value, conn=None):
+libs/ldaplib/general.py:            def add_enabled_services(dn, values, conn=None):
+libs/ldaplib/general.py:            def remove_enabled_services(dn, values, conn=None):
+libs/ldaplib/general.py:            def add_disabled_services(dn, values, conn=None):
+libs/ldaplib/general.py:            def remove_disabled_services(dn, values, conn=None):
+libs/ldaplib/general.py:            def update_attr_with_single_value(dn, attr, value, conn=None):
+libs/ldaplib/general.py:            def __reset_num_domain_current_accounts(domain, num, account_type='user', conn=None):
+libs/ldaplib/general.py:            def reset_num_domain_current_users(domain, num, conn=None):
+libs/ldaplib/general.py:            def __update_num_domain_current_accounts(domain,
+libs/ldaplib/general.py:            def update_num_domain_current_users(domain,
+libs/ldaplib/general.py:            def enable_disable_account_by_dn(dn, action, conn=None):
+libs/ldaplib/general.py:            def enable_disable_mail_accounts(mails, account_type, action, conn=None):
+libs/ldaplib/general.py:            def enable_disable_users(mails, action, conn=None):
+libs/ldaplib/general.py:            def enable_disable_admins(mails, action, conn=None):
+libs/ldaplib/general.py:            def __num_accounts_under_domain(domain,
+libs/ldaplib/general.py:            def num_users_under_domain(domain, update_statistics=False, conn=None):
+libs/ldaplib/general.py:            def get_all_domains(attributes=None,
+libs/ldaplib/general.py:            def get_domain_password_lengths(domain,
+libs/ldaplib/general.py:            def get_paged_account_list(account_profiles,
+libs/ldaplib/general.py:            def get_allocated_domain_quota(domain, conn=None):
+libs/ldaplib/general.py:            def get_domain_used_quota(domains=None):
+libs/ldaplib/general.py:            def get_account_used_quota(accounts):
+libs/ldaplib/general.py:            def get_all_account_used_quota_under_domain(domain):
+libs/ldaplib/general.py:            def delete_account_used_quota(accounts):
+libs/ldaplib/general.py:            def get_next_uid_gid(conn):
+libs/ldaplib/general.py:            def filter_existing_domains(domains, conn=None):
+libs/ldaplib/general.py:            def exclude_non_existing_emails_in_domain(domain, mails, conn=None):
+libs/ldaplib/general.py:            def filter_existing_emails(mails, base_dn=None, conn=None):
+libs/ldaplib/general.py:            def get_profile_by_dn(dn, query_filter=None, attributes=None, conn=None):
+libs/ldaplib/general.py:            def __get_account_setting_by_dn(dn,
+libs/ldaplib/general.py:            def get_admin_account_setting(mail, profile=None, conn=None):
+libs/ldaplib/general.py:            def get_domain_account_setting(domain, profile=None, conn=None):
+libs/ldaplib/general.py:            def get_user_account_setting(mail, profile=None, conn=None):
+libs/ldaplib/general.py:            def delete_ldap_tree(dn, conn=None):
+libs/ldaplib/general.py:            def get_first_char_of_all_accounts(domain, account_type, conn=None):
+libs/ldaplib/core.py:               def __init__(self):
+libs/ldaplib/core.py:               def __del__(self):
+libs/hooks.py:                      def hook_set_language():
+libs/ldaplib/domain.py:             def get_first_char_of_all_domains(conn=None):
+libs/ldaplib/domain.py:             def get_profile(domain,
+libs/ldaplib/domain.py:             def get_profiles_of_managed_domains(attributes=None,
+libs/ldaplib/domain.py:             def update_domain_status_for_all_accounts(domain, status='active', conn=None):
+libs/ldaplib/domain.py:             def enable_disable_domains(domains, action, conn=None):
+libs/ldaplib/domain.py:             def get_default_user_quota(domain, domain_account_setting=None, conn=None):
+libs/ldaplib/domain.py:             def assign_admins_to_domain(domain, admins, conn=None):
+libs/ldaplib/domain.py:             def list_accounts(attributes=None,
+libs/ldaplib/domain.py:             def add(form, conn=None):
+libs/ldaplib/domain.py:             def update(domain, profile_type, form, conn=None):
+libs/ldaplib/domain.py:             def delete_domains(domains, keep_mailbox_days=0, conn=None):
+libs/ldaplib/domain.py:             def get_enabled_services(domain, profile=None, conn=None):
+libs/ldaplib/ldaputils.py:          def rdn_value_to_dn(keyword, account_type='user'):
+libs/ldaplib/ldaputils.py:          def rdn_value_to_domain_dn(value):
+libs/ldaplib/ldaputils.py:          def rdn_value_to_user_dn(value):
+libs/ldaplib/ldaputils.py:          def rdn_value_to_admin_dn(value):
+libs/ldaplib/ldaputils.py:          def rdn_value_to_ou_users_dn(value):
+libs/ldaplib/ldaputils.py:          def rdn_value_to_ou_maillists_dn(value):
+libs/ldaplib/ldaputils.py:          def rdn_value_to_ou_aliases_dn(value):
+libs/ldaplib/ldaputils.py:          def attr_ldif(attr, value, default=None, mode=None) -> List:
+libs/ldaplib/ldaputils.py:          def attrs_ldif(kvs: Dict) -> List:
+libs/ldaplib/ldaputils.py:          def mod_replace(attr, value, default=None) -> List[Tuple]:
+libs/ldaplib/ldaputils.py:          def form_mod_attr(form,
+libs/ldaplib/ldaputils.py:          def form_mod_attrs_from_api(form,
+libs/ldaplib/ldaputils.py:          def account_setting_list_to_dict(setting_list) -> Dict:
+libs/ldaplib/ldaputils.py:          def account_setting_dict_to_list(setting_dict: Dict) -> List[bytes]:
+libs/ldaplib/ldaputils.py:          def get_account_setting_from_profile(ldif) -> Dict:
+libs/ldaplib/ldaputils.py:          def get_account_settings_from_qr(ldap_query_result, key='domainName') -> Dict:
+libs/ldaplib/ldaputils.py:          def get_days_of_shadow_last_change(year=None, month=None, day=None) -> int:
+libs/ldaplib/ldaputils.py:          def ldif_to_dict(ldif) -> Dict:
+libs/ldaplib/ldaputils.py:          def dict_to_ldif(ldif_dict) -> List[Tuple]:
+libs/ldaplib/ldaputils.py:          def get_custom_user_attributes(domain=None):
+libs/ldaplib/iredldif.py:           def ldif_domain(domain,
+libs/ldaplib/iredldif.py:           def ldif_group(name):
+libs/ldaplib/iredldif.py:           def ldif_mailadmin(mail,
+libs/ldaplib/iredldif.py:           def ldif_mailuser(domain,
+libs/ldaplib/auth.py:               def verify_bind_dn_pw(dn, password, conn=None):
+libs/ldaplib/auth.py:               def login_auth(username,
+libs/ldaplib/user.py:               def list_accounts(domain,
+libs/ldaplib/user.py:               def get_profile(mail, attributes=None, conn=None):
+libs/ldaplib/user.py:               def get_user_forwardings(mail, profile=None, conn=None):
+libs/ldaplib/user.py:               def user_is_global_admin(mail, user_profile=None, conn=None):
+libs/ldaplib/user.py:               def reset_forwardings(mail, forwardings=None, conn=None):
+libs/ldaplib/user.py:               def update_managed_user_attrs(domain, mail, mod_attrs, conn=None):
+libs/ldaplib/user.py:               def add(domain, form, conn=None):
+libs/ldaplib/user.py:               def mark_unmark_as_admin(domain, mails, action, conn=None):
+libs/ldaplib/user.py:               def __delete_single_user(mail,
+libs/ldaplib/user.py:               def delete(domain,
+libs/ldaplib/user.py:               def update(profile_type, mail, form, conn=None):
+libs/ldaplib/user.py:               def __mark_user_as_admin(user, domains, conn=None):
+libs/ldaplib/user.py:               def __unmark_user_as_admin(user, domains=None, all_domains=False, conn=None):
+libs/form_utils.py:                 def get_single_value(form,
+libs/form_utils.py:                 def get_multi_values(form,
+libs/form_utils.py:                 def get_multi_values_from_api(form,
+libs/form_utils.py:                 def get_multi_values_from_textarea(form,
+libs/form_utils.py:                 def get_form_dict(form,
+libs/form_utils.py:                 def get_name(form, input_name='cn'):
+libs/form_utils.py:                 def get_domain_name(form, input_name='domainName'):
+libs/form_utils.py:                 def get_domain_names(form, input_name='domainName'):
+libs/form_utils.py:                 def get_language(form, input_name='preferredLanguage'):
+libs/form_utils.py:                 def get_domain_quota_and_unit(form,
+libs/form_utils.py:                 def get_quota(form, input_name='defaultQuota', default=0):
+libs/form_utils.py:                 def get_account_status(form,
+libs/form_utils.py:                 def get_password(form,
+libs/form_utils.py:                 def get_timezone(form, input_name='timezone'):
+controllers/ldap/utils.py:          def GET(self, account_type):
+controllers/ldap/basic.py:          def GET(self):
+controllers/ldap/basic.py:          def POST(self):
+controllers/ldap/basic.py:          def GET(self):
+controllers/ldap/basic.py:          def GET(self):
+libs/jinja_filters.py:              def file_size_format(value, base_mb=False):
+libs/jinja_filters.py:              def cut_string(s, length=40):
+libs/jinja_filters.py:              def convert_to_percentage(current, total):
+libs/jinja_filters.py:              def show_all_attrs(value):
+libs/mailparser.py:                 def __decode_headers(msg):
+libs/mailparser.py:                 def parse_raw_message(msg: bytes):
+libs/ireddate.py:                   def utcoffset(self, dt):
+libs/ireddate.py:                   def tzname(self, dt):
+libs/ireddate.py:                   def dst(self, dt):
+libs/ireddate.py:                   def __repr__(self):
+libs/ireddate.py:                   def __init__(self, offset, name):
+libs/ireddate.py:                   def utcoffset(self, dt):
+libs/ireddate.py:                   def tzname(self, dt):
+libs/ireddate.py:                   def dst(self, dt):
+libs/ireddate.py:                   def fix_gmt_timezone(tz):
+libs/ireddate.py:                   def set_local_timezone(tz):
+libs/ireddate.py:                   def get_local_timezone():
+libs/ireddate.py:                   def timezone(tzname):
+libs/ireddate.py:                   def pick_timezone(*args):
+libs/ireddate.py:                   def to_timezone(dt, tzinfo=None):
+libs/ireddate.py:                   def to_datetime_with_tzinfo(dt, tzinfo=None, formatstr=None):
+libs/ireddate.py:                   def utc_to_timezone(dt, timezone=None, formatstr="%Y-%m-%d %H:%M:%S"):
+controllers/ldap/domain.py:         def GET(self, cur_page=1, disabled_only=False):
+controllers/ldap/domain.py:         def POST(self):
+controllers/ldap/domain.py:         def GET(self, cur_page=1):
+controllers/ldap/domain.py:         def GET(self, profile_type, domain):
+controllers/ldap/domain.py:         def POST(self, profile_type, domain):
+controllers/ldap/domain.py:         def GET(self):
+controllers/ldap/domain.py:         def POST(self):
+libs/iredbase.py:                   def csrf_token():
+libs/iredbase.py:                   def render_template(template_name, **kwargs):
+libs/iredbase.py:                   def __init__(self, message):
+libs/iredbase.py:                   def log_into_sql(msg, admin="", domain="", username="", event="", loglevel="info"):
+libs/iredpwd.py:                    def __has_non_ascii_character(s):
+libs/iredpwd.py:                    def verify_new_password(
+libs/iredpwd.py:                    def generate_random_password(length=10, db_settings=None):
+libs/iredpwd.py:                    def generate_bcrypt_password(p) -> str:
+libs/iredpwd.py:                    def verify_bcrypt_password(challenge_password: str, plain_password: str) -> bool:
+libs/iredpwd.py:                    def generate_md5_password(p: str) -> str:
+libs/iredpwd.py:                    def verify_md5_password(challenge_password: Union[str, bytes],
+libs/iredpwd.py:                    def generate_plain_md5_password(p: Union[str, bytes]) -> str:
+libs/iredpwd.py:                    def verify_plain_md5_password(challenge_password, plain_password):
+libs/iredpwd.py:                    def generate_ssha_password(p: Union[str, bytes]) -> str:
+libs/iredpwd.py:                    def verify_ssha_password(challenge_password: Union[str, bytes],
+libs/iredpwd.py:                    def generate_sha512_password(p: Union[str, bytes]) -> str:
+libs/iredpwd.py:                    def verify_sha512_password(challenge_password: Union[str, bytes],
+libs/iredpwd.py:                    def verify_sha512_crypt_password(challenge_password: Union[str, bytes],
+libs/iredpwd.py:                    def generate_ssha512_password(p: Union[str, bytes]) -> str:
+libs/iredpwd.py:                    def verify_ssha512_password(challenge_password: Union[str, bytes],
+libs/iredpwd.py:                    def generate_password_with_doveadmpw(scheme: str, plain_password: str) -> str:
+libs/iredpwd.py:                    def verify_password_with_doveadmpw(challenge_password: Union[str, bytes],
+libs/iredpwd.py:                    def generate_cram_md5_password(p):
+libs/iredpwd.py:                    def verify_cram_md5_password(challenge_password, plain_password):
+libs/iredpwd.py:                    def generate_ntlm_password(p):
+libs/iredpwd.py:                    def verify_ntlm_password(challenge_password, plain_password):
+libs/iredpwd.py:                    def generate_password_hash(p: Union[str, bytes],
+libs/iredpwd.py:                    def verify_password_hash(challenge_password: Union[str, bytes],
+libs/iredpwd.py:                    def is_supported_password_scheme(pw_hash):
+libs/iredutils.py:                  def is_auth_email(s) -> bool:
+libs/iredutils.py:                  def is_email(s) -> bool:
+libs/iredutils.py:                  def is_domain(s) -> bool:
+libs/iredutils.py:                  def is_tld_domain(s) -> bool:
+libs/iredutils.py:                  def is_ipv4(address) -> bool:
+libs/iredutils.py:                  def is_ipv6(address) -> bool:
+libs/iredutils.py:                  def is_strict_ip(s) -> bool:
+libs/iredutils.py:                  def is_ip_or_network(address) -> bool:
+libs/iredutils.py:                  def is_wildcard_ipv4(s) -> bool:
+libs/iredutils.py:                  def is_wildcard_addr(s) -> bool:
+libs/iredutils.py:                  def is_cidr_network(address) -> bool:
+libs/iredutils.py:                  def is_list_with_ip_or_network(lst) -> bool:
+libs/iredutils.py:                  def is_valid_account_first_char(s) -> bool:
+libs/iredutils.py:                  def is_mlid(s) -> bool:
+libs/iredutils.py:                  def is_ml_confirm_token(s) -> bool:
+libs/iredutils.py:                  def is_boolean(s) -> bool:
+libs/iredutils.py:                  def is_valid_mailbox_format(s) -> bool:
+libs/iredutils.py:                  def is_valid_mailbox_folder(s) -> bool:
+libs/iredutils.py:                  def is_integer(s) -> bool:
+libs/iredutils.py:                  def is_positive_integer(s) -> bool:
+libs/iredutils.py:                  def is_not_negative_integer(s) -> bool:
+libs/iredutils.py:                  def ired_gettext(string):
+libs/iredutils.py:                  def get_gmttime() -> str:
+libs/iredutils.py:                  def epoch_seconds_to_gmt(seconds, time_format=None) -> str:
+libs/iredutils.py:                  def epoch_days_to_date(days, time_format=None) -> str:
+libs/iredutils.py:                  def set_datetime_format(t, with_hour=True, time_format=None) -> str:
+libs/iredutils.py:                  def __bytes2str(b) -> str:
+libs/iredutils.py:                  def bytes2str(b: Union[bytes, str, List, Tuple, Set, Dict])\
+libs/iredutils.py:                  def __str2bytes(s) -> bytes:
+libs/iredutils.py:                  def str2bytes(s):
+libs/iredutils.py:                  def generate_random_strings(length=10) -> str:
+libs/iredutils.py:                  def generate_maildir_path(mail: str,
+libs/iredutils.py:                  def convert_shadowlastchange_to_date(day, time_format="%Y-%m-%d %H:%M:%SZ") -> str:
+libs/iredutils.py:                  def is_allowed_ip(client_ip, allowed_ip_list) -> bool:
+libs/iredutils.py:                  def sendmail_with_cmd(from_address, recipients, message_text):
+libs/iredutils.py:                  def sendmail(recipients, message_text, from_address=None):
+libs/iredutils.py:                  def is_valid_amavisd_address(addr):
+libs/iredutils.py:                  def get_account_priority(account) -> int:
+libs/iredutils.py:                  def strip_mail_ext_address(mail, delimiters=None) -> str:
+libs/iredutils.py:                  def lower_email_with_upper_ext_address(mail: str, delimiters=None) -> str:
+libs/iredutils.py:                  def get_password_policies(db_settings=None) -> Dict:
+libs/iredutils.py:                  def add_element_to_list(lst, e, sort=False):
+libs/iredutils.py:                  def remove_element_from_list(lst, e, sort=False):
+libs/iredutils.py:                  def get_language_maps() -> Dict:
+libs/iredutils.py:                  def get_settings_from_db(params=None, account=None) -> Dict:
+libs/iredutils.py:                  def store_settings_in_db(kvs=None, account=None, flush=False, conn=None):
+libs/iredutils.py:                  def __is_allowed_login_ip(client_ip, check_global_admin=False) -> bool:
+libs/iredutils.py:                  def is_allowed_admin_login_ip(client_ip) -> bool:
+libs/iredutils.py:                  def is_allowed_global_admin_login_ip(client_ip) -> bool:
+libs/iredutils.py:                  def get_db_conn(db_name, sql_dbn):
+libs/sysinfo.py:                    def get_iredmail_version():
+libs/sysinfo.py:                    def __get_proxied_urlopen():
+libs/sysinfo.py:                    def get_license_info():
+libs/sysinfo.py:                    def check_new_version():
+libs/sysinfo.py:                    def get_hostname():
+libs/sysinfo.py:                    def get_server_uptime():
+libs/sysinfo.py:                    def get_system_load_average():
+libs/sysinfo.py:                    def get_nic_info():
+libs/sysinfo.py:                    def get_all_mac_addresses():
+libs/sqllib/general.py:             def is_global_admin(admin, conn=None) -> bool:
+libs/sqllib/general.py:             def is_domain_admin(domain, admin=None, conn=None) -> bool:
+libs/sqllib/general.py:             def is_email_exists(mail, conn=None) -> bool:
+libs/sqllib/general.py:             def __is_account_exists(account, account_type, conn=None) -> bool:
+libs/sqllib/general.py:             def is_domain_exists(domain, conn=None) -> bool:
+libs/sqllib/general.py:             def is_ml_exists(mail, conn=None) -> bool:
+libs/sqllib/general.py:             def __is_active_account(account_type, account, conn=None) -> bool:
+libs/sqllib/general.py:             def is_active_user(mail, conn=None) -> bool:
+libs/sqllib/general.py:             def filter_existing_emails(mails, account_type=None, conn=None):
+libs/sqllib/general.py:             def filter_existing_domains(conn, domains):
+libs/sqllib/general.py:             def get_domain_settings(domain, domain_profile=None, conn=None):
+libs/sqllib/general.py:             def get_user_settings(mail, existing_settings=None, conn=None):
+libs/sqllib/general.py:             def get_admin_settings(admin=None, existing_settings=None, conn=None) -> Tuple:
+libs/sqllib/general.py:             def __update_account_settings(conn,
+libs/sqllib/general.py:             def update_user_settings(conn,
+libs/sqllib/general.py:             def update_admin_settings(conn,
+libs/sqllib/general.py:             def update_domain_settings(conn,
+libs/sqllib/general.py:             def __num_accounts_under_domain(domain, account_type, conn=None) -> int:
+libs/sqllib/general.py:             def num_users_under_domain(domain, conn=None) -> int:
+libs/sqllib/general.py:             def get_account_used_quota(accounts, conn) -> Dict:
+libs/sqllib/general.py:             def get_first_char_of_all_accounts(domain,
+libs/logger.py:                     def log_traceback():
+libs/logger.py:                     def log_activity(msg, admin="", domain="", username="", event="", loglevel="info"):
+libs/sqllib/sqlutils.py:            def account_settings_dict_to_string(account_settings: Dict) -> str:
+libs/sqllib/sqlutils.py:            def account_settings_string_to_dict(account_settings: str) -> Dict:
+libs/sqllib/utils.py:               def set_account_status(conn,
+libs/sqllib/utils.py:               def delete_accounts(accounts,
+libs/sqllib/user.py:                def user_is_global_admin(conn, mail, user_profile=None):
+libs/sqllib/user.py:                def delete_users(accounts,
+libs/sqllib/user.py:                def simple_profile(mail, columns=None, conn=None):
+libs/sqllib/user.py:                def promote_users_to_be_global_admin(mails, promote=True, conn=None):
+libs/sqllib/user.py:                def num_users_under_domains(conn, domains, disabled_only=False, first_char=None):
+libs/sqllib/user.py:                def get_paged_users(conn,
+libs/sqllib/user.py:                def mark_user_as_admin(conn,
+libs/sqllib/user.py:                def profile(mail,
+libs/sqllib/user.py:                def add_user_from_form(domain, form, conn=None):
+libs/sqllib/user.py:                def update(conn, mail, profile_type, form):
+libs/sqllib/user.py:                def get_basic_user_profiles(domain,
+libs/panel/log.py:                  def list_logs(event='all', domain='all', admin='all', cur_page=1):
+libs/panel/log.py:                  def delete_logs(form, delete_all=False):
+libs/sqllib/admin.py:               def is_admin_exists(conn, admin):
+libs/sqllib/admin.py:               def num_admins(conn):
+libs/sqllib/admin.py:               def num_user_admins(conn):
+libs/sqllib/admin.py:               def get_all_admins(columns=None, email_only=False, conn=None):
+libs/sqllib/admin.py:               def get_paged_admins(conn, cur_page=1):
+libs/sqllib/admin.py:               def get_paged_domain_admins(conn,
+libs/sqllib/admin.py:               def get_all_global_admins(conn=None):
+libs/sqllib/admin.py:               def get_managed_domains(admin,
+libs/sqllib/admin.py:               def num_managed_domains(admin=None,
+libs/sqllib/admin.py:               def num_managed_users(admin=None, domains=None, conn=None, listed_only=False):
+libs/sqllib/admin.py:               def __num_allocated_accounts(admin=None,
+libs/sqllib/admin.py:               def sum_all_allocated_domain_quota(admin=None,
+libs/sqllib/admin.py:               def sum_all_used_quota(conn):
+libs/sqllib/admin.py:               def add_admin_from_form(form, conn=None):
+libs/sqllib/admin.py:               def get_profile(mail, columns=None, conn=None):
+libs/sqllib/admin.py:               def delete_admins(mails, revoke_admin_privilege_from_user=True, conn=None):
+libs/sqllib/admin.py:               def update(mail, profile_type, form, conn=None):
+libs/sqllib/admin.py:               def revoke_admin_privilege_if_no_managed_domains(admin=None, conn=None):
+libs/sqllib/domain.py:              def get_all_domains(conn=None, columns=None, name_only=False):
+libs/sqllib/domain.py:              def get_all_managed_domains(conn=None,
+libs/sqllib/domain.py:              def enable_disable_domains(domains, action, conn=None):
+libs/sqllib/domain.py:              def get_domain_used_quota(conn, domains=None):
+libs/sqllib/domain.py:              def get_allocated_domain_quota(domain, conn=None):
+libs/sqllib/domain.py:              def delete_domains(domains,
+libs/sqllib/domain.py:              def simple_profile(domain, columns=None, conn=None):
+libs/sqllib/domain.py:              def profile(domain, conn=None):
+libs/sqllib/domain.py:              def get_domain_enabled_services(domain, conn=None):
+libs/sqllib/domain.py:              def add(form, conn=None):
+libs/sqllib/domain.py:              def update(domain, profile_type, form, conn=None):
+libs/sqllib/domain.py:              def get_paged_domains(first_char=None,
+libs/sqllib/domain.py:              def get_domain_admin_addresses(domain, conn=None):
+libs/sqllib/domain.py:              def assign_admins_to_domain(domain, admins, conn=None):
+libs/sqllib/domain.py:              def get_first_char_of_all_domains(conn=None):
+controllers/panel/log.py:           def GET(self):
+controllers/panel/log.py:           def POST(self):
+libs/sqllib/__init__.py:            def __del__(self):
+libs/sqllib/__init__.py:            def connect(self):
+libs/sqllib/__init__.py:            def __init__(self):
+libs/sqllib/__init__.py:            def __del__(self):
+libs/sqllib/__init__.py:            def __init__(self):
+libs/sqllib/auth.py:                def auth(conn,
+tools/update_password_in_csv.py:    def usage():
+tools/cleanup_amavisd_db.py:        def remove_from_one_table(sql_table, index_column, removed_values):
+tools/dump_disclaimer.py:           def write_disclaimer(text, filename, file_type='txt'):
+tools/dump_disclaimer.py:           def handle_disclaimer(domain, disclaimer_text):
+tools/dump_disclaimer.py:           def dump_from_ldap():
+tools/dump_disclaimer.py:           def dump_from_sql():
+tools/reset_user_password.py:       def usage():
+tools/ira_tool_lib.py:              def get_db_conn(db_name):
+tools/ira_tool_lib.py:              def log_to_iredadmin(msg, event, admin='', username='', loglevel='info'):
+tools/ira_tool_lib.py:              def sql_count_id(conn, table, column='id', where=None):
+tools/delete_mailboxes.py:          def delete_record(conn_deleted_mailboxes, rid):
+tools/delete_mailboxes.py:          def delete_mailbox(conn_deleted_mailboxes,
+tools/update_mailbox_quota.py:      def usage():

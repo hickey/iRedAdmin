@@ -11,7 +11,7 @@ deploy_to_server:
     - mkdir .ssh
     - echo "$DEPLOY_SSH_KEY" > .ssh/id_ed25519
     - chmod -R go-rx .ssh
-    - /usr/bin/rsync -avz --exclude .ssh -e "ssh -i .ssh/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" . ${RSYNC_ENDPOINT}
+    - /usr/bin/rsync -avz --exclude .git --exclude .ssh -e "ssh -i .ssh/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" . ${RSYNC_ENDPOINT}
     - rm -rf .ssh
 
 notify_success:

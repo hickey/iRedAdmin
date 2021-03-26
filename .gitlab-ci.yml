@@ -8,11 +8,8 @@ deploy_to_server:
   image: alpine:3
   script:
     - apk update && apk add openssh-client rsync
-    - mkdir .ssh
-    - echo "$DEPLOY_SSH_KEY" > .ssh/id_ed25519
-    - chmod -R go-rx .ssh
-    - /usr/bin/rsync -avz --exclude .git --exclude .ssh -e "ssh -i .ssh/id_ed25519 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" . ${RSYNC_ENDPOINT}
-    - rm -rf .ssh
+    - chmod -R go-rx ${DEPLOY_SSH_KEY}
+    - /usr/bin/rsync -avz --exclude .git --exclude ${DEPLOY_SSH_KEY} -e "ssh -i ${DEPLOY_SSH_KEY} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" . ${RSYNC_ENDPOINT}
 
 notify_success:
   stage: notify

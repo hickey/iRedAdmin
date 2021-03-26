@@ -46,4 +46,10 @@ urls = [
     '/profile/user/(general)/(%s$)' % e, 'controllers.sql.user.Profile',
     '/profile/user/(password)/(%s$)' % e, 'controllers.sql.user.Profile',
     '/profile/user/(advanced)/(%s$)' % e, 'controllers.sql.user.Profile',
+
+    # Mailing list related.
+    '/maillist/(%s)' % d, 'controllers.sql.maillist.List',
+
+    # Aliases related.
+    '/aliases/(%s)' % d, 'controllers.sql.aliases.List',
 ]

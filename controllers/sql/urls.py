@@ -26,6 +26,7 @@ urls = [
 
     # Admin related.
     '/admins', 'controllers.sql.admin.List',
+    '/admins/(%s)' %d, 'controllers.sql.admin.List',
     r'/admins/page/(\d+)', 'controllers.sql.admin.List',
     '/profile/admin/(general)/(%s$)' % e, 'controllers.sql.admin.Profile',
     '/profile/admin/(password)/(%s$)' % e, 'controllers.sql.admin.Profile',
@@ -49,7 +50,9 @@ urls = [
 
     # Mailing list related.
     '/maillist/(%s)' % d, 'controllers.sql.maillist.List',
+    '/create/(maillist)', 'controllers.sql.maillist.Create',
 
     # Aliases related.
     '/aliases/(%s)' % d, 'controllers.sql.aliases.List',
+    '/create/(alias)', 'controllers.sql.aliases.Create',
 ]

@@ -76,3 +76,9 @@ def convert_to_percentage(current, total):
             return 100
         else:
             return percent
+
+def show_all_attrs(value):
+    res = []
+    for k in dir(value):
+        res.append('%r %r\n' % (k, getattr(value, k)))
+    return '\n'.join(res)

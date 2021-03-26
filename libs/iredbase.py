@@ -116,6 +116,7 @@ jinja_env_filters = {
     "set_datetime_format": iredutils.set_datetime_format,
     "generate_random_password": iredpwd.generate_random_password,
     "utc_to_timezone": ireddate.utc_to_timezone,
+    "show_all_attrs": jinja_filters.show_all_attrs,
 }
 
 _default_template_dir = rootdir + "/../templates/" + settings.SKIN

@@ -2,7 +2,11 @@
 
 {% from "macros/form_inputs.html" import
     input_submit,
-    input_csrf_token
+    input_csrf_token,
+    input_text,
+    input_checkbox,
+    input_textarea,
+    input_radios
     with context
     %}
 
@@ -30,33 +34,46 @@
             (ctx.homepath + '/profile/domain/general/' + cur_domain, cur_domain),
             (ctx.homepath + '/users/' + cur_domain, _('Users')),
             ('active', ctx.homepath + '/profile/user/general/' + mail, _('Profile of user:') + '&nbsp;' + mail),
+            (ctx.homepath + '/maillists/' + cur_domain, _('Mailing Lists')),
+            (ctx.homepath + '/aliases/' + cur_domain, _('Aliases')),
+            (ctx.homepath + '/admins/' + cur_domain, _('Admins')),
             ] %}
 
     {{ display_subnav(crumbs) }}
 {% endblock %}
 
+{# User profile #}
 {% block main %}
 
 {# Show system message #}
-{% if msg %}
-    {% if msg.startswith('PW_') %}
-        {% set _pw_errors = msg.split(',') %}
-        {% for _err in _pw_errors %}
+{%- if msg %}
+    {%- if msg.startswith('PW_') %}
+        {%- set _pw_errors = msg.split(',') %}
+        {%- for _err in _pw_errors %}
             {{ user_msg_handler(_err) }}
-        {% endfor %}
-    {% else %}
+        {%- endfor %}
+    {%- else %}
         {{ user_msg_handler(msg) }}
-    {% endif %}
-{% endif %}
+    {%- endif %}
+{%- endif %}
 
-{% if discarded_aliases %}
-    {% set _msg = _('Some addresses have been discarded because they have been used: %s.') |format(discarded_aliases | join(', ')) %}
+{%- if discarded_aliases %}
+    {%- set _msg = _('Some addresses have been discarded because they have been used: %s.') |format(discarded_aliases | join(', ')) %}
     {{ warning_info(msg=_msg, removable=true) }}
-{% endif %}
+{%- endif %}
 
-{% set navlinks = [
+{%- set navlinks = [
         ('general', _('General'), [true]),
+        ('fowarding', _('Forwarding'), [true]),
+        ('bcc', _('BCC'), [true]),
+        ('relay', _('Relay'), [true]),
+        ('aliases', _('Aliases'), [true]),
+        ('throttle', _('Throttling'), [true]),
+        ('greylisting', _('Greylisting'), [true]),
+        ('wblist', _('White/Blacklists'), [true]),
+        ('spampolicy', _('Spam Policy'), [true]),
         ('password', _('Password'), [true]),
+        ('advanced', _('Advanced'), [true]),
         ]
         %}
 
@@ -70,7 +87,9 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <h2>{{ _('Profile of user:') }} {{ mail }}</h2>
+            <h2><a href="{{ ctx.homepath + "/activities/sent/user/" + mail }}">
+                <i class="far fa-chart-bar fa-lg" style="padding-left: 5px'"></i>
+              </a></h2>
         </div>
 
         <div class="box-wrap clear">

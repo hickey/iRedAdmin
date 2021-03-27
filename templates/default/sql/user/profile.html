@@ -111,7 +111,9 @@
                                              show_value_in_input=true,
                                              used_quota=stored_mailbox_size,
                                              stored_messages=stored_mailbox_messages,
-                                             show_used_quota=true) }}
+                                             show_used_quota=true,
+                                             default_unit='MB',
+                                             show_unit=true,) }}
 
                             {{ display_preferred_language(value=profile.get('language'), languagemaps=languagemaps) }}
                             {{ display_timezones(value=user_settings.get('timezone'), timezones=timezones) }}

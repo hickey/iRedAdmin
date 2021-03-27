@@ -672,11 +672,11 @@
 
     <div class="form-field clear">
         <!-- display_quota -->
-        {% if label == '' %}
+        {%- if label == '' %}
             <h4 class="size-250 fl-space">{{ _('Mailbox Quota') }}</h4>
-        {% else %}
+        {%- else %}
             <h4 class="size-250 fl-space">{{ label |e }}</h4>
-        {% endif %}
+        {%- endif %}
 
         <div class="clean-padding fl-space2">
             <input type="text" size="{{ input_size }}"
@@ -695,21 +695,21 @@
                 <label>{{ default_unit }}</label>
             {%- endif %}
 
-            {% if show_used_quota %}
-                {% if value |int > 0 %}
-                    {% if session.get('show_used_quota') and value.isdigit() and used_quota.isdigit() %}
-                        {% set percent = used_quota |convert_to_percentage(value |int * 1024 * 1024) %}
+            {%- if show_used_quota %}
+                {%- if value |int > 0 %}
+                    {%- if session.get('show_used_quota') and value.isdigit() and used_quota.isdigit() %}
+                        {%- set percent = used_quota |convert_to_percentage(value |int * 1024 * 1024) %}
 
-                        {% if (stored_messages | int) > 0 %}
+                        {%- if (stored_messages | int) > 0 %}
                             <label class="fl-space">{{ _('(%d%% full, %d messages, %s.)') | format(percent, stored_messages |int, used_quota | file_size_format) }}</label>
-                        {% else %}
+                        {%- else %}
                             <label class="fl-space color-grey">{{ _('(Mailbox is empty.)') }}</label>
-                        {% endif %}
-                    {% endif %}
-                {% elif value | int == 0 %}
+                        {%- endif %}
+                    {%- endif %}
+                {%- elif value | int == 0 %}
                     <label class="fl-space">{{ _('(%d messages, %s.)') | format(stored_messages |int, used_quota | file_size_format) }}</label>
-                {% endif %}
-            {% endif %}
+                {%- endif %}
+            {%- endif %}
         </div>
     </div>
 {%- endmacro %}

@@ -144,11 +144,11 @@
                         <div class="col2-3">
                             {{ input_text(input_name='recipientBccAddress',
                                 label=_('BCC incoming emails to other address'),
-                                size=35) }}
+                                size=35, enable_input=false) }}
 
                             {{ input_text(input_name='senderBccAddress',
                                 label=_('BCC outgoing emails to other address'),
-                                size=35) }}
+                                size=35, enable_input=false) }}
                         </div>
                         <div class="col1-3 lastcol">
                             <div class="mark_blue bt-space10">
@@ -174,10 +174,11 @@
                         <div class="col2-3">
                             {{ input_text(input_name='mtaTransport',
                                 label=_('Relay received email to'),
-                                size=30) }}
+                                size=30, enable_input=false) }}
 
                             {{ input_checkbox(input_name='relay_without_verify_local_recipient',
-                                label=_('Relay without verifying local recipients'))}}
+                                enable_input=false,
+                                label=_('Relay without verifying local recipients'), enable_input=false)}}
                         </div>
                         <div class="col1-3 lastcol">
                             <div class="mark_blue ">
@@ -274,7 +275,7 @@
                                 label=_('Catch-all Addresses'),
                                 comment=_('One mail address per line. Invalid address will be discarded.'),
                                 is_list_of_emails=true,
-                                rows=6) }}
+                                rows=6, enable_input=false) }}
                         </div>
                         <div class="col1-3 lastcol">
                             <div class="notification note-attention">
@@ -301,10 +302,10 @@
                         <div class="col2-3">
                             {{ input_text(input_name='domainAliasName',
                                 label=_('Alias domains'),
-                                size=35) }}
+                                size=35, enable_input=false) }}
 
                             {{ input_text(input_name='domainAliasName',
-                                label=' ', size=35) }}
+                                label=' ', size=35, enable_input=false) }}
                         </div>
                         <div class="col1-3 lastcol">
                             <div class="mark_blue bt-space10">
@@ -332,7 +333,7 @@
                                 field_class='form-field clear bt-space10',
                                 item_class='form-field-item clear bt-space10',
                                 label_style='font-weight:bold;',
-                                required=true)}}
+                                required=true, enable_input=false)}}
 
                             {%- set custom_field = 'Custom: <input type="text" name="custom_outbound_period" size=10> Seconds' %}
                             {{ input_radios(input_name='outbound_period',
@@ -341,6 +342,7 @@
                                 label_class='',
                                 field_class='form-field clear bt-space10',
                                 required=true, escape_html=false,
+                                enable_input=false,
                                 options=[('86400', _('1 Day')),
                                          ('3600', _('1 Hour')),
                                          ('60', _('1 Minute')),
@@ -352,6 +354,7 @@
                                  only_first_label=true,
                                  label_class='', field_class='form-field clear bt-space10',
                                  escape_html=false,
+                                 enable_input=false,
                                  options=[('-1', _('Inherit global throttle setting')),
                                           ('0', _('Unlimited')),
                                           ('', custom_field)]) }}
@@ -362,6 +365,7 @@
                                  only_first_label=true,
                                  label_class='', field_class='form-field clear bt-space10',
                                  escape_html=false,
+                                 enable_input=false,
                                  options=[(-1, _('Inherit from account which has lower priority')),
                                           (0, _('Unlimited')),
                                           ('', custom_field)]) }}
@@ -372,6 +376,7 @@
                                  only_first_label=true,
                                  label_class='', field_class='form-field clear bt-space10',
                                  escape_html=false,
+                                 enable_input=false,
                                  options=[(-1, _('Inherit from account which has lower priority')),
                                           (0, _('Unlimited')),
                                           ('', custom_field)]) }}
@@ -383,6 +388,7 @@
                                 field_class='form-field clear bt-space10',
                                 item_class='form-field-item clear bt-space10',
                                 label_style='font-weight:bold;',
+                                enable_input=false,
                                 required=true)}}
 
                             {%- set custom_field = 'Custom: <input type="text" name="custom_inbound_period" size=10> Seconds' %}
@@ -392,6 +398,7 @@
                                 label_class='',
                                 field_class='form-field clear bt-space10',
                                 required=true, escape_html=false,
+                                enable_input=false,
                                 options=[('86400', _('1 Day')),
                                          ('3600', _('1 Hour')),
                                          ('60', _('1 Minute')),
@@ -403,6 +410,7 @@
                                  only_first_label=true,
                                  label_class='', field_class='form-field clear bt-space10',
                                  escape_html=false,
+                                 enable_input=false,
                                  options=[('-1', _('Inherit global throttle setting')),
                                           ('0', _('Unlimited')),
                                           ('', custom_field)]) }}
@@ -413,6 +421,7 @@
                                  only_first_label=true,
                                  label_class='', field_class='form-field clear bt-space10',
                                  escape_html=false,
+                                 enable_input=false,
                                  options=[(-1, _('Inherit from account which has lower priority')),
                                           (0, _('Unlimited')),
                                           ('', custom_field)]) }}
@@ -423,6 +432,7 @@
                                  only_first_label=true,
                                  label_class='', field_class='form-field clear bt-space10',
                                  escape_html=false,
+                                 enable_input=false,
                                  options=[(-1, _('Inherit from account which has lower priority')),
                                           (0, _('Unlimited')),
                                           ('', custom_field)]) }}
@@ -457,34 +467,42 @@
                         <div class="col2-3">
                             {{ input_checkbox(input_name='enable_spam_checks',
                                 label=_('Spam checking'),
+                                enable_input=false,
                                 comment=_('Enable spam checking')) }}
 
                             {{ input_checkbox(input_name='spam_quarantine_to',
                                 label=' ',
+                                enable_input=false,
                                 comment=_('Quarantine spam')) }}
 
                             {{ input_checkbox(input_name='enable_virus_checks',
                                 label=_('Virus checking'),
+                                enable_input=false,
                                 comment=_('Enable virus checking')) }}
 
                             {{ input_checkbox(input_name='virus_quarantine_to',
                                 label=' ',
+                                enable_input=false,
                                 comment=_('Quarantine virus')) }}
 
                             {{ input_checkbox(input_name='enable_header_checks',
                                 label=_('Bad-header checking'),
+                                enable_input=false,
                                 comment=_('Enable bad-header checking')) }}
 
                             {{ input_checkbox(input_name='bad_header_quarantine_to',
                                 label=' ',
+                                enable_input=false,
                                 comment=_('Quarantine bad-header email')) }}
 
                             {{ input_checkbox(input_name='enable_banned_checks',
                                 label=_('Banned file type checking'),
+                                enable_input=false,
                                 comment=_('Enable banned file type checking')) }}
 
                             {{ input_checkbox(input_name='banned_quarantine_to',
                                 label=' ',
+                                enable_input=false,
                                 comment=_('Quarantine email which contains banned file types')) }}
                         </div>
                     </div>
@@ -494,18 +512,21 @@
                     <div class="columns clear">
                         <div class="col2-3">
                             {{ input_checkbox(input_name='modify_spam_subject',
-                                label=_('Prefix text [SPAM] to the subject line')) }}
+                                label=_('Prefix text [SPAM] to the subject line'),
+                                enable_input=false) }}
 
                             {{ input_text(input_name='spam_tag2_level',
                                 label=_('Mark mail as spam when score is >='),
                                 comment=_('Default is 6.'),
                                 comment_as_label=true,
+                                enable_input=false,
                                 comment_class='color-grey', size=6) }}
 
                             {{ input_text(input_name='spam_kill_level',
                                 label=_('Block or quarantine marked spam when score is >='),
                                 comment=_('Default is 6.9.'),
                                 comment_as_label=true,
+                                enable_input=false,
                                 comment_class='color-grey', size=6) }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -532,6 +553,7 @@
                         <div class="col2-3">
                             {{ input_radios(input_name='greylisting',
                                 label=_('Greylisting service for this domain'),
+                                enable_input=false,
                                 options=[('inherit', _('Inherit global setting')),
                                          ('enable', _('Enable greylisting service')),
                                          ('disable', _('Disable greylisting service'))]) }}
@@ -560,6 +582,7 @@
                             {{ input_textarea(input_name='whitelists',
                                 label=_('Do not apply greylisting on listed senders'),
                                 comment=_('One sender per line.'),
+                                enable_input=false,
                                 is_list_of_emails=true, rows=15) }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -604,6 +627,7 @@
                                     {{ input_textarea(input_name='whitelistSender',
                                         label=_('Whitelisted senders'),
                                         comment=_('(One record per line.)'),
+                                        enable_input=false,
                                         rows=15, cols='95%') }}
                                 </div>
                             </div>
@@ -612,6 +636,7 @@
                                     {{ input_textarea(input_name='blacklistSender',
                                         label=_('Blacklisted senders'),
                                         comment=_('(One record per line.)'),
+                                        enable_input=false,
                                         rows=15, cols='95%') }}
                                 </div>
                             </div>
@@ -623,6 +648,7 @@
                                     {{ input_textarea(input_name='whitelistRecipient',
                                         label=_('Whitelisted recipients'),
                                         comment=_('(One record per line.)'),
+                                        enable_input=false,
                                         rows=15, cols='95%') }}
                                 </div>
                             </div>
@@ -631,6 +657,7 @@
                                     {{ input_textarea(input_name='blacklistRecipient',
                                         label=_('Blacklisted recipients'),
                                         comment=_('(One record per line.)'),
+                                        enable_input=false,
                                         rows=15, cols='95%') }}
                                 </div>
                             </div>
@@ -673,9 +700,11 @@
                     <div class="columns clear">
                         <div class="col2-3">
                             {{ input_checkbox(input_name='backupmx',
+                                enable_input=false,
                                 label=_('Mark as backup MX')) }}
 
                             {{ input_text(input_name='primary_mx',
+                                enable_input=false,
                                 label=_('Primary MX'), size=30) }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -735,16 +764,19 @@
                             {{ input_text(input_name='numberOfUsers',
                                 label=_('Number of max mail users'),
                                 comment='x account(s) exist',
+                                enable_input=false,
                                 comment_as_label=true, size=8) }}
 
                             {{ input_text(input_name='numberOfAliases',
                                 label=_('Number of max mail aliases'),
                                 comment='x account(s) exist',
+                                enable_input=false,
                                 comment_as_label=true, size=8) }}
 
                             {{ input_text(input_name='numberOfLists',
                                 label=_('Number of max mailing lists'),
                                 comment='x accounts(s) exist',
+                                enable_input=false,
                                 comment_as_label=true, size=8) }}
                             <div class="clear bt-space">&nbsp;</div>
                         </div>
@@ -761,9 +793,11 @@
                     <div class="columns clear">
                         <div class="col2-3">
                             {{ input_text(input_name='minPasswordLength',
+                            enable_input=false,
                                 label=_('Minimum password length'), size=8) }}
 
                             {{ input_text(input_name='maxPasswordLength',
+                            enable_input=false,
                                 label=_('Maximum password length'), size=8) }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -791,10 +825,12 @@
                         <div class="col2-3">
                             {{ input_text(input_name='recipientBccAddress',
                                 label=_('Default bcc address for incoming emails for new user'),
+                                enable_input=false,
                                 size=35) }}
 
                             {{ input_text(input_name='senderBccAddress',
                                 label=_('Default bcc address for outcoming emails for new user'),
+                                enable_input=false,
                                 size=35) }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -809,6 +845,7 @@
                     <div class="columns clear">
                         <div class="col2-3">
                             {{ input_text(input_name='default_mail_list',
+                            enable_input=false,
                                 label=_('Default mailing lists of new user')) }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -823,6 +860,7 @@
                     <div class="columns clear">
                         <div class="col2-3">
                             {{ input_text(input_name='default_mail_aliases',
+                            enable_input=false,
                                 label=_('Default mailing aliases of new user')) }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -840,6 +878,7 @@
                         <div class="col2-3">
                             {{ input_checkbox(input_name='enabledService',
                                 label=_('Enabled Services'),
+                                enable_input=false,
                                 comment=_('Self-service'), value='self-service') }}
                         </div>
                     </div>
@@ -851,46 +890,55 @@
                             {{ input_checkbox(input_name='disabledMailService',
                                 label=_('Disabled mail services'),
                                 comment=_('Sending mails via SMTP'),
+                                enable_input=false,
                                 value='smtp') }}
 
                             {{ input_checkbox(input_name='disabledMailService',
                                 label=' ',
                                 comment=_('Sending mails via SMTP over TLS/SSL'),
+                                enable_input=false,
                                 value='smtpsecured') }}
 
                             {{ input_checkbox(input_name='disabledMailService',
                                 label=' ',
+                                enable_input=false,
                                 comment=_('Fetching mails via POP3'),
                                 value='pop3') }}
 
                             {{ input_checkbox(input_name='disabledMailService',
                                 label=' ',
                                 comment=_('Fetching mails via POP3 over TLS/SSL'),
+                                enable_input=false,
                                 value='pop3secured') }}
 
                             {{ input_checkbox(input_name='disabledMailService',
                                 label=' ',
                                 comment=_('Fetching mail via IMAP'),
+                                enable_input=false,
                                 value='imap') }}
 
                             {{ input_checkbox(input_name='disabledMailService',
                                 label=' ',
                                 comment=_('Fetching mail via IMAP over TLS/SSL'),
+                                enable_input=false,
                                 value='imapsecured') }}
 
                             {{ input_checkbox(input_name='disabledMailService',
                                 label=' ',
                                 comment=_('Customize mail filter rule'),
+                                enable_input=false,
                                 value='managesieve') }}
 
                             {{ input_checkbox(input_name='disabledMailService',
                                 label=' ',
                                 comment=_('Customize mail filter rule over TLS/SSL'),
+                                enable_input=false,
                                 value='managesievesecured') }}
 
                             {{ input_checkbox(input_name='disabledMailService',
                                 label=' ',
                                 comment=_('SOGo Groupware (Calendar, Contacts, Tasks, ActiveSync)'),
+                                enable_input=false,
                                 value='sogo') }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -913,51 +961,56 @@
                             {{ input_checkbox(input_name='disabledDomainProfile',
                                 label=_('Disabled domain profile'),
                                 comment=_('Password policies'),
+                                enable_input=false,
                                 value='password_policies') }}
 
                             {{ input_checkbox(input_name='disabledDomainProfile',
                                 label=' ',
                                 comment=_('Aliases'),
+                                enable_input=false,
                                 value='aliases') }}
 
                             {{ input_checkbox(input_name='disabledDomainProfile',
                                 label=' ',
                                 comment=_('BCC'),
+                                enable_input=false,
                                 value='bcc') }}
 
                             {{ input_checkbox(input_name='disabledDomainProfile',
                                 label=' ',
                                 comment=_('Catch-all'),
+                                enable_input=false,
                                 value='catchall') }}
 
                             {{ input_checkbox(input_name='disabledDomainProfile',
                                 label=' ',
                                 comment=_('Relay'),
+                                enable_input=false,
                                 value='relay') }}
 
                             {{ input_checkbox(input_name='disabledDomainProfile',
                                 label=' ',
-                                comment=_('Backup MX'),
+                                comment=_('Backup MX'),enable_input=false,
                                 value='backupmx') }}
 
                             {{ input_checkbox(input_name='disabledDomainProfile',
                                 label=' ',
-                                comment=_('Throttling'),
+                                comment=_('Throttling'),enable_input=false,
                                 value='throttle') }}
 
                             {{ input_checkbox(input_name='disabledDomainProfile',
                                 label=' ',
-                                comment=_('White/Blacklist'),
+                                comment=_('White/Blacklist'),enable_input=false,
                                 value='wblist') }}
 
                             {{ input_checkbox(input_name='disabledDomainProfile',
                                 label=' ',
-                                comment=_('Spam Policy'),
+                                comment=_('Spam Policy'),enable_input=false,
                                 value='spampolicy') }}
 
                             {{ input_checkbox(input_name='disabledDomainProfile',
                                 label=' ',
-                                comment=_('Greylisting'),
+                                comment=_('Greylisting'),enable_input=false,
                                 value='greylisting') }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -975,42 +1028,42 @@
                         <div class="col2-3">
                             {{ input_checkbox(input_name='disabledUserProfile',
                                 label=_('Disabled user profiles'),
-                                comment=_('Aliases'),
+                                comment=_('Aliases'),enable_input=false,
                                 value='aliases') }}
 
                             {{ input_checkbox(input_name='disabledUserProfile',
                                 label=' ',
-                                comment=_('BCC'),
+                                comment=_('BCC'),enable_input=false,
                                 value='bcc') }}
 
                             {{ input_checkbox(input_name='disabledUserProfile',
                                 label=' ',
-                                comment=_('Forwarding'),
+                                comment=_('Forwarding'),enable_input=false,
                                 value='forwarding') }}
 
                             {{ input_checkbox(input_name='disabledUserProfile',
                                 label=' ',
-                                comment=_('Relay'),
+                                comment=_('Relay'),enable_input=false,
                                 value='relay') }}
 
                             {{ input_checkbox(input_name='disabledUserProfile',
                                 label=' ',
-                                comment=_('Throttling'),
+                                comment=_('Throttling'),enable_input=false,
                                 value='throttling') }}
 
                             {{ input_checkbox(input_name='disabledUserProfile',
                                 label=' ',
-                                comment=_('White/Blacklist'),
+                                comment=_('White/Blacklist'),enable_input=false,
                                 value='wblist') }}
 
                             {{ input_checkbox(input_name='disabledUserProfile',
                                 label=' ',
-                                comment=_('Spam Policy'),
+                                comment=_('Spam Policy'),enable_input=false,
                                 value='spampolicy') }}
 
                             {{ input_checkbox(input_name='disabledUserProfile',
                                 label=' ',
-                                comment=_('Greylisting'),
+                                comment=_('Greylisting'),enable_input=false,
                                 value='greylisting') }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -1028,37 +1081,37 @@
                         <div class="col2-3">
                             {{ input_checkbox(input_name='disabledUserPreference',
                                 label=_('Disabled self-service preferences'),
-                                comment=_('Personal information'),
+                                comment=_('Personal information'),enable_input=false,
                                 value='personal_info') }}
 
                             {{ input_checkbox(input_name='disabledUserPreference',
                                 label=' ',
-                                comment=_('Change password'),
+                                comment=_('Change password'),enable_input=false,
                                 value='password') }}
 
                             {{ input_checkbox(input_name='disabledUserPreference',
                                 label=' ',
-                                comment=_('Set mail forwarding'),
+                                comment=_('Set mail forwarding'),enable_input=false,
                                 value='forwarding') }}
 
                             {{ input_checkbox(input_name='disabledUserPreference',
                                 label=' ',
-                                comment=_('Manage per-user white/blacklist'),
+                                comment=_('Manage per-user white/blacklist'),enable_input=false,
                                 value='wblist') }}
 
                             {{ input_checkbox(input_name='disabledUserPreference',
                                 label=' ',
-                                comment=_('Manage quarantined mails'),
+                                comment=_('Manage quarantined mails'),enable_input=false,
                                 value='quarantine') }}
 
                             {{ input_checkbox(input_name='disabledUserPreference',
-                                label=' ',
+                                label=' ',enable_input=false,
                                 comment=_('View received mails and white/blacklist senders'),
                                 value='rcvd_mails') }}
 
                             {{ input_checkbox(input_name='disabledUserPreference',
                                 label=' ',
-                                comment=_('Spam Policy'),
+                                comment=_('Spam Policy'),enable_input=false,
                                 value='spampolicy') }}
                         </div>
                         <div class="col1-3 lastcol">

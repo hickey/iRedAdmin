@@ -746,6 +746,7 @@
                                 label=_('Number of max mailing lists'),
                                 comment='x accounts(s) exist',
                                 comment_as_label=true, size=8) }}
+                            <div class="clear bt-space">&nbsp;</div>
                         </div>
                         <div class="col1-3 lastcol">
                             <div class="mark_blue bt-space10">
@@ -813,7 +814,7 @@
                         <div class="col1-3 lastcol">
                             <div class="mark_blue bt-space10">
                                 <ul class="standard clean-padding bt-space10">
-                                    <li class="bt-space5"><a href="{{ ctx.homepath + '/create/maillist/' + curr_domain }}" class="action_add">Add mailing list</a></li>
+                                    <li class="bt-space5"><a href="{{ ctx.homepath + '/create/maillist/' + cur_domain }}" class="action_add">Add mailing list</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -827,7 +828,7 @@
                         <div class="col1-3 lastcol">
                             <div class="mark_blue bt-space10">
                                 <ul class="standard clean-padding bt-space10">
-                                    <li class="bt-space5"><a href="{{ ctx.homepath + '/create/aliases/' + curr_domain }}" class="action_add">Add mail alias</a></li>
+                                    <li class="bt-space5"><a href="{{ ctx.homepath + '/create/aliases/' + cur_domain }}" class="action_add">Add mail alias</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -899,7 +900,7 @@
                                 toggle on checkbox below.</p>
                                 <p>
                                 {{ input_checkbox(input_name='disable_services_for_existing_users',
-                                    comment=_('Update existing mail users')) }}
+                                    label=_('Update existing mail users'), label_after_box=true) }}
                                 </p>
                             </div>
                         </div>

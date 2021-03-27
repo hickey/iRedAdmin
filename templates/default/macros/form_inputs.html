@@ -95,9 +95,10 @@
             {%- endif -%}
         </h4>
         {%- elif not only_first_label %}
-        <h4>&nbsp;</h4>
+        <h4 {% if label_class %}class="{{ label_class }}"{% endif %}>&nbsp;</h4>
+        {%- else %}
+        <p {% if label_class %}class="{{ label_class }}"{% endif %}>&nbsp</p>
         {%- endif -%}
-
         <div {% if item_class %}class="{{item_class}}"{% endif %}>
         <input type="radio"
                class="radio {% if not enable_input %}disabled{% endif %}"

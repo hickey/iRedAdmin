@@ -69,17 +69,16 @@
                       only_first_label=false,
                       escape_html=true,
                       enable_input=true) -%}
-    {#
+    {#-
         `options` must be a list with 2-element tuples:
 
         [('<input_value>', '<description>', '<extra-comment>'), ...]
-    #}
-    {% if not value %}
-        {% set value = '' %}
-    {% endif %}
-
+    -#}
+    {%- if not value %}
+        {%- set value = '' %}
+    {%- endif %}
     <div {% if field_class %}class="{{field_class}}"{% endif %}>
-    {% for (_opt_value, _opt_desc) in options %}
+    {%- for (_opt_value, _opt_desc) in options %}
         {%- if loop.first -%}
         <h4 {% if label_class %}class="{{ label_class }}"{% endif %}>
             {{ label }}
@@ -95,8 +94,8 @@
                 {%- endif -%}
             {%- endif -%}
         </h4>
-        {% elif not only_first_label %}
-                &nbsp;
+        {%- elif not only_first_label %}
+        <h4>&nbsp;</h4>
         {%- endif -%}
 
         <div {% if item_class %}class="{{item_class}}"{% endif %}>

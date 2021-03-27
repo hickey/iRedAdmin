@@ -35,7 +35,7 @@
             (ctx.homepath + '/users/' + cur_domain, _('Users')),
             (ctx.homepath + '/maillists/' + cur_domain, _('Mailing Lists')),
             (ctx.homepath + '/aliases/' + cur_domain, _('Aliases')),
-            (ctx.homepath + '/admins/' + cur_domain, _('Admins'))
+            (ctx.homepath + '/admins/' + cur_domain, _('Admins')),
             ]
             %}
     {{ display_subnav(crumbs) }}
@@ -178,7 +178,7 @@
 
                             {{ input_checkbox(input_name='relay_without_verify_local_recipient',
                                 enable_input=false,
-                                label=_('Relay without verifying local recipients'), enable_input=false)}}
+                                label=_('Relay without verifying local recipients'))}}
                         </div>
                         <div class="col1-3 lastcol">
                             <div class="mark_blue ">
@@ -813,9 +813,9 @@
 
                     <div class="columns clear">
                         <div class="col2-3">
-                            {{ display_preferred_language(
+                            {{ display_preferred_language(languagemaps=languagemaps,
                                 label=_('Default language for new user')) }}
-                            {{ display_timezones() }}
+                            {{ display_timezones(timezones=timezones) }}
                         </div>
                     </div>
 

@@ -365,6 +365,7 @@
     {% endif %}
 
     {% if percent > 0 or show_zero %}
+        <!-- display_progress_bar -->
         <div class="progress-container" title="{{ title |e }}" style="width: {{width |e }}; height: {{height}};">
             <div class="progress-bar"
                  style="height: {{height}}; width: {{percent}}%; background-color: {{bgcolor}};"
@@ -381,6 +382,7 @@
                                       available_chars=None,
                                       separator='?starts_with=') -%}
     <div class="filter_by_first_char center">
+        <!-- display_filter_by_first_char -->
         <i class="fa fa-filter"
             {% if account_type == 'domain' %}
                 title="{{ _('Filter domains by first character in mail domain name') }}"
@@ -445,6 +447,7 @@
 {% macro display_phone_numbers(phone_numbers=None) -%}
     {% if not phone_numbers %}
     <div class="form-field clear">
+        <!-- display_phone_numbers -->
         <h4 class="size-250 fl-space">{{ _('Telephone Number') }}</h4>
         <span class="clean-padding bt-space20">
             <input type="text" name="telephoneNumber" value="" size="35" class="text" />
@@ -476,6 +479,7 @@
 
 {% macro display_preferred_language(value='', languagemaps=['en_US'], label=none) -%}
 <div class="form-field clear">
+    <!-- display_preferred_language -->
     {% if label is sameas none %}
         <h4 class="size-250 fl-space">{{ _('Preferred language') }}</h4>
     {% else %}
@@ -496,6 +500,7 @@
     {% endif %}
 
     <div class="form-field clear">
+        <!-- display_timezones -->
         <h4 class="size-250 fl-space">{{ _('Time zone') }}</h4>
         <select name="timezone">
             <option value="none" {% if not value %}selected{% endif %}></option>
@@ -509,6 +514,7 @@
 
 {% macro display_input_global_admin(value='no') %}
 <div class="form-field clear">
+    <!-- display_input_global_admin -->
     <h4 class="size-250 fl-space">{{ _('Mark as global admin') }}</h4>
     <div class="form-checkbox-item clear">
         {#
@@ -544,6 +550,7 @@
 {# Display accountStatus #}
 {% macro display_account_status(status, account_type='user') %}
     <div class="form-field clear">
+        <!-- display_account_status -->
         {% if account_type == 'domain' %}
             <h4 class="size-250 fl-space">{{ _('Enable this domain') }}</h4>
         {% else %}
@@ -582,6 +589,7 @@
 
     {% if show_oldpw %}
         <div class="form-field clear">
+            <!-- display_reset_password -->
             <h4 class="size-250 fl-space">{{ _('Old password') }} <span class="required">*</span></h4>
             <span class="clean-padding bt-space20">
                 <input type="password" size="35"
@@ -632,6 +640,9 @@
 {% macro display_quota(value='',
                        label='',
                        comment='',
+                       id='',
+                       input_size=6,
+                       class='text',
                        used_quota=0,
                        stored_messages=0,
                        spare_quota_bytes=0,
@@ -639,6 +650,9 @@
                        show_value_in_input=true,
                        hide_zero=true,
                        show_used_quota=false,
+                       show_unit_selector=false,
+                       show_unit=false,
+                       default_unit='MB',
                        enable_input=true) -%}
     {# Convert to string #}
     {% set used_quota = used_quota |string %}
@@ -657,6 +671,7 @@
     {% endif %}
 
     <div class="form-field clear">
+        <!-- display_quota -->
         {% if label == '' %}
             <h4 class="size-250 fl-space">{{ _('Mailbox Quota') }}</h4>
         {% else %}
@@ -664,21 +679,21 @@
         {% endif %}
 
         <div class="clean-padding fl-space2">
-            <input type="text" size="6"
-                   name="mailQuota"
+            <input type="text" size="{{ input_size }}"
+                   name="{{ id }}"
                    value="{% if show_value_in_input %}{{ value |e }}{% endif %}"
-                   class="text fl-space {% if not enable_input %}disabled{% endif %}"
+                   class="{{ class }} {% if not enable_input %}disabled{% endif %}"
                    />
-            <label class="fl-space">MB
-                {% if spare_quota_bytes |int > 0 %}
-                    {% if show_spare_quota %}
-                        <span> ({{ _('Available quota:') }} {{ spare_quota_bytes | file_size_format |e }})</span>
-                    {% endif %}
-                {% elif spare_quota_bytes |int == -1 %}
-                    {% set comment = '(' + _('Set to 0 for unlimited.') + ')' %}
-                {% endif %}
-                {{ comment |e }}
-            </label>
+            {%- if show_unit_selector %}
+                <select name="{{ id }}Unit">
+                    <option value="TB" {% if default_unit == 'TB' %}selected="selected"{% endif %}>TB</option>
+                    <option value="GB" {% if default_unit == 'GB' %}selected="selected"{% endif %}>GB</option>
+                    <option value="MB" {% if default_unit == 'MB' %}selected="selected"{% endif %}>MB</option>
+                </select>
+            {%- endif %}
+            {%- if show_unit %}
+                <label>{{ default_unit }}</label>
+            {%- endif %}
 
             {% if show_used_quota %}
                 {% if value |int > 0 %}
@@ -705,6 +720,7 @@
     {% endif %}
 
     <div class="form-field clear">
+        <!-- display_domain_cn -->
         <h4 class="size-250 fl-space">{{ _('Company/Organization Name') }}</h4>
 
         <span class="clean-padding bt-space20">
@@ -750,6 +766,7 @@
     {% endif %}
 
     <div class="form-field clear">
+        <!-- display_input_cn -->
         <h4 class="{{ size }} fl-space">{{ _('Display Name') }}</h4>
 
         <span class="clean-padding bt-space20">
@@ -784,6 +801,7 @@
 
 {% macro display_mark_user_as_admin(is_global_admin=false) %}
 <div class="form-field clear">
+    <!-- display_mark_user_as_admin -->
     <h4 class="size-250 fl-space">{{ _('Mark this user as global admin') }}</h4>
 
     <div class="form-checkbox-item clear">
@@ -820,6 +838,7 @@
                             languagemaps=['en_US'],
                             timezones=None) %}
     <div id="domain_add" class="box-wrap clear">
+        <!-- display_add_domain -->
         {% if label %}
             <h3>{{ _('Add domain') }}</h3>
         {% endif %}

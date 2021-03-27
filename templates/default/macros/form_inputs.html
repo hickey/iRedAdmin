@@ -114,6 +114,7 @@
 
 {% macro input_checkbox(label,
                         input_name,
+                        value=none,
                         checked=false,
                         required=false,
                         enable_input=true,
@@ -131,8 +132,9 @@
             <input type="checkbox"
                class="checkbox {% if not enable_input %}disabled{% endif %}"
                name="{{ input_name |e }}"
-               {% if checked in [true, 'yes'] %}checked="checked"{% endif %}
-               {% if not enable_input %}disabled="disabled"{% endif %}
+               {%- if value %}value="{{value}}"{% endif %}
+               {%- if checked in [true, 'yes'] %}checked="checked"{% endif %}
+               {%- if not enable_input %}disabled="disabled"{% endif %}
                />
             <label {% if label_style %}style="{{label_style}}"{% endif %}>{% if label %}{{ label }}{% else %}&nbsp;{% endif %}{% if required %}&nbsp;<span class="required">*</span>{% endif %}</label>
         </div>
@@ -142,24 +144,24 @@
             <input type="checkbox"
                class="checkbox {% if not enable_input %}disabled{% endif %}"
                name="{{ input_name |e }}"
-               {% if checked in [true, 'yes'] %}checked="checked"{% endif %}
-               {% if not enable_input %}disabled="disabled"{% endif %}
+               {%- if value %}value="{{value}}"{% endif %}
+               {%- if checked in [true, 'yes'] %}checked="checked"{% endif %}
+               {%- if not enable_input %}disabled="disabled"{% endif %}
                />
-
-            {% if comment %}
-                {% if comment_as_tooltip %}
+            {%- if comment %}
+                {%- if comment_as_tooltip %}
                 <i class="fa fa-info-circle fa-lg"
                    title="{{ comment | e}}"
                    style="cursor: help;"></i>
-                {% else %}
+                {%- else %}
                 {{ comment |e }}
-                {% endif %}
-            {% endif %}
+                {%- endif %}
+            {%- endif %}
         </div>
         {%- endif %}
-        {% if add_hidden_input %}
+        {%- if add_hidden_input %}
         <input type="hidden" name="hidden_{{ input_name |e }}" />
-        {% endif %}
+        {%- endif %}
     </div>
 {% endmacro %}
 

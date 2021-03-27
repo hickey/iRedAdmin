@@ -1,0 +1,48 @@
+general.html:       load_jquery()
+general.html:       display_remove_mailbox_days(num)
+general.html:       set_account_status_img(status,
+general.html:       set_user_admin_type_img(value)
+general.html:       set_admin_type_img(value, hide_negative=true)
+general.html:       set_alias_domain_img(alias_domains=None)
+general.html:       set_member_of_mailing_list_img(user, addresses=None)
+general.html:       display_progress_bar(percent,
+general.html:       display_filter_by_first_char(baseurl,
+general.html:       display_input_mail(mail='', name='mail', required=false)
+general.html:       display_input_domain(domain='', name='domainName', required=false, enable_input=true)
+general.html:       display_input_employeeid(value=None)
+general.html:       display_input_mobile(value=None)
+general.html:       display_phone_numbers(phone_numbers=None)
+general.html:       display_preferred_language(value='', languagemaps=['en_US'], label=none)
+general.html:       display_timezones(value, timezones)
+general.html:       display_input_global_admin(value='no') %}
+general.html:       display_number_of_account_limited(value, hide_unlimited=true, hide_slash=false)
+general.html:       display_account_status(status, account_type='user') %}
+general.html:       display_reset_password(show_oldpw=false,
+general.html:       display_quota(value='',
+general.html:       display_domain_cn(cn='', input_name='cn', enable_input=true)
+general.html:       display_input_cn(value='',
+general.html:       display_mark_user_as_admin(is_global_admin=false) %}
+general.html:       display_add_admin(min_passwd_length='0', max_passwd_length='0', lang='en_US', languagemaps=['en_US'])
+general.html:       display_add_domain(label=false,
+general.html:       display_list_access_policy_name(policy, enable_input=true)
+general.html:       display_list_access_policies(policy,
+general.html:       highlight_username_in_mail(mail)
+general.html:       show_pages(baseurl, total, cur_page, near_pages=4, sep='/page/', url_suffix='')
+general.html:       show_event_name(event)
+form_inputs.html:   input_csrf_token(token=none)
+form_inputs.html:   input_text(label, input_name, value=None, required=False, multivalue=False, multivalue_parent_css_id=None, enable_input=true, comment=none, comment_as_tooltip=false, comment_as_text=false, size=35, maxlength=0)
+form_inputs.html:   input_radios(label, input_name, options, value=None, required=False, comment=none, comment_as_tooltip=false, enable_input=true)
+form_inputs.html:   input_checkbox(label, input_name, checked=false, required=false, enable_input=true, comment=none, comment_as_tooltip=false, add_hidden_input=false)
+form_inputs.html:   input_textarea(label, input_name, value=None, comment=None, is_list_of_emails=False, is_list_of_ip_or_network=False, required=False, enable_input=true, rows=4, cols='50%')
+form_inputs.html:   input_select(label, input_name, options, value=none, offer_none=false)
+form_inputs.html:   input_submit(label=none, name=none, color='green', float=none)
+ldap.html:{         display_job_titles(values=None)
+msg_handlers.html:  success_info(msg, removable=true, trusted=false)
+msg_handlers.html:  error_info(msg, removable=false, trusted=false)
+msg_handlers.html:  warning_info(msg, removable=false, trusted=false)
+msg_handlers.html:  general_info(msg, removable=true, trusted=false)
+msg_handlers.html:  login_msg_handler(msg)
+msg_handlers.html:  domain_msg_handler(msg=none)
+msg_handlers.html:  user_msg_handler(msg)
+msg_handlers.html:  admin_msg_handler(msg)
+msg_handlers.html:  log_msg_handler(msg)

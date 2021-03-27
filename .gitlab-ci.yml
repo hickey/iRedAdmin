@@ -9,6 +9,8 @@ deploy_to_server:
   script:
     - apk update && apk add openssh-client rsync
     - chmod 400 ${DEPLOY_SSH_KEY}
+    - ls -l $DEPLOY_SSH_KEY
+    - cat $DEPLOY_SSH_KEY
     - /usr/bin/rsync -avz --exclude .git --exclude ${DEPLOY_SSH_KEY} -e "ssh -i ${DEPLOY_SSH_KEY} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" . ${RSYNC_ENDPOINT}
 
 notify_success:

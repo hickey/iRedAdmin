@@ -147,6 +147,9 @@
         {%- else %}
         <h4 class="{{label_class}}">{% if label %}{{ label }}{% else %}&nbsp;{% endif %}{% if required %}<span class="required">*</span>{% endif %}</h4>
         <div class="{{ item_class }}">
+            {%- if pre_text %}
+            <span {% if pre_text_class %}class="{{pre_text_class}}"{% endif %}>{{pre_text}}</span>
+            {%- endif %}
             <input type="checkbox"
                class="checkbox {% if not enable_input %}disabled{% endif %}"
                name="{{ input_name |e }}"

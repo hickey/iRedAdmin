@@ -475,6 +475,11 @@
                                 enable_input=false,
                                 comment=_('Quarantine email which contains banned file types')) }}
                         </div>
+                        <div class="col1-3">
+                            {{ input_submit(input_name='delete_policy',
+                                label=_('Delete policy and use default settings'),
+                                color='red') }}
+                        </div>
                     </div>
 
                     <div class='rule'></div>

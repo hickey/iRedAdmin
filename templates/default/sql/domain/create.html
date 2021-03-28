@@ -1,5 +1,16 @@
 {% extends "layout.html" %}
-{% from "macros/general.html" import display_add_domain with context %}
+{% from "macros/general.html" import
+        display_input_domain,
+        display_domain_cn,
+        display_preferred_language,
+        display_timezones,
+        display_quota
+        with context %}
+{% from "macros/form_inputs.html" import
+        input_text,
+        input_csrf_token,
+        input_submit
+        with context %}}
 {% from "macros/msg_handlers.html" import domain_msg_handler with context %}
 
 {% block title %}{{ _('Add domain') }}{% endblock title %}
@@ -15,9 +26,53 @@
                 <h2>{{ _('Add domain') }}</h2>
             </div>
 
-            {{ display_add_domain(label=false,
-                                  preferred_language=preferred_language,
-                                  languagemaps=languagemaps) }}
+            <div class="box-wrap clear" style="display:block;">
+                <form name="form_add_domain" method="post" action="{{ctx.homepath}}/create/domain">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+                    <div class="columns clear">
+                        {{ display_input_domain(required=true) }}
+                        {{ display_domain_cn() }}
+
+                        {{ display_preferred_language(languagemaps=languagemaps,
+                            label=_('Default language for new user'))}}
+
+                        {{ display_timezones(timezones=timezones) }}
+
+                        <div class="rule"></div>
+
+                        {{ display_quota(value='0', name='domainQuota',
+                            label=_('Domain quota size'), input_size=8,
+                            class='text fl-space', show_unit_selector=true,
+                            enable_input=false,
+                            default_unit='GB') }}
+                        {{ display_quota(value='1024', name='defaultQuota',
+                            label=_('Domain quota of new user'), input_size=8,
+                            class='text fl-space', show_unit=true,
+                            enable_input=false,
+                            default_unit='MB') }}
+                        {{ display_quota(value='0', name='maxUserQuota',
+                            label=_('Max quota of mail user'), input_size=8,
+                            class='text fl-space', show_unit_selector=true,
+                            enable_input=false,
+                            default_unit='GB') }}
+
+                        <div class="rule"></div>
+
+                        {{ input_text(input_name='numberOfUsers',
+                            label=_('Number of max mail users'),
+                            size=8, enable_input=false) }}
+                        {{ input_text(input_name='numberOfAliases',
+                            label=_('Number of max mail aliases'),
+                            size=8, enable_input=false) }}
+                        {{ input_text(input_name='numberOfLists',
+                            label=_('Number of max mailing lists'),
+                            size=8, enable_input=false) }}
+
+                        {{ input_submit() }}
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 

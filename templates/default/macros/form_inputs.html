@@ -121,6 +121,8 @@
                         label_after_box=false,
                         comment=none,
                         comment_as_tooltip=false,
+                        pre_text=none,
+                        pre_text_class=none,
                         field_class='form-field clear',
                         label_class='size-250 fl-space',
                         label_style=none,
@@ -130,6 +132,9 @@
     <div class="{{ field_class }}">
         {%- if label_after_box %}
         <div class="{{ item_class }}">
+            {%- if pre_text %}
+            <span {% if pre_text_class %}class="{{pre_text_class}}"{% endif %}>{{pre_text}}</span>
+            {%- endif %}
             <input type="checkbox"
                class="checkbox {% if not enable_input %}disabled{% endif %}"
                name="{{ input_name |e }}"

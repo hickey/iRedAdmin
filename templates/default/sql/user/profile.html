@@ -153,24 +153,28 @@
                                 escape_html=false,
                                 comment=_('Domain admin <span class="color-grey">Please choose managed domains below.</span>')) }}
 
-                            |-- {{ input_checkbox(input_name='disable_viewing_mail_log',
+                            {{ input_checkbox(input_name='disable_viewing_mail_log',
                                 label=' ',
                                 enable_input=false,
+                                pre_text='|--', pre_text_class='color-grey',
                                 comment=_('Disallow to view log of inbound/outbound mails')) }}
 
-                            |-- {{ input_checkbox(input_name='disable_managing_quarantined_mails',
+                            {{ input_checkbox(input_name='disable_managing_quarantined_mails',
                                 label=' ',
                                 enable_input=false,
+                                pre_text='|--', pre_text_class='color-grey',
                                 comment=_('Disallow to manage quarantined mails')) }}
 
-                            |-- {{ input_checkbox(input_name='allowed_to_grant_admin',
+                            {{ input_checkbox(input_name='allowed_to_grant_admin',
                                 label=' ',
                                 enable_input=false,
+                                pre_text='|--', pre_text_class='color-grey',
                                 comment=_('Allow this admin to mark other mail user as domain admin')) }}
 
-                            |-- {{ input_checkbox(input_name='normal_admin_options',
+                            {{ input_checkbox(input_name='normal_admin_options',
                                 label=' ',
                                 enable_input=false,
+                                pre_text='|--', pre_text_class='color-grey',
                                 comment=_('Allow this admin to create new mail domains with up to ')) }}
 
                             {{ input_textarea(input_name='domain_search',

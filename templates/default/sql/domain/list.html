@@ -90,6 +90,13 @@
                                         <a href="{{ctx.homepath}}/profile/domain/general/{{ domain }}">
                                             <i class="fa fa-cog fa-lg fr-space" title="{{ _('Edit domain profile') }}"></i>
                                         </a>
+                                        <a href="{{ctx.homepath}}/activities/sent/{{ domain }}">
+                                            <i class="far fa-chart-bar fa-lg fr-space" title="{{ _('Domain activity') }}"></i>
+                                        </a>
+                                        {%- if r.active %}
+                                        <i class="fas fa-check fa-lg color-link fr-space"
+                                            title="Domain is active."></i>
+                                        {%- endif %}
 
                                         {{ set_account_status_img(status=r.active, account_type='domain') }}
                                     </td>

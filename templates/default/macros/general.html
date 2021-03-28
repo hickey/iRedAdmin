@@ -701,13 +701,13 @@
                         {%- set percent = used_quota |convert_to_percentage(value |int * 1024 * 1024) %}
 
                         {%- if (stored_messages | int) > 0 %}
-                            <label class="fl-space">{{ _('(%d%% full, %d messages, %s.)') | format(percent, stored_messages |int, used_quota | file_size_format) }}</label>
+                            <label class="fr-space">{{ _('(%d%% full, %d messages, %s.)') | format(percent, stored_messages |int, used_quota | file_size_format) }}</label>
                         {%- else %}
-                            <label class="fl-space color-grey">{{ _('(Mailbox is empty.)') }}</label>
+                            <label class="fr-space color-grey">{{ _('(Mailbox is empty.)') }}</label>
                         {%- endif %}
                     {%- endif %}
                 {%- elif value | int == 0 %}
-                    <label class="fl-space">{{ _('(%d messages, %s.)') | format(stored_messages |int, used_quota | file_size_format) }}</label>
+                    <label class="fr-space">{{ _('(%d messages, %s.)') | format(stored_messages |int, used_quota | file_size_format) }}</label>
                 {%- endif %}
             {%- endif %}
         </div>

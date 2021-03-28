@@ -109,6 +109,7 @@
                             {% set stored_mailbox_messages = used_quota.get(mail, {}).get('messages', 0) %}
 
                             {{ display_quota(value=profile.quota,
+                                             name='mailQuota',
                                              show_value_in_input=true,
                                              used_quota=stored_mailbox_size,
                                              stored_messages=stored_mailbox_messages,

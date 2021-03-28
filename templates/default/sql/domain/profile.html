@@ -94,7 +94,7 @@
                     </div>
                     <div class="columns clear">
                         <div class="col2-3">
-                            {{ display_quota(value='0', id='domainQuota',
+                            {{ display_quota(value='0', name='domainQuota',
                                 label=_('Domain quota size'), input_size=8,
                                 class='text fl-space', show_unit_selector=true,
                                 default_unit='GB') }}
@@ -112,11 +112,11 @@
 
                     <div class="columns clear">
                         <div class="col2-3">
-                            {{ display_quota(value='1024', id='defaultQuota',
+                            {{ display_quota(value='1024', name='defaultQuota',
                                 label=_('Domain quota of new user'), input_size=8,
                                 class='text fl-space', show_unit=true,
                                 default_unit='MB') }}
-                            {{ display_quota(value='0', id='maxUserQuota',
+                            {{ display_quota(value='0', name='maxUserQuota',
                                 label=_('Max quota of mail user'), input_size=8,
                                 class='text fl-space', show_unit_selector=true,
                                 default_unit='GB') }}

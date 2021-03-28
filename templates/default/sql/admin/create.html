@@ -2,6 +2,8 @@
 
 {% from "macros/form_inputs.html" import
     input_submit,
+    input_text,
+    input_checkbox,
     input_csrf_token
     with context
     %}
@@ -10,6 +12,7 @@
     display_random_password,
     display_preferred_language,
     display_add_admin,
+    display_quota
     with context %}
 
 {% from "macros/msg_handlers.html" import admin_msg_handler with context %}
@@ -52,6 +55,43 @@
                                              max_passwd_length=max_passwd_length,
                                              lang=default_language,
                                              languagemaps=languagemaps) }}
+
+                        <div class="rule"></div>
+
+                        {{ input_checkbox(input_name='mark_as_global_admin',
+                            label=_('Mark as global admin'),
+                            enable_input=false) }}
+                        {{ input_checkbox(input_name='disable_viewing_mail_log',
+                            label=_('Privileges'),
+                            comment=_('Disallow to view log of inbound/outbound mails'),
+                            enable_input=false) }}
+                        {{ input_checkbox(input_name='disable_managing_quarantined_mails',
+                            label=_(' '),
+                            comment=_('Disallow to manage quarantined mails'),
+                            enable_input=false) }}
+                        {{ input_text(input_name='create_max_domains',
+                            label=_('Create new mail domains with up to'),
+                            comment=_('Domains'), comment_as_label=true, size=10,
+                            enable_input=false) }}
+                        {{ display_quota(name='create_max_quota',
+                            label=' ', show_unit=true, show_unit_selector=true,
+                            default_unit='GB', enable_input=false)}}
+                        {{ input_text(input_name='create_max_users',
+                            label=' ', size=10,
+                            comment=_('Mail users'), comment_as_label=true,
+                            enable_input=false) }}
+                        {{ input_text(input_name='create_max_aliases',
+                            label=' ', size=10,
+                            comment=_('Mail aliases'), comment_as_label=true,
+                            enable_input=false) }}
+                        {{ input_text(input_name='create_max_lists',
+                            label=' ', size=10,
+                            comment=_('Mailing lists'), comment_as_label=true,
+                            enable_input=false) }}
+                        {{ input_checkbox(input_name='disable_domain_ownership_verification',
+                            label=' ',
+                            comment=_('No need to verify ownership for new domain'),
+                            enable_input=false) }}
 
                         {{ input_submit(label=_('Add')) }}
                     </form>

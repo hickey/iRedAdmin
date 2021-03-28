@@ -125,6 +125,7 @@
                         label_class='size-250 fl-space',
                         label_style=none,
                         item_class='form-checkbox-item clear',
+                        escape_html=true,
                         add_hidden_input=false) -%}
     <div class="{{ field_class }}">
         {%- if label_after_box %}
@@ -154,7 +155,11 @@
                    title="{{ comment | e}}"
                    style="cursor: help;"></i>
                 {%- else %}
+                    {%- if escape_html %}
                 {{ comment |e }}
+                    {%- else %}
+                {{ comment }}
+                    {%- endif %}
                 {%- endif %}
             {%- endif %}
         </div>

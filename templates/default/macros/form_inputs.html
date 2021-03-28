@@ -220,8 +220,11 @@
 {% macro input_submit(label=none,
                       name=none,
                       color='green',
-                      float=none) -%}
+                      float=none,
+                      add_rule=true) -%}
+    {%- if add_rule %}
     <div class="rule2"></div>
+    {%- endif %}
     <div class="form-field clear">
         <h4 class="size-250 fl-space">&nbsp;</h4>
         <span>

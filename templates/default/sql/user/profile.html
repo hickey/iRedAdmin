@@ -99,7 +99,7 @@
                     {{ input_csrf_token() }}
 
                     <div class="columns clear">
-                        <div class="col2-3">
+                        <div class="col3-4">
                             {{ display_account_status(profile.active) }}
 
                             <div class="bt-space10"></div>
@@ -121,66 +121,95 @@
                             <div class="bt-space10"></div>
                             {{ display_input_employeeid(profile.employeeid) }}
                         </div>
+                        <div class="col1-4 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li><a href="#change_email_address" class="modal-link"><span class="text">Change email address</span></a></li>
+                                    <li class="bt-space5">You can enable self-service (per-domain setting) to allow users to manage their own preferences and more.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="rule"></div>
                     <div class="columns clear">
-                        <div class="col2-3">
+                        <div class="col3-4">
                             {{ input_textarea(input_name='subscribed_list',
                                 label=_('Member of Mailing Lists'),
                                 rows=6, cols='50%') }}
                         </div>
-                    </div>
-                    <div class="rule"></div>
-                    <div class="columns clear">
-                        <div class="col2-3">
-                            {{ input_textarea(input_name='memberOfGroup',
-                                label=_('Member of Mail Aliases'),
-                                rows=6, cols='50%') }}
+                        <div class="col1-4 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5"><a href="{{ctx.homepath}}/create/maillist/{{cur_domain}}">Add mailing list</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="rule"></div>
                     <div class="columns clear">
-                        <div class="col2-3">
+                        <div class="col3-4">
+                            {{ input_textarea(input_name='memberOfGroup',
+                                label=_('Member of Mail Aliases'),
+                                rows=6, cols='50%') }}
+                        </div>
+                        <div class="col1-4 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5"><a href="{{ctx.homepath}}/create/alias/{{cur_domain}}">Add mail alias</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rule"></div>
+                    <div class="columns clear">
+                        <div class="col3-4">
                             {{ input_checkbox(input_name='domainGlobalAdmin',
                                 label=_('Mark this user as'),
                                 enable_input=false,
                                 escape_html=false,
-                                comment=_('<span style="color:red;">Global admin</span> <span class="color-grey">Note: Global admin can manage all mail domains.</span>')) }}
+                                comment=_('<span style="color:red;">Global admin</span> <span class="color-grey" style="font-size:small;font-style:italic;">Note: Global admin can manage all mail domains.</span>')) }}
 
                             {{ input_checkbox(input_name='domainadmin',
                                 label=' ',
                                 enable_input=false,
                                 escape_html=false,
-                                comment=_('Domain admin <span class="color-grey">Please choose managed domains below.</span>')) }}
+                                comment=_('Domain admin <span class="color-grey" style="font-size:small;font-style:italic;">Please choose managed domains below.</span>')) }}
 
                             {{ input_checkbox(input_name='disable_viewing_mail_log',
                                 label=' ',
                                 enable_input=false,
-                                pre_text='|--', pre_text_class='color-grey',
+                                pre_text='&nbsp;&nbsp;&nbsp;|--', pre_text_class='color-grey',
                                 comment=_('Disallow to view log of inbound/outbound mails')) }}
 
                             {{ input_checkbox(input_name='disable_managing_quarantined_mails',
                                 label=' ',
                                 enable_input=false,
-                                pre_text='|--', pre_text_class='color-grey',
+                                pre_text='&nbsp;&nbsp;&nbsp;|--', pre_text_class='color-grey',
                                 comment=_('Disallow to manage quarantined mails')) }}
 
                             {{ input_checkbox(input_name='allowed_to_grant_admin',
                                 label=' ',
                                 enable_input=false,
-                                pre_text='|--', pre_text_class='color-grey',
+                                pre_text='&nbsp;&nbsp;&nbsp;|--', pre_text_class='color-grey',
                                 comment=_('Allow this admin to mark other mail user as domain admin')) }}
 
                             {{ input_checkbox(input_name='normal_admin_options',
                                 label=' ',
                                 enable_input=false,
-                                pre_text='|--', pre_text_class='color-grey',
+                                pre_text='&nbsp;&nbsp;&nbsp;|--', pre_text_class='color-grey',
                                 comment=_('Allow this admin to create new mail domains with up to ')) }}
 
                             {{ input_textarea(input_name='domain_search',
                                 label=_('Managed Domains'),
                                 enable_input=false,
                                 rows=6, cols='50%') }}
+                        </div>
+                        <div class="col1-4 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5"><a href="{{ctx.homepath}}/create/domain">Add domain</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     {{ input_submit() }}

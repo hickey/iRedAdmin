@@ -21,6 +21,9 @@
             (ctx.homepath + '/domains', _('All domains')),
             (ctx.homepath + '/profile/domain/general/' + cur_domain, cur_domain),
             (ctx.homepath + '/users/' + cur_domain, _('Users')),
+            (ctx.homepath + '/maillist/' + cur_domain, _('Maillist')),
+            (ctx.homepath + '/aliases/' + cur_domain, _('Aliases')),
+            (ctx.homepath + '/admins/' + cur_domain, _('Admins')),
             ]
             %}
     {{ display_subnav(crumbs) }}
@@ -44,7 +47,9 @@
         <div class="box-body">
             <div class="box-header clear">
                 <ul class="tabs clear">
-                    <li class="active"><a href="#user_add"><i class="fa fa-plus"></i> {{ _('User') }}</a>
+                    <li class="active"><a href="#user_add"><i class="fa fa-plus"></i> {{ _('User') }}</a></li>
+                    <li><a href="{{ctx.homepath}}/create/maillist/{{cur_domain}}"><i class="fa fa-plus"></i>{{ _('Maillist') }}</a></li>
+                    <li><a href="{{ctx.homepath}}/create/alias/{{cur_domain}}"><i class="fa fa-plus"></i>{{ _('Alias') }}</a></li>
                 </ul>
 
                 <h2>{{ _('Add mail user') }}</h2>

@@ -135,21 +135,25 @@
 
                     <div class="columns clear">
                         <div class="col2-3">
-                            {{ input_checkbox(input_name='recipientbcc',
-                                label=_('Monitor incoming emails via BCC'),
-                                enable_input=false) }}
+                            <div>
+                                {{ input_checkbox(input_name='recipientbcc',
+                                    label=_('Monitor incoming emails via BCC'),
+                                    enable_input=false) }}
 
-                            {{ input_checkbox(input_name='senderbcc',
-                                label=_('Monitor outgoing emails via BCC'),
-                                enable_input=false) }}
+                                {{ input_text(input_name='recipientBccAddress',
+                                    label=_('BCC incoming emails to other address'),
+                                    size=35, enable_input=false) }}
+                            </div>
+                            <div class="rule"></div>
+                            <div>
+                                {{ input_checkbox(input_name='senderbcc',
+                                    label=_('Monitor outgoing emails via BCC'),
+                                    enable_input=false) }}
 
-                            {{ input_text(input_name='recipientBccAddress',
-                                label=_('BCC incoming emails to other address'),
-                                size=35, enable_input=false) }}
-
-                            {{ input_text(input_name='senderBccAddress',
-                                label=_('BCC outgoing emails to other address'),
-                                size=35, enable_input=false) }}
+                                {{ input_text(input_name='senderBccAddress',
+                                    label=_('BCC outgoing emails to other address'),
+                                    size=35, enable_input=false) }}
+                            </div>
                         </div>
                         <div class="col1-3 lastcol">
                             <div class="mark_blue bt-space10">

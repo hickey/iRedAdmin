@@ -126,6 +126,28 @@
                 </form>
             </div>
 
+            {# profile_type: Forwarding #}
+            <div id="profile_forwarding" style="display: block">
+                <form name="forwarding" method="post" action="{{ctx.homepath}}/profile/user/forwarding/{{mail}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='savecopy',
+                                label=_('Save a copy in mailbox'),
+                                enable_input=false) }}
+
+                            {{ input_textarea(input_name='mailForwardingAddresses',
+                                label=_('Forward mails to address'),
+                                comment=_('One mail address per line. Invalid address will be discarded.'),
+                                is_list_of_emails=true,
+                                rows=6, cols='50%', enable_input=false) }}
+                        </div>
+                    </div>
+
+                    {{ input_submit() }}
+                </form>
+            </div>
 
             {# profile_type: BCC #}
             <div id="profile_bcc" style="display: block">

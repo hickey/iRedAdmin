@@ -66,11 +66,11 @@
 
                     {{ display_domain_selector(
                         label=_('Add mail alias under domain'),
-                        required=true, baseurl=ctx.homepath + '/create/alias') }}
+                        required=true, baseurl='{{ctx.homepath}}/create/alias') }}
 
                     {{ input_text(input_name='listname',
                         label=_('Mail Address'), required=true,
-                        comment='@' + cur_domain, comment_as_label=true,
+                        comment='@{{cur_domain}}', comment_as_label=true,
                         enable_input=false) }}
 
                     {{ input_text(input_name='cn',

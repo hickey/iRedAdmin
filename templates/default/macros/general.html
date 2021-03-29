@@ -512,6 +512,25 @@
     </div>
 {%- endmacro %}
 
+{% macro display_domain_selector(label=none,
+                                 required=true,
+                                 baseurl=none) -%}
+    {%- if not label %}
+        {%- set label = '' %}
+    {%- endif %}
+    <div class="form-field clear">
+        <h4 class="size-250 fl-space">{{ label }}
+            {%- if required %}<span class="required">*</span>{% endif %}</h4>
+        <span class="clean-padding">
+            <select name="domainName" onchange="change_url(this, baseurl=baseurl);">
+            {% for d in allDomains %}
+                <option value="{{ d |e }}" {% if d == cur_domain %}selected{%endif%}>{{ d |e }}</option>
+            {% endfor %}
+            </select>
+        </span>
+    </div>
+{%- endmacro %}
+
 {% macro display_input_global_admin(value='no') %}
 <div class="form-field clear">
     <!-- display_input_global_admin -->

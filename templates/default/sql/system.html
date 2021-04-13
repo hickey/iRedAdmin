@@ -61,12 +61,12 @@
                             {{ input_radios(input_name='mailbox_format',
                                 label=_('Default mailbox format'),
                                 options=[('maildir', _('Maildir (One message per file). Recommended.')),
-                                         ('mdbox', _('Mdbox (Multiple messages per file) '))],
+                                         ('mdbox', _('Mdbox (Multiple messages per file)'))],
                                 enable_input=false) }}
                             {{ input_text(input_name='mailbox_folder',
-                                label=_('Default mailbox folder',
+                                label=_('Default mailbox folder'),
                                 caption=_('Only letters (case sensitive) and digits are allowed, max 20 chars'),
-                                enable_input=false)) }}
+                                enable_input=false) }}
                         </div>
                         <div class="col1-3 lastcol">
                             <div class="mark_blue bt-space10">
@@ -137,6 +137,9 @@
                     {{ input_submit() }}
                 </form>
             </div>
+
+
+
         </div><!-- .box-wrap -->
     </div><!-- .box-body -->
 </div><!-- .content-box -->

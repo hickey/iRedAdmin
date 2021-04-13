@@ -48,7 +48,95 @@
 <div class="content-box">
     <div class="box-body">
         <div class="box-wrap clear">
-            System menu
+            {# form_type: settings #}
+            <div id="form_settings" style="display: block">
+                <form name="settings" method="post" action="{{ctx.homepath}}/system/settings">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+
+                    <div class="columns clear">
+                        <h2>Mailbox</h2>
+                        <div class="rule">&nbsp;</div>
+                        <div class="col2-3">
+                            {{ input_radios(input_name='mailbox_format',
+                                label=_('Default mailbox format'),
+                                options=[('maildir', _('Maildir (One message per file). Recommended.')),
+                                         ('mdbox', _('Mdbox (Multiple messages per file) '))],
+                                enable_input=false) }}
+                            {{ input_text(input_name='mailbox_folder',
+                                label=_('Default mailbox folder',
+                                caption=_('Only letters (case sensitive) and digits are allowed, max 20 chars'),
+                                enable_input=false)) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li>It affects newly created mailboxes, not existing ones.</li>
+                                    <li>Maildir is easy to migrate, backup and restore.</li>
+                                    <li>Mdbox has better performance, but corrupted/lost index files will cause data lose and can not be recovered.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns clear">
+                        <h2>Password</h2>
+                        <div class="rule">&nbsp;</div>
+                        <div class="col2-3">
+                            {{ input_text(input_name='min_passwd_length',
+                                label=_('Minimum password length'),
+                                size=4, enable_input=false) }}
+                            {{ input_text(input_name='max_passwd_length',
+                                label=_('Maximum password length'),
+                                size=4, enable_input=false) }}
+                            {{ input_checkbox(input_name='password_has_letter',
+                                label=_('Require at least one letter'),
+                                enable_input=false) }}
+                            {{ input_checkbox(input_name='password_has_uppercase',
+                                label=_('Require at least one uppercase letter'),
+                                enable_input=false) }}
+                            {{ input_checkbox(input_name='password_has_number',
+                                label=_('Require at least one number'),
+                                enable_input=false) }}
+                            {{ input_checkbox(input_name='password_has_special_char',
+                                label=_('Require at least one special character'),
+                                enable_input=false) }}
+                        </div>
+                    </div>
+                    <div class="columns clear">
+                        <h2>Login Restrictions</h2>
+                        <div class="rule">&nbsp;</div>
+                        <div class="col2-3">
+                            {{ input_textarea(input_name='admin_login_ip_list',
+                                label=_('All admins can only login from specified IP addresses or networks'),
+                                caption=_('One IP address or network per line. Invalid address or network will be discarded.'),
+                                rows=4, cols='50%', enable_input=false) }}
+                            {{ input_textarea(input_name='global_admin_ip_list',
+                                label=_('Global admin can only login from specified IP addresses or networks'),
+                                caption=_('One IP address or network per line. Invalid address or network will be discarded.'),
+                                rows=4, cols='50%', enable_input=false) }}
+                            {{input_textarea(input_name='restful_api_clients',
+                                label=_('RESTful API is accessible only from specified IP addresses or networks'),
+                                caption=_('One IP address or network per line. Invalid address or network will be discarded.'),
+                                rows=4, cols='50%', enable_input=false) }}
+                        </div>
+                    </div>
+                    <div class="columns clear">
+                        <h2>Data Clean Up</h2>
+                        <div class="rule">&nbsp;</div>
+                        <div class="col2-3">
+                            {{ input_text(input_name='amavisd_remove_maillog_in_days',
+                                label=_('Remove log of inbound/outbound mails older than'),
+                                comment=_('Days'), comment_as_label=true,
+                                size=4, enable_input=false) }}
+                            {{ input_text(input_name='amavisd_remove_quarantine_in_days',
+                                label=_('Remove quarantined mails older than'),
+                                comment=_('Days'), comment_as_label=true,
+                                size=4, enable_input=false) }}
+                        </div>
+                    </div>
+                    {{ input_submit() }}
+                </form>
+            </div>
         </div><!-- .box-wrap -->
     </div><!-- .box-body -->
 </div><!-- .content-box -->

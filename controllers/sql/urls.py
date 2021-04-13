@@ -26,7 +26,7 @@ urls = [
 
     # Admin related.
     '/admins', 'controllers.sql.admin.List',
-    '/admins/(%s)' %d, 'controllers.sql.admin.List',
+    '/admins/(%s)' % d, 'controllers.sql.admin.List',
     r'/admins/page/(\d+)', 'controllers.sql.admin.List',
     '/profile/admin/(general)/(%s$)' % e, 'controllers.sql.admin.Profile',
     '/profile/admin/(password)/(%s$)' % e, 'controllers.sql.admin.Profile',
@@ -55,4 +55,12 @@ urls = [
     # Aliases related.
     '/aliases/(%s)' % d, 'controllers.sql.aliases.List',
     '/create/(alias)', 'controllers.sql.aliases.Create',
+
+    # System menu
+    '/system/settings', 'controllers.sql.system.Settings',
+    '/verify/domain_ownership', 'controllers.sql.system.DomainOwnership',
+    '/system/spampolicy', 'controllers.sql.system.SpamPolicy',
+    '/system/wblist', 'controllers.sql.system.WBList',
+    '/system/greylisting', 'controllers.sql.system.Greylisting',
+    '/system/throttle', 'controllers.sql.system.Throttling',
 ]

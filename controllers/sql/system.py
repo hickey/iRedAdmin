@@ -1,5 +1,6 @@
-# Author: Zhang Huangbin <zhb@iredmail.org>
+# Author: Gerard Hickey <hickey@kinetic-compute.com>
 
+import sys
 import web
 import settings
 
@@ -55,7 +56,10 @@ class Settings:
             page = web.render('sql/system.html',
                           msg=form.get('msg', None))
         except Exception as e:
-            page = e
+            print(e, file=sys.stderr)
+            fp = open('/tmp/error', 'a')
+            fp.print(e)
+            fp.close()
 
         return page
 

@@ -1,0 +1,1107 @@
+{% extends "layout.html" %}
+
+{% from "macros/form_inputs.html" import
+    input_submit,
+    input_csrf_token,
+    input_text,
+    input_checkbox,
+    input_textarea,
+    input_radios
+    with context
+    %}
+
+{% from "macros/general.html" import
+        display_subnav,
+        set_account_status_img,
+        display_domain_cn,
+        display_preferred_language,
+        display_timezones,
+        display_account_status,
+        display_domain_backupmx,
+        display_quota,
+        display_input_mail
+        with context
+        %}
+
+{% from "macros/msg_handlers.html" import domain_msg_handler with context %}
+
+{% block title %}{{ _('Edit account profile') }}{% endblock %}
+{% block navlinks_domains %}class="active"{% endblock %}
+
+{% block breadcrumb %}
+    {% set crumbs = [
+            (ctx.homepath + '/system/spampolicy', _('Global Spam Policy')),
+            (ctx.homepath + '/system/wblist', _('Whitelists & Blacklists')),
+            (ctx.homepath + '/system/greylisting', _('Greylisting')),
+            (ctx.homepath + '/system/throttle', _('Throttle')),
+            ]
+            %}
+    {{ display_subnav(crumbs) }}
+{% endblock %}
+
+{# Domain profile. #}
+{% block main %}
+
+{# Show system message #}
+{{ domain_msg_handler(msg) }}
+
+<div class="content-box">
+    <div class="box-body">
+        <div class="box-wrap clear">
+            {# profile_type: general #}
+            <div id="profile_general" style="display: block">
+                <form name="general" method="post" action="{{ctx.homepath}}/profile/domain/general/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ display_account_status(profile.active, account_type='domain') }}
+                            {{ display_domain_cn(cn=profile.description) }}
+                        </div>
+                    </div>
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ display_quota(value='0', name='domainQuota',
+                                label=_('Domain quota size'), input_size=8,
+                                class='text fl-space', show_unit_selector=true,
+                                default_unit='GB') }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('Set to 0 for unlimited.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rule">&nbsp;</div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ display_quota(value='1024', name='defaultQuota',
+                                label=_('Domain quota of new user'), input_size=8,
+                                class='text fl-space', show_unit=true,
+                                default_unit='MB') }}
+                            {{ display_quota(value='0', name='maxUserQuota',
+                                label=_('Max quota of mail user'), input_size=8,
+                                class='text fl-space', show_unit_selector=true,
+                                default_unit='GB') }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('Domain admin cannot assign more than max quota to a mail user.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{ input_submit() }}
+                </form>
+            </div>
+
+            {# profile_type: BCC #}
+            <div id="profile_bcc" style="display: block">
+                <form name="bcc" method="post" action="{{ctx.homepath}}/profile/domain/bcc/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_text(input_name='recipientBccAddress',
+                                label=_('BCC incoming emails to other address'),
+                                size=35, enable_input=false) }}
+
+                            {{ input_text(input_name='senderBccAddress',
+                                label=_('BCC outgoing emails to other address'),
+                                size=35, enable_input=false) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('Multiple addresses are NOT supported.') }}</li>
+                                    <li class="bt-space5">{{ _('Per-user bcc settings has higher priority than per-domain bcc settings.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{ input_submit() }}
+                </form>
+            </div>
+
+            {# profile_type: Relay #}
+            <div id="profile_relay" style="display: block">
+                <form name="relay" method="post" action="{{ctx.homepath}}/profile/domain/relay/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_text(input_name='mtaTransport',
+                                label=_('Relay received email to'),
+                                size=30, enable_input=false) }}
+
+                            {{ input_checkbox(input_name='relay_without_verify_local_recipient',
+                                enable_input=false,
+                                label=_('Relay without verifying local recipients'))}}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue ">
+                                <p style="padding-bottom: 10px;"><a href="#sample_transport" class="label modal-link">Sample Settings</a></p>
+                            </div>
+                        </div>
+                        <div style="width:auto;height:auto;overflow:auto;position:relative;">
+                            <div id="sample_transport" class="modal-window modal-600">
+                                <h2>Sample Settings</h2>
+                                <table class="style1">
+                                    <thead>
+                                        <tr>
+                                            <th>Setting</th>
+                                            <th>Comment</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>dovecot</strong></td>
+                                            <td>default transport</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>discard</strong></td>
+                                            <td>discard received email</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="white-space: nowrap;"><strong>smtp:[example.com]:25</strong></td>
+                                            <td>forward emails to host example.com through
+                                                port 25. The [] form is required when you specify an IP address instead
+                                                of a hostname, or disable MX DNS lookup.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space10">For advanced settings and further information please see <a href="http://www.postfix.org/transport.5.html" target="_blank" rel="noopener">Postfix manual page</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rule">&nbsp;</div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_text(input_name='relayhost',
+                                label=_('Relay outgoing email to'),
+                                size=30) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue ">
+                                <p style="padding-bottom: 10px;"><a href="#sample_relayhost" class="label modal-link">Sample Settings</a></p>
+                            </div>
+                        </div>
+                        <div style="width:auto;height:auto;overflow:auto;position:relative;">
+                            <div id="sample_relayhost" class="modal-window modal-600">
+                                <h2>Sample Settings</h2>
+                                <table class="style1">
+                                    <thead>
+                                        <tr>
+                                            <th>Setting</th>
+                                            <th>Comment</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="white-space: nowrap;"><strong>example.com</strong></td>
+                                            <td>relay emails to the servers specified in MX DNS records of domain example.com through port 25</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="white-space: nowrap;"><strong>[example.com]</strong></td>
+                                            <td>relay emails to the servers specified in A DNS records of domain example.com through port 25</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space10">For advanced settings and further information please see <a href="http://www.postfix.org/transport.5.html" target="_blank" rel="noopener">Postfix manual page</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{ input_submit() }}
+                </form>
+            </div>
+
+            {# profile_type: Catch-all #}
+            <div id="profile_catchall" style="display: block">
+                <form name="catchall" method="post" action="{{ctx.homepath}}/profile/domain/catchall/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_textarea(input_name='',
+                                label=_('Catch-all Addresses'),
+                                comment=_('One mail address per line. Invalid address will be discarded.'),
+                                is_list_of_emails=true,
+                                rows=6, enable_input=false) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="notification note-attention">
+                                <p>{{ _('Catch-all address may receive many spam emails.') }}</p>
+                            </div>
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('Emails delivered to non-exist mail accounts will be forwarded to catch-all address(es).') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{ input_submit() }}
+                </form>
+            </div>
+
+            {# profile_type: Aliases #}
+            <div id="profile_aliases" style="display: block">
+                <form name="aliases" method="post" action="{{ctx.homepath}}/profile/domain/aliases/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_text(input_name='domainAliasName',
+                                label=_('Alias domains'),
+                                size=35, enable_input=false) }}
+
+                            {{ input_text(input_name='domainAliasName',
+                                label=' ', size=35, enable_input=false) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('Emails sent to <em><strong>user@[ALIAS_DOMAIN]</strong></em> will be delivered to <em><strong>user@' + cur_domain +'</strong></em>.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns clear"></div>
+                    {{ input_submit() }}
+                </form>
+            </div>
+
+            {# profile_type: Throttling #}
+            <div id="profile_throttle" style="display: block">
+                <form name="throttle" method="post" action="{{ctx.homepath}}/profile/domain/throttle/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+                    <div class="columns clear">
+                        <div class="col1-3-compat">
+                            {{ input_checkbox(input_name='enable_outbound_throttling',
+                                label=_('Throttle outbound mails'),
+                                label_after_box=true,
+                                field_class='form-field clear bt-space10',
+                                item_class='form-field-item clear bt-space10',
+                                label_style='font-weight:bold;',
+                                required=true, enable_input=false)}}
+
+                            {%- set custom_field = 'Custom: <input type="text" name="custom_outbound_period" size=10> Seconds' %}
+                            {{ input_radios(input_name='outbound_period',
+                                label=_('Period of time'),
+                                only_first_label=true,
+                                label_class='',
+                                field_class='form-field clear bt-space10',
+                                required=true, escape_html=false,
+                                enable_input=false,
+                                options=[('86400', _('1 Day')),
+                                         ('3600', _('1 Hour')),
+                                         ('60', _('1 Minute')),
+                                         ('', custom_field)])}}
+
+                            {%- set custom_field = 'Custom: <input type="text" name="custom_outbound_max_msgs" size=15>' %}
+                            {{ input_radios(input_name='outbound_max_msgs',
+                                 label=_('Number of max outbound emails'),
+                                 only_first_label=true,
+                                 label_class='', field_class='form-field clear bt-space10',
+                                 escape_html=false,
+                                 enable_input=false,
+                                 options=[('-1', _('Inherit global throttle setting')),
+                                          ('0', _('Unlimited')),
+                                          ('', custom_field)]) }}
+
+                            {%- set custom_field = 'Custom: <input type="text" name="custom_outbound_max_quota" size=15> Bytes' %}
+                            {{ input_radios(input_name='outbound_max_quota',
+                                 label=_('Cumulative size of all outbound emails'),
+                                 only_first_label=true,
+                                 label_class='', field_class='form-field clear bt-space10',
+                                 escape_html=false,
+                                 enable_input=false,
+                                 options=[(-1, _('Inherit from account which has lower priority')),
+                                          (0, _('Unlimited')),
+                                          ('', custom_field)]) }}
+
+                            {%- set custom_field = 'Custom: <input type="text" name="custom_outbound_msg_size" size=15> Bytes' %}
+                            {{ input_radios(input_name='outbound_msg_size',
+                                 label=_('Max size of single email'),
+                                 only_first_label=true,
+                                 label_class='', field_class='form-field clear bt-space10',
+                                 escape_html=false,
+                                 enable_input=false,
+                                 options=[(-1, _('Inherit from account which has lower priority')),
+                                          (0, _('Unlimited')),
+                                          ('', custom_field)]) }}
+                        </div>
+                        <div class="col1-3-compat-left-border">
+                            {{ input_checkbox(input_name='enable_inbound_throttling',
+                                label=_('Throttle inbound mails'),
+                                label_after_box=true,
+                                field_class='form-field clear bt-space10',
+                                item_class='form-field-item clear bt-space10',
+                                label_style='font-weight:bold;',
+                                enable_input=false,
+                                required=true)}}
+
+                            {%- set custom_field = 'Custom: <input type="text" name="custom_inbound_period" size=10> Seconds' %}
+                            {{ input_radios(input_name='inbound_period',
+                                label=_('Period of time'),
+                                only_first_label=true,
+                                label_class='',
+                                field_class='form-field clear bt-space10',
+                                required=true, escape_html=false,
+                                enable_input=false,
+                                options=[('86400', _('1 Day')),
+                                         ('3600', _('1 Hour')),
+                                         ('60', _('1 Minute')),
+                                         ('', custom_field)])}}
+
+                            {%- set custom_field = 'Custom: <input type="text" name="custom_inbound_max_msgs" size=15>' %}
+                            {{ input_radios(input_name='inbound_max_msgs',
+                                 label=_('Number of max inbound emails'),
+                                 only_first_label=true,
+                                 label_class='', field_class='form-field clear bt-space10',
+                                 escape_html=false,
+                                 enable_input=false,
+                                 options=[('-1', _('Inherit global throttle setting')),
+                                          ('0', _('Unlimited')),
+                                          ('', custom_field)]) }}
+
+                            {%- set custom_field = 'Custom: <input type="text" name="custom_inbound_max_quota" size=15> Bytes' %}
+                            {{ input_radios(input_name='inbound_max_quota',
+                                 label=_('Cumulative size of all inbound emails'),
+                                 only_first_label=true,
+                                 label_class='', field_class='form-field clear bt-space10',
+                                 escape_html=false,
+                                 enable_input=false,
+                                 options=[(-1, _('Inherit from account which has lower priority')),
+                                          (0, _('Unlimited')),
+                                          ('', custom_field)]) }}
+
+                            {%- set custom_field = 'Custom: <input type="text" name="custom_inbound_msg_size" size=15> Bytes' %}
+                            {{ input_radios(input_name='inbound_msg_size',
+                                 label=_('Max size of single email'),
+                                 only_first_label=true,
+                                 label_class='', field_class='form-field clear bt-space10',
+                                 escape_html=false,
+                                 enable_input=false,
+                                 options=[(-1, _('Inherit from account which has lower priority')),
+                                          (0, _('Unlimited')),
+                                          ('', custom_field)]) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('This throttle setting will be applied to all individual accounts under domain') }}</li>
+                                    <li class="bt-space5">{{ _('You can set per-user throttling in account profile page.') }}</li>
+                                    <li class="bt-space5">{{ _('Per-user throttle setting has higher priority.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{ input_submit() }}
+                </form>
+            </div>
+
+            {# profile_type: Spam Policy #}
+            <div id="profile_spampolicy" style="display: block">
+                <form name="spampolicy" method="post" action="{{ctx.homepath}}/profile/domain/spampolicy/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+
+                    <div class="notification note-info">
+                        <p><i class="fa fa-info fa-lg fa-fw"></i>
+                        Account does not have specific spam policy yet, server-wide policy will be applied.
+                        </p>
+                    </div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='enable_spam_checks',
+                                label=_('Spam checking'),
+                                enable_input=false,
+                                comment=_('Enable spam checking')) }}
+
+                            {{ input_checkbox(input_name='spam_quarantine_to',
+                                label=' ',
+                                enable_input=false,
+                                comment=_('Quarantine spam')) }}
+
+                            {{ input_checkbox(input_name='enable_virus_checks',
+                                label=_('Virus checking'),
+                                enable_input=false,
+                                comment=_('Enable virus checking')) }}
+
+                            {{ input_checkbox(input_name='virus_quarantine_to',
+                                label=' ',
+                                enable_input=false,
+                                comment=_('Quarantine virus')) }}
+
+                            {{ input_checkbox(input_name='enable_header_checks',
+                                label=_('Bad-header checking'),
+                                enable_input=false,
+                                comment=_('Enable bad-header checking')) }}
+
+                            {{ input_checkbox(input_name='bad_header_quarantine_to',
+                                label=' ',
+                                enable_input=false,
+                                comment=_('Quarantine bad-header email')) }}
+
+                            {{ input_checkbox(input_name='enable_banned_checks',
+                                label=_('Banned file type checking'),
+                                enable_input=false,
+                                comment=_('Enable banned file type checking')) }}
+
+                            {{ input_checkbox(input_name='banned_quarantine_to',
+                                label=' ',
+                                enable_input=false,
+                                comment=_('Quarantine email which contains banned file types')) }}
+                        </div>
+                    </div>
+
+                    <div class='rule'></div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='modify_spam_subject',
+                                label=_('Prefix text [SPAM] to the subject line'),
+                                enable_input=false) }}
+
+                            {{ input_text(input_name='spam_tag2_level',
+                                label=_('Mark mail as spam when score is >='),
+                                comment=_('Default is 6.'),
+                                comment_as_label=true,
+                                enable_input=false,
+                                comment_class='color-grey', size=6) }}
+
+                            {{ input_text(input_name='spam_kill_level',
+                                label=_('Block or quarantine marked spam when score is >='),
+                                comment=_('Default is 6.9.'),
+                                comment_as_label=true,
+                                enable_input=false,
+                                comment_class='color-grey', size=6) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">If many clean mails were marked as spam, please slightly increase the score.</li>
+                                    <li class="bt-space5">If many spam message were not classified, please slightly decrease the score.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns clear"></div>
+                    {{ input_submit() }}
+                </form>
+            </div>
+
+            {# profile_type: Greylisting #}
+            <div id="profile_greylisting" style="display: block">
+                <form name="greylisting" method="post" action="{{ctx.homepath}}/profile/domain/greylisting/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_radios(input_name='greylisting',
+                                label=_('Greylisting service for this domain'),
+                                enable_input=false,
+                                options=[('inherit', _('Inherit global setting')),
+                                         ('enable', _('Enable greylisting service')),
+                                         ('disable', _('Disable greylisting service'))]) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue">
+                                <p style="padding-bottom: 10px;"><a href="#about_greylisting" class="label modal-link">{{ _('About greylisting') }}</a></p>
+                            </div>
+                        </div>
+                        <div id="about_greylisting" class="modal-window modal-600">
+                            <h2>About greylisting</h2>
+                            <div class="rule3"></div>
+                            <ul class="standard clean-padding bt-space10">
+                                <li class="bt-space10">Greylisting is a method of
+                            defending your email users against spam. A mail transfer agent (MTA,
+                            e.g. Postfix) using greylisting will temporarily reject any email from a
+                            sender it does not recognize. If the mail is legitimate the originating
+                            server will, after a delay, try again and, if sufficient time has
+                            elapsed (usually 7 to 30 minutes), the email will be accepted.</li>
+                                <li class="bt-space10">Greylisting helps block out huge amounts of spam, not recommended to turn it off.</li>
+                                <li class="bt-space10">Refer to <a href="http://www.greylisting.org/" target="_blank" rel="noopener">greylisting.org</a> for technical details about greylisting.</li>
+                            </ul>
+                            <div class="bt-space0">&nbsp;</div>
+                        </div>
+                        <div class="col2-3">
+                            {{ input_textarea(input_name='whitelists',
+                                label=_('Do not apply greylisting on listed senders'),
+                                comment=_('One sender per line.'),
+                                enable_input=false,
+                                is_list_of_emails=true, rows=15) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <h4>Sender address format</h4>
+                                <ul class="standard clean-padding bt-space10">
+                                    <li><strong>IP Address</strong>
+                                        <ul>
+                                            <li>Single IP Address: <em><u>192.168.2.10</u></em></li>
+                                            <li>CIDR formatted range of IP addresses: <em><u>192.168.2.0/24</u></em></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Email address or domain names</strong>
+                                        <ul>
+                                            <li>Single user: <em><u>user@example.com</u></em></li>
+                                            <li>Entire domain: <em><u>@example.com</u></em></li>
+                                            <li>All sub-domains: <em><u>@.example.com</u></em></li>
+                                        </ul>
+                                    </li>
+                                    <li>Record comment can be added after a #: <em><u>192.168.2.20 # Comment</u></em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns clear"></div>
+                    {{ input_submit() }}
+                </form>
+            </div>
+
+            {# profile_type: WBlist #}
+            <div id="profile_wblist" style="display: block">
+                <form name="wblist" method="post" action="{{ctx.homepath}}/profile/domain/wblist/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            <h3>For Inbound Mails</h3>
+                            <div class="rule"></div>
+                            <div class="col1-2">
+                                <div class="col1-3">
+                                    {{ input_textarea(input_name='whitelistSender',
+                                        label=_('Whitelisted senders'),
+                                        comment=_('(One record per line.)'),
+                                        enable_input=false,
+                                        rows=15, cols='95%') }}
+                                </div>
+                            </div>
+                            <div class="col1-2 lastcol">
+                                <div class="col1-3">
+                                    {{ input_textarea(input_name='blacklistSender',
+                                        label=_('Blacklisted senders'),
+                                        comment=_('(One record per line.)'),
+                                        enable_input=false,
+                                        rows=15, cols='95%') }}
+                                </div>
+                            </div>
+
+                            <h3>For Outbound Mails</h3>
+                            <div class="rule"></div>
+                            <div class="col1-2">
+                                <div class="col1-3">
+                                    {{ input_textarea(input_name='whitelistRecipient',
+                                        label=_('Whitelisted recipients'),
+                                        comment=_('(One record per line.)'),
+                                        enable_input=false,
+                                        rows=15, cols='95%') }}
+                                </div>
+                            </div>
+                            <div class="col1-2 lastcol">
+                                <div class="col1-3">
+                                    {{ input_textarea(input_name='blacklistRecipient',
+                                        label=_('Blacklisted recipients'),
+                                        comment=_('(One record per line.)'),
+                                        enable_input=false,
+                                        rows=15, cols='95%') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">Whitelist has higher priority than blacklist.</li>
+                                    <li class="bt-space5">Per-user whitelists &amp; blacklists has highest priority, then per-domain setting, then global setting.</li>
+                                    <li class="bt-space5">Mails sent from blacklisted senders will be quarantined by default.</li>
+                                </ul>
+                                <h4>Valid record formats</h4>
+                                <ul class="standard clean-padding bt-space10">
+                                    <li><strong>IP Address</strong>
+                                        <ul>
+                                            <li>Single IP Address: <em><u>192.168.2.10</u></em></li>
+                                            <li>IP CIDR Network: <em><u>192.168.2.0/24, 2620:0:2d0:200::7/128</u></em></li>
+                                        </ul>
+                                    </li>
+                                    <li class="bt-space5"><strong>Single user</strong>: <u>user@domain.tld</u></li>
+                                    <li class="bt-space5"><strong>User with wildcard</strong>: <u>user@*</u></li>
+                                    <li class="bt-space5"><strong>Entire domain</strong>: <u>@domain.tld</u></li>
+                                    <li class="bt-space5"><strong>Domain and its sub-domains</strong>: <u>@.domain.tld</u></li>
+                                    <li class="bt-space5"><strong>All accounts</strong>: <u style="color: red;">@.</u></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns clear"></div>
+                    {{ input_submit() }}
+                </form>
+            </div>
+
+            {# profile_type: Backup MX #}
+            <div id="profile_backupmx" style="display: block">
+                <form name="backupmx" method="post" action="{{ctx.homepath}}/profile/domain/backupmx/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='backupmx',
+                                enable_input=false,
+                                label=_('Mark as backup MX')) }}
+
+                            {{ input_text(input_name='primary_mx',
+                                enable_input=false,
+                                label=_('Primary MX'), size=30) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <p style="padding-bottom: 10px;"><a href="#backupmx_samples" class="label modal-link">Sample Settings of Primary MX</a></p>
+                            </div>
+
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('When smtp service on primary MX mail server is down, emails sent to this domain will be delivered to backup MX server.') }}</li>
+                                    <li class="bt-space5">{{ _('Received emails on backup MX will be relayed to primary MX server when its smtp service is back online.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="backupmx_samples" class="modal-window modal-600">
+                            <h2>Sample Settings of Primary MX</h2>
+                            <p>It's strongly recommended to use IP address of backup MX server instead of domain name to avoid potential looping.</p>
+                            <table class="style1">
+                                <thead>
+                                    <tr>
+                                        <th>Setting</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="white-space: nowrap;"><strong>[8.8.8.8]:25</strong></td>
+                                        <td>Relay emails to the specified IP address through port 25</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="white-space: nowrap;"><strong>example.com</strong></td>
+                                        <td>Relay emails to the server specified in MX type DNS records of domain example.com through port 25</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="white-space: nowrap;"><strong>[example.com]:25</strong></td>
+                                        <td>Relay emails to the server specified in A type DNS records of domain example.com through port 25</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ul class="standard clean-padding bt-space10">
+                                <li class="bt-space10">For advanced settings and further information please see <a href="http://www.postfix.org/transport.5.html" target="_blank" rel="noopener">Postfix manual page</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="columns clear"></div>
+                    {{ input_submit() }}
+                </form>
+            </div>
+
+            {# profile_type: Advanced #}
+            <div id="profile_advanced" style="display: block">
+                <form name="advanced" method="post" action="{{ctx.homepath}}/profile/domain/advanced/{{cur_domain}}">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_text(input_name='numberOfUsers',
+                                label=_('Number of max mail users'),
+                                comment='x account(s) exist',
+                                enable_input=false,
+                                comment_as_label=true, size=8) }}
+
+                            {{ input_text(input_name='numberOfAliases',
+                                label=_('Number of max mail aliases'),
+                                comment='x account(s) exist',
+                                enable_input=false,
+                                comment_as_label=true, size=8) }}
+
+                            {{ input_text(input_name='numberOfLists',
+                                label=_('Number of max mailing lists'),
+                                comment='x accounts(s) exist',
+                                enable_input=false,
+                                comment_as_label=true, size=8) }}
+                            <div class="clear bt-space">&nbsp;</div>
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('Set value to 0 or leave it empty for unlimited.') }}</li>
+                                    <li class="bt-space5">{{ _('Set value to -1 means not allowed to create this kind of account.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_text(input_name='minPasswordLength',
+                            enable_input=false,
+                                label=_('Minimum password length'), size=8) }}
+
+                            {{ input_text(input_name='maxPasswordLength',
+                            enable_input=false,
+                                label=_('Maximum password length'), size=8) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('Leave it empty to use server-wide default setting.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rule"></div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ display_preferred_language(languagemaps=languagemaps,
+                                label=_('Default language for new user')) }}
+                            {{ display_timezones(timezones=timezones) }}
+                        </div>
+                    </div>
+
+                    <div class="rule"></div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_text(input_name='recipientBccAddress',
+                                label=_('Default bcc address for incoming emails for new user'),
+                                enable_input=false,
+                                size=35) }}
+
+                            {{ input_text(input_name='senderBccAddress',
+                                label=_('Default bcc address for outcoming emails for new user'),
+                                enable_input=false,
+                                size=35) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('These addresses will be assigned to newly created mail user as per-user bcc address.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_text(input_name='default_mail_list',
+                            enable_input=false,
+                                label=_('Default mailing lists of new user')) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5"><a href="{{ ctx.homepath + '/create/maillist/' + cur_domain }}" class="action_add">Add mailing list</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_text(input_name='default_mail_aliases',
+                            enable_input=false,
+                                label=_('Default mailing aliases of new user')) }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5"><a href="{{ ctx.homepath + '/create/aliases/' + cur_domain }}" class="action_add">Add mail alias</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rule"></div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='enabledService',
+                                label=_('Enabled Services'),
+                                enable_input=false,
+                                comment=_('Self-service'), value='self-service') }}
+                        </div>
+                    </div>
+
+                    <div class="rule"></div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='disabledMailService',
+                                label=_('Disabled mail services'),
+                                comment=_('Sending mails via SMTP'),
+                                enable_input=false,
+                                value='smtp') }}
+
+                            {{ input_checkbox(input_name='disabledMailService',
+                                label=' ',
+                                comment=_('Sending mails via SMTP over TLS/SSL'),
+                                enable_input=false,
+                                value='smtpsecured') }}
+
+                            {{ input_checkbox(input_name='disabledMailService',
+                                label=' ',
+                                enable_input=false,
+                                comment=_('Fetching mails via POP3'),
+                                value='pop3') }}
+
+                            {{ input_checkbox(input_name='disabledMailService',
+                                label=' ',
+                                comment=_('Fetching mails via POP3 over TLS/SSL'),
+                                enable_input=false,
+                                value='pop3secured') }}
+
+                            {{ input_checkbox(input_name='disabledMailService',
+                                label=' ',
+                                comment=_('Fetching mail via IMAP'),
+                                enable_input=false,
+                                value='imap') }}
+
+                            {{ input_checkbox(input_name='disabledMailService',
+                                label=' ',
+                                comment=_('Fetching mail via IMAP over TLS/SSL'),
+                                enable_input=false,
+                                value='imapsecured') }}
+
+                            {{ input_checkbox(input_name='disabledMailService',
+                                label=' ',
+                                comment=_('Customize mail filter rule'),
+                                enable_input=false,
+                                value='managesieve') }}
+
+                            {{ input_checkbox(input_name='disabledMailService',
+                                label=' ',
+                                comment=_('Customize mail filter rule over TLS/SSL'),
+                                enable_input=false,
+                                value='managesievesecured') }}
+
+                            {{ input_checkbox(input_name='disabledMailService',
+                                label=' ',
+                                comment=_('SOGo Groupware (Calendar, Contacts, Tasks, ActiveSync)'),
+                                enable_input=false,
+                                value='sogo') }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <p>Disabling service will be applied to newly created mail
+                                user by default. If you want to update existing mail users, please
+                                toggle on checkbox below.</p>
+                                <p>
+                                {{ input_checkbox(input_name='disable_services_for_existing_users',
+                                    label=_('Update existing mail users'), label_after_box=true) }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rule"></div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='disabledDomainProfile',
+                                label=_('Disabled domain profile'),
+                                comment=_('Password policies'),
+                                enable_input=false,
+                                value='password_policies') }}
+
+                            {{ input_checkbox(input_name='disabledDomainProfile',
+                                label=' ',
+                                comment=_('Aliases'),
+                                enable_input=false,
+                                value='aliases') }}
+
+                            {{ input_checkbox(input_name='disabledDomainProfile',
+                                label=' ',
+                                comment=_('BCC'),
+                                enable_input=false,
+                                value='bcc') }}
+
+                            {{ input_checkbox(input_name='disabledDomainProfile',
+                                label=' ',
+                                comment=_('Catch-all'),
+                                enable_input=false,
+                                value='catchall') }}
+
+                            {{ input_checkbox(input_name='disabledDomainProfile',
+                                label=' ',
+                                comment=_('Relay'),
+                                enable_input=false,
+                                value='relay') }}
+
+                            {{ input_checkbox(input_name='disabledDomainProfile',
+                                label=' ',
+                                comment=_('Backup MX'),enable_input=false,
+                                value='backupmx') }}
+
+                            {{ input_checkbox(input_name='disabledDomainProfile',
+                                label=' ',
+                                comment=_('Throttling'),enable_input=false,
+                                value='throttle') }}
+
+                            {{ input_checkbox(input_name='disabledDomainProfile',
+                                label=' ',
+                                comment=_('White/Blacklist'),enable_input=false,
+                                value='wblist') }}
+
+                            {{ input_checkbox(input_name='disabledDomainProfile',
+                                label=' ',
+                                comment=_('Spam Policy'),enable_input=false,
+                                value='spampolicy') }}
+
+                            {{ input_checkbox(input_name='disabledDomainProfile',
+                                label=' ',
+                                comment=_('Greylisting'),enable_input=false,
+                                value='greylisting') }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('Normal admin cannot view and update disabled profiles in account profile page.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rule"></div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='disabledUserProfile',
+                                label=_('Disabled user profiles'),
+                                comment=_('Aliases'),enable_input=false,
+                                value='aliases') }}
+
+                            {{ input_checkbox(input_name='disabledUserProfile',
+                                label=' ',
+                                comment=_('BCC'),enable_input=false,
+                                value='bcc') }}
+
+                            {{ input_checkbox(input_name='disabledUserProfile',
+                                label=' ',
+                                comment=_('Forwarding'),enable_input=false,
+                                value='forwarding') }}
+
+                            {{ input_checkbox(input_name='disabledUserProfile',
+                                label=' ',
+                                comment=_('Relay'),enable_input=false,
+                                value='relay') }}
+
+                            {{ input_checkbox(input_name='disabledUserProfile',
+                                label=' ',
+                                comment=_('Throttling'),enable_input=false,
+                                value='throttling') }}
+
+                            {{ input_checkbox(input_name='disabledUserProfile',
+                                label=' ',
+                                comment=_('White/Blacklist'),enable_input=false,
+                                value='wblist') }}
+
+                            {{ input_checkbox(input_name='disabledUserProfile',
+                                label=' ',
+                                comment=_('Spam Policy'),enable_input=false,
+                                value='spampolicy') }}
+
+                            {{ input_checkbox(input_name='disabledUserProfile',
+                                label=' ',
+                                comment=_('Greylisting'),enable_input=false,
+                                value='greylisting') }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('Normal admin cannot view and update disabled profiles in account profile page.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rule"></div>
+
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='disabledUserPreference',
+                                label=_('Disabled self-service preferences'),
+                                comment=_('Personal information'),enable_input=false,
+                                value='personal_info') }}
+
+                            {{ input_checkbox(input_name='disabledUserPreference',
+                                label=' ',
+                                comment=_('Change password'),enable_input=false,
+                                value='password') }}
+
+                            {{ input_checkbox(input_name='disabledUserPreference',
+                                label=' ',
+                                comment=_('Set mail forwarding'),enable_input=false,
+                                value='forwarding') }}
+
+                            {{ input_checkbox(input_name='disabledUserPreference',
+                                label=' ',
+                                comment=_('Manage per-user white/blacklist'),enable_input=false,
+                                value='wblist') }}
+
+                            {{ input_checkbox(input_name='disabledUserPreference',
+                                label=' ',
+                                comment=_('Manage quarantined mails'),enable_input=false,
+                                value='quarantine') }}
+
+                            {{ input_checkbox(input_name='disabledUserPreference',
+                                label=' ',enable_input=false,
+                                comment=_('View received mails and white/blacklist senders'),
+                                value='rcvd_mails') }}
+
+                            {{ input_checkbox(input_name='disabledUserPreference',
+                                label=' ',
+                                comment=_('Spam Policy'),enable_input=false,
+                                value='spampolicy') }}
+                        </div>
+                        <div class="col1-3 lastcol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">{{ _('Normal mail user cannot view and update disabled preferences.') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{ input_submit() }}
+                </form>
+            </div>
+        </div><!-- .box-wrap -->
+    </div><!-- .box-body -->
+</div><!-- .content-box -->
+{% endblock main %}
+
+{% block extra_js %}
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".tabs li").idTabs("profile_{{ profile_type }}")
+});
+</script>
+{% endblock extra_js %}

@@ -51,9 +51,14 @@ class Settings:
         # else:
         #     days_to_keep_removed_mailbox = settings.DAYS_TO_KEEP_REMOVED_MAILBOX
 
-
-        return web.render('sql/system.html',
+        try:
+            page = web.render('sql/system.html',
                           msg=form.get('msg', None))
+        except Exception as e:
+            page = e
+
+        return page
+
 
 
 class DomainOwnership:

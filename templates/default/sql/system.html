@@ -138,8 +138,14 @@
                 </form>
             </div>
 
+            {# form_type: domain_ownership #}
+            <div id="form_domain_ownership" style="display: block">
+                <form name="domain_ownership" method="post" action="{{ctx.homepath}}/system/domain_ownership">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
 
-
+                </form>
+            </div>
         </div><!-- .box-wrap -->
     </div><!-- .box-body -->
 </div><!-- .content-box -->

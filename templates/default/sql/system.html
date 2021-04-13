@@ -65,7 +65,7 @@
                                 enable_input=false) }}
                             {{ input_text(input_name='mailbox_folder',
                                 label=_('Default mailbox folder'),
-                                caption=_('Only letters (case sensitive) and digits are allowed, max 20 chars'),
+                                comment=_('Only letters (case sensitive) and digits are allowed, max 20 chars'),
                                 enable_input=false) }}
                         </div>
                         <div class="col1-3 lastcol">
@@ -108,15 +108,15 @@
                         <div class="col2-3">
                             {{ input_textarea(input_name='admin_login_ip_list',
                                 label=_('All admins can only login from specified IP addresses or networks'),
-                                caption=_('One IP address or network per line. Invalid address or network will be discarded.'),
+                                comment=_('One IP address or network per line. Invalid address or network will be discarded.'),
                                 rows=4, cols='50%', enable_input=false) }}
                             {{ input_textarea(input_name='global_admin_ip_list',
                                 label=_('Global admin can only login from specified IP addresses or networks'),
-                                caption=_('One IP address or network per line. Invalid address or network will be discarded.'),
+                                comment=_('One IP address or network per line. Invalid address or network will be discarded.'),
                                 rows=4, cols='50%', enable_input=false) }}
                             {{input_textarea(input_name='restful_api_clients',
                                 label=_('RESTful API is accessible only from specified IP addresses or networks'),
-                                caption=_('One IP address or network per line. Invalid address or network will be discarded.'),
+                                comment=_('One IP address or network per line. Invalid address or network will be discarded.'),
                                 rows=4, cols='50%', enable_input=false) }}
                         </div>
                     </div>

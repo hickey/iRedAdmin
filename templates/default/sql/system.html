@@ -30,6 +30,7 @@
 
 {% block breadcrumb %}
     {% set crumbs = [
+            (ctx.homepath + '/system/settings', _('System Settings')),
             (ctx.homepath + '/system/spampolicy', _('Global Spam Policy')),
             (ctx.homepath + '/system/wblist', _('Whitelists & Blacklists')),
             (ctx.homepath + '/system/greylisting', _('Greylisting')),
@@ -143,7 +144,36 @@
                 <form name="domain_ownership" method="post" action="{{ctx.homepath}}/system/domain_ownership">
                     <!--suppress ALL -->
                     {{ input_csrf_token() }}
-
+                    <div class="columns clear">
+                        <h2>Domain ownership verfication</h2>
+                        <div class="rule">&nbsp;</div>
+                        <p>Please verify mail domains listed below, to ensure
+                            that it is an valid domain and you have the required
+                            privileges in the domain to manage the email services.
+                            Mail services are disabled for pending domains, and
+                            will be enabled automatically after verified.</p>
+                        <p>To verify domain ownership, please choose one of methods listed below:</p>
+                        <ul class="standard clean-padding bt-space20">
+                            <li>Create a text file under top directory of your web site, both file name and file content must be same as verify code</li>
+                            <li>Create a TXT type DNS record of the domain name, use the verify code as its value</li>
+                        </ul>
+                        <form id="form_domain_ownership" method="post" action="/verify/domain_ownership">
+                            <table class="style1">
+                                <thead>
+                                    <tr>
+                                        <th class="checkbox">
+                                            <input class="checkbox select-all" type="checkbox">
+                                        </th>
+                                        <th>Domain</th>
+                                        <th style="wiite-space: nowrap;">Verify code</th>
+                                        <th>Admin</th>
+                                        <th>Last verify status</th>
+                                        <th>Last verify time</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </form>
+                    </div>
                 </form>
             </div>
         </div><!-- .box-wrap -->
@@ -154,7 +184,7 @@
 {% block extra_js %}
 <script type="text/javascript">
 $(document).ready(function() {
-    $(".tabs li").idTabs("profile_{{ profile_type }}")
+    $(".tabs li").idTabs("form_{{ profile_type }}")
 });
 </script>
 {% endblock extra_js %}

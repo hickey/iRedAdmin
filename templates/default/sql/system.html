@@ -141,7 +141,7 @@
 
             {# form_type: domain_ownership #}
             <div id="form_domain_ownership" style="display: block">
-                <form name="domain_ownership" method="post" action="{{ctx.homepath}}/system/domain_ownership">
+                <form name="form_ownership" method="post" action="{{ctx.homepath}}/system/domain_ownership">
                     <!--suppress ALL -->
                     {{ input_csrf_token() }}
                     <div class="columns clear">
@@ -176,6 +176,78 @@
                     </div>
                 </form>
             </div>
+
+            {# form_type: spampolicy #}
+            <div id="form_spampolicy" style="display: block">
+                <form name="form_spampolicy" method="post" action="{{ctx.homepath}}/system/spampolicy">
+                    <!--suppress ALL -->
+                    {{ input_csrf_token() }}
+                    <div class="notification note-info">
+                        <p><i class="fa fa-info fa-lg fa-fw"> Account does not have specific spam policy yet, server-wide policy will be applied.</i></p>
+                    </div>
+                    <div class="columns clear">
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='enable_spam_checks',
+                                label=_('Spam checking'),
+                                comment=_('Enable spam checking'),
+                                enable_input=false) }}
+                            {{ input_checkbox(input_name='spam_quarantine_to',
+                                label=_(' '),
+                                comment=_('Quarantine spam'),
+                                enable_input=false) }}
+                            {{ input_checkbox(input_name='enable_virus_checking',
+                                label=_('Virus checking'),
+                                comment=_('Enable virus checking'),
+                                enable_input=false) }}
+                            {{ input_checkbox(input_name='virus_quarantine_to',
+                                label=_(' '),
+                                comment=_('Quarantine virus'),
+                                enable_input=false) }}
+                            {{ input_checkbox(input_name='enable_header_checks',
+                                label=_('Bad-header checking'),
+                                comment=_('Enable bad-header checking'),
+                                enable_input=false) }}
+                            {{ input_checkbox(input_name='bad_header_quarantine_to',
+                                label=_(' '),
+                                comment=_('Quarantine bad-header email'),
+                                enable_input=false) }}
+                            {{ input_checkbox(input_name='enable_banned_checks',
+                                label=_('Banned file type checking'),
+                                comment=_('Enable banned file type checking'),
+                                enable_input=false) }}
+                            {{ input_checkbox(input_name='banned_quarantine_to',
+                                label=_(' '),
+                                comment=_('Quarantine email which contains banned file types'),
+                                enable_input=false) }}
+                        </div>
+                        <div class="rule">&nbsp;</div>
+                        <div class="col2-3">
+                            {{ input_checkbox(input_name='modify_spam_subject',
+                                label=_('Prefix text [SPAM] to subject of spam'),
+                                enable_input=false) }}
+                            {{ input_text(input_name='spam_tag2_level',
+                                label=_('Mark mail as spam when score is'),
+                                comment=_('Default is 6'),
+                                comment_as_label=true, enable_input=false) }}
+                            {{ input_text(input_name='spam_kill_level',
+                                label=_('Block or quarantine marked spam when score is >='),
+                                comment=_('Default is 6.9'),
+                                comment_as_label=true, enable_input=false) }}
+                            {{ input_checkbox(input_name='always_insert_x_spam_headers',
+                                label=_('Always insert X-Spam-* headers'),
+                                enable_input=false) }}
+                        </div>
+                        <div class="col1-3 lascol">
+                            <div class="mark_blue bt-space10">
+                                <ul class="standard clean-padding bt-space10">
+                                    <li class="bt-space5">If many clean mails were marked as spam, please slightly increase the score.</li>
+                                    <li class="bt-space5">If many spam message were not classified, please slightly decrease the score.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {{ input_submit() }}
+            </form>
         </div><!-- .box-wrap -->
     </div><!-- .box-body -->
 </div><!-- .content-box -->

@@ -27,18 +27,6 @@
 
 {% block title %}{{ _('System Settings') }}{% endblock %}
 
-{% block breadcrumb %}
-    {% set crumbs = [
-            (ctx.homepath + '/system/settings', _('System Settings')),
-            (ctx.homepath + '/system/spampolicy', _('Global Spam Policy')),
-            (ctx.homepath + '/system/wblist', _('Whitelists & Blacklists')),
-            (ctx.homepath + '/system/greylisting', _('Greylisting')),
-            (ctx.homepath + '/system/throttle', _('Throttle')),
-            ]
-            %}
-    {{ display_subnav(crumbs) }}
-{% endblock %}
-
 {# Domain profile. #}
 {% block main %}
 
@@ -48,6 +36,22 @@
 <div class="content-box">
     <div class="box-body">
         <div class="box-wrap clear">
+            {% set navlinks = [
+                (ctx.homepath + '/system/settings', _('System Settings'), true),
+                (ctx.homepath + '/system/spampolicy', _('Global Spam Policy'), true),
+                (ctx.homepath + '/system/wblist', _('Whitelists & Blacklists'), true),
+                (ctx.homepath + '/system/greylisting', _('Greylisting'), true),
+                (ctx.homepath + '/system/throttle', _('Throttle'), true),
+                ]
+                %}
+            <ul class="tabs clear">
+                {% for nav in navlinks %}
+                    {% if not false in nav[2] and not none in nav[2] %}
+                        <li><a href="#profile_{{ nav[0] }}">{{ nav[1] }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
             {# form_type: settings #}
             <div id="form_settings" style="display: block">
                 <form name="settings" method="post" action="{{ctx.homepath}}/system/settings">
@@ -539,7 +543,7 @@
 {% block extra_js %}
 <script type="text/javascript">
 $(document).ready(function() {
-    $(".tabs li").idTabs("form_{{ profile_type }}")
+    $(".tabs li").idTabs("form_{{ form_type }}")
 });
 </script>
 {% endblock extra_js %}

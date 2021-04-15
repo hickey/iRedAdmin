@@ -37,17 +37,17 @@
     <div class="box-body">
         <div class="box-wrap clear">
             {% set navlinks = [
-                (ctx.homepath + '/system/settings', _('System Settings'), true),
-                (ctx.homepath + '/system/spampolicy', _('Global Spam Policy'), true),
-                (ctx.homepath + '/system/wblist', _('Whitelists & Blacklists'), true),
-                (ctx.homepath + '/system/greylisting', _('Greylisting'), true),
-                (ctx.homepath + '/system/throttle', _('Throttle'), true),
+                ('settings', _('System Settings'), true),
+                ('spampolicy', _('Global Spam Policy'), true),
+                ('wblist', _('Whitelists & Blacklists'), true),
+                ('greylisting', _('Greylisting'), true),
+                ('throttle', _('Throttle'), true),
                 ]
                 %}
             <ul class="tabs clear">
                 {% for nav in navlinks %}
                     {% if not false in nav[2] and not none in nav[2] %}
-                        <li><a href="#profile_{{ nav[0] }}">{{ nav[1] }}</a></li>
+                        <li><a href="#form_{{ nav[0] }}">{{ nav[1] }}</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

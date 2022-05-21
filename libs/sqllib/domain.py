@@ -367,6 +367,22 @@ def add(form, conn=None):
     kv = form_utils.get_form_dict(form=form, input_name='cn', key_name='description')
     params.update(kv)
 
+    # Language
+    # kv = form_utils.get_form_dict(form=form, input_name='preferredLanguage', key_name='')
+
+    # Quotas
+    # q_fields = {'domainQuota': 'quota', 'defaultQuota': 'none', 'maxUserQuota': 'maxquota'}
+    q_fields = {'domainQuota': 'quota', 'maxUserQuota': 'maxquota'}
+    for item in q_fields.items():
+        kv = form_utils.get_form_dict(form=form, input_name=item[0], key_name=item[1])
+        params.update(kv)
+
+    # Levels
+    l_fields = {'numberOfUsers': 'mailboxes', 'numberOfAliases': 'aliases', 'numberOfLists': 'maillists'}
+    for item in l_fields.items():
+        kv = form_utils.get_form_dict(form=form, input_name=item[0], key_name=item[1])
+        params.update(kv)
+
     # Add domain in database.
     try:
         conn.insert('domain', **params)

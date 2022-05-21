@@ -44,30 +44,27 @@
                         {{ display_quota(value='0', name='domainQuota',
                             label=_('Domain quota size'), input_size=8,
                             class='text fl-space', show_unit_selector=true,
-                            enable_input=false,
                             default_unit='GB') }}
                         {{ display_quota(value='1024', name='defaultQuota',
                             label=_('Domain quota of new user'), input_size=8,
-                            class='text fl-space', show_unit=true,
-                            enable_input=false,
+                            class='text fl-space', show_unit_selector=true,
                             default_unit='MB') }}
                         {{ display_quota(value='0', name='maxUserQuota',
                             label=_('Max quota of mail user'), input_size=8,
                             class='text fl-space', show_unit_selector=true,
-                            enable_input=false,
                             default_unit='GB') }}
 
                         <div class="rule"></div>
 
                         {{ input_text(input_name='numberOfUsers',
                             label=_('Number of max mail users'),
-                            size=8, enable_input=false) }}
+                            size=8) }}
                         {{ input_text(input_name='numberOfAliases',
                             label=_('Number of max mail aliases'),
-                            size=8, enable_input=false) }}
+                            size=8) }}
                         {{ input_text(input_name='numberOfLists',
                             label=_('Number of max mailing lists'),
-                            size=8, enable_input=false) }}
+                            size=8) }}
 
                         {{ input_submit() }}
                     </div>
